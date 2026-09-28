@@ -1,0 +1,246 @@
+---
+/**
+ * Pagina de um nucleo. Uma rota gera as quatro: acrescentar um nucleo em
+ * conteudo.json cria a pagina, o alfinete no mapa e a linha na lista, sem
+ * tocar em codigo.
+ *
+ * O nome do arquivo sai nucleo-<slug>.html para bater com as URLs ja
+ * indexadas (build.format 'file' no astro.config.mjs).
+ */
+import Base from '../layouts/Base.astro';
+import GradeGaleria from '../components/GradeGaleria.astro';
+import { conteudo, type Nucleo } from '../dados/conteudo';
+
+export function getStaticPaths() {
+  return conteudo.nucleos.map((n) => ({
+    params: { slug: n.slug },
+    props: { nucleo: n },
+  }));
+}
+
+interface Props {
+  nucleo: Nucleo;
+}
+
+const { nucleo } = Astro.props;
+const { site, horarios } = conteudo;
+
+/**
+ * Link do mapa: o campo `mapa` do nucleo quando existe, senao uma busca pelo
+ * endereco. A codificacao deixa a barra passar (Olinda/PE, nao Olinda%2FPE)
+ * para casar com o que o site antigo ja publicava.
+ */
+const mapa = nucleo.mapa
+  ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nucleo.end).replace(/%2F/g, '/')}`;
+
+const contato = nucleo.whatsapp || site.instagram;
+---
+
+<Base titulo={`${nucleo.nome.split(' · ')[0]} — Núcleo`} tela="nucleo" arquivo={`nucleo-${nucleo.slug}.html`}>
+  <div>
+    <div class="capa sec hero bleed">
+      <div class="foto">
+        <img src="fotos/ecai11.jpg" alt="Foto do núcleo" decoding="async" />
+      </div>
+      <div class="veu"></div>
+
+      <a class="voltar hv2" href="nucleos.html">← Núcleos</a>
+
+      <div class="titulo">
+        <span class="etiqueta">{nucleo.tag}</span>
+        <h1>{nucleo.nome}</h1>
+        <div class="endereco">{nucleo.end}</div>
+      </div>
+    </div>
+
+    <div class="corpo sec">
+      <div class="acoes">
+        <a class="falar" href={contato} target="_blank" rel="noopener">Falar com o núcleo</a>
+        <a class="ir" href={mapa} target="_blank" rel="noopener" aria-label="Ver no mapa">↗</a>
+      </div>
+
+      <div class="rotulo">Horários</div>
+      <div class="horarios">
+        {horarios.map((h) => (
+          <div class="horario" style={`background:${h.bg}`}>
+            <div>
+              <div class="dia">{h.dia}</div>
+              <div class="turma">{h.turma}</div>
+            </div>
+            <div class="hora">{h.hora}</div>
+          </div>
+        ))}
+      </div>
+
+      <div class="professor">
+        <div class="retrato">
+          <img src="fotos/ecai_07.jpg" alt="Prof." loading="lazy" decoding="async" />
+        </div>
+        <div>
+          <div class="papel">Professor responsável</div>
+          <div class="nome">{nucleo.prof}</div>
+        </div>
+      </div>
+
+      <div class="rotulo">Fotos do núcleo</div>
+      <GradeGaleria />
+    </div>
+  </div>
+</Base>
+
+<style>
+  .capa { position: relative; height: 280px; background: var(--cor-tinta); }
+
+  .foto { position: absolute; inset: 0; filter: grayscale(1) contrast(1.12); }
+  .foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .veu {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(11, 11, 11, .6) 0%, rgba(11, 11, 11, .1) 40%, rgba(11, 11, 11, .92) 100%);
+    pointer-events: none;
+  }
+
+  .voltar {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 38px;
+    padding: 0 14px;
+    border-radius: var(--raio-pilula);
+    border: 1px solid rgba(255, 255, 255, .4);
+    background: rgba(11, 11, 11, .45);
+    color: var(--cor-papel);
+    font-family: var(--fonte-texto);
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .titulo {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    color: var(--cor-papel);
+    pointer-events: none;
+  }
+  .etiqueta {
+    font-size: 9.5px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--cor-tinta);
+    background: var(--cor-verde);
+    padding: 4px 9px;
+    border-radius: var(--raio-pilula);
+  }
+  .titulo h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 34px;
+    line-height: .98;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    margin: 12px 0 4px;
+  }
+  .endereco { font-size: 13px; color: rgba(255, 255, 255, .7); }
+
+  .corpo { padding: 24px 20px 30px; background: var(--cor-papel); }
+
+  .acoes { display: flex; gap: 10px; margin-bottom: 24px; }
+  .falar, .ir {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  .falar {
+    flex: 1;
+    min-height: 50px;
+    border: 0;
+    border-radius: var(--raio-pilula);
+    background: var(--cor-verde);
+    color: var(--cor-tinta);
+    font-family: var(--fonte-titulo);
+    font-size: 14.5px;
+  }
+  .ir {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(11, 11, 11, .2);
+    background: var(--cor-papel);
+    font-size: 16px;
+  }
+
+  .rotulo {
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(11, 11, 11, .45);
+    margin-bottom: 12px;
+  }
+
+  .horarios {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(11, 11, 11, .12);
+    margin-bottom: 26px;
+  }
+  .horario {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 13px 16px;
+    border-bottom: 1px solid rgba(11, 11, 11, .08);
+  }
+  .dia { font-size: 14.5px; font-weight: 700; }
+  .turma { font-size: 12.5px; color: var(--cor-tinta-58); }
+  .hora { font-family: var(--fonte-titulo); font-size: 15px; }
+
+  .professor {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 16px;
+    border-radius: 22px;
+    background: var(--cor-superficie);
+    margin-bottom: 26px;
+  }
+  .retrato {
+    flex: none;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    filter: grayscale(1) contrast(1.1);
+  }
+  .retrato img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+  }
+  .papel {
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(11, 11, 11, .5);
+    margin-bottom: 3px;
+  }
+  .professor .nome {
+    font-family: var(--fonte-titulo);
+    font-size: 19px;
+    text-transform: uppercase;
+    letter-spacing: -.01em;
+  }
+</style>

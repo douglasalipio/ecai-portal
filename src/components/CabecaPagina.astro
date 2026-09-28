@@ -1,0 +1,53 @@
+---
+/**
+ * Bloco de abertura das paginas internas: sobretitulo, h1 e linha de apoio.
+ *
+ * Os dois recuos variam de pagina para pagina por ruido do export de design
+ * (22px na Galeria, 24px em Nucleos), nao por decisao. Ficam como props para
+ * a migracao fechar identica; depois da para uniformizar num passo so.
+ */
+interface Props {
+  sobretitulo: string;
+  titulo: string;
+  texto: string;
+  /** padding-bottom da secao */
+  recuo?: string;
+  /** margin-bottom do paragrafo */
+  recuoTexto?: string;
+}
+
+const { sobretitulo, titulo, texto, recuo = '22px', recuoTexto = '0' } = Astro.props;
+---
+
+<div class="cabeca sec" style={`--recuo:${recuo}`}>
+  <span class="sobretitulo">{sobretitulo}</span>
+  <h1>{titulo}</h1>
+  <p style={`margin-bottom:${recuoTexto}`}>{texto}</p>
+</div>
+
+<style>
+  .cabeca { padding: 30px 20px var(--recuo); background: var(--cor-papel); }
+
+  .sobretitulo {
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(11, 11, 11, .45);
+  }
+
+  h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 42px;
+    line-height: .94;
+    letter-spacing: -.025em;
+    text-transform: uppercase;
+    margin: 10px 0 12px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: rgba(11, 11, 11, .7);
+  }
+</style>

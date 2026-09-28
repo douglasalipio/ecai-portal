@@ -29,12 +29,16 @@ CABECALHO = """/* Tarja de zebra — a faixa listrada que separa as secoes.
  * Gerado por ferramentas/extrair-zebra.py a partir do HTML do site antigo.
  * Nao edite a mao: rode o script de novo.
  *
- * Nome da classe: .zebra-<cor>[-<opacidade>], onde a opacidade so aparece
- * quando nao e 1.
+ * Cada variante sai de duas formas:
+ *   --zebra-<nome>   custom property, para quem precisa do valor (o mapa de
+ *                    nucleos usa como background-image com outro size)
+ *   .zebra-<nome>    classe pronta, para a tarja horizontal de 14px
+ *
+ * O nome e .zebra-<cor>[-<opacidade>]; a opacidade so aparece quando nao e 1.
  */
-
-.zebra { background-repeat: repeat-x; background-size: 300px 100%; }
 """
+
+BASE = ".zebra { background-repeat: repeat-x; background-size: 300px 100%; }"
 
 CORES = {"#3f9b46": "verde", "#ffffff": "branca", "#0b0b0b": "preta"}
 
@@ -68,11 +72,14 @@ def main():
     if not variantes:
         sys.exit("nenhuma tarja encontrada em %s" % pasta)
 
-    regras = [".zebra-%s { background-image: url('%s'); }" % (n, variantes[n])
-              for n in sorted(variantes)]
+    vars_ = ["  --zebra-%s: url('%s');" % (n, variantes[n]) for n in sorted(variantes)]
+    classes = [".zebra-%s { background-image: var(--zebra-%s); }" % (n, n)
+               for n in sorted(variantes)]
+
     os.makedirs(os.path.dirname(SAIDA), exist_ok=True)
     with open(SAIDA, "w", encoding="utf-8") as f:
-        f.write(CABECALHO + "\n" + "\n\n".join(regras) + "\n")
+        f.write(CABECALHO + "\n:root {\n" + "\n\n".join(vars_) + "\n}\n\n"
+                + BASE + "\n\n" + "\n".join(classes) + "\n")
 
     print("%d variantes -> %s (%.1f KB)" % (len(variantes), SAIDA,
                                             os.path.getsize(SAIDA) / 1024))

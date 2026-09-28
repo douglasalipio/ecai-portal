@@ -1,0 +1,64 @@
+---
+/**
+ * Lista de nucleos em linhas: sigla no circulo, nome, professor e seta.
+ * Aparece em Nucleos e na home.
+ */
+import { conteudo } from '../dados/conteudo';
+
+interface Props {
+  /** Omite um nucleo da lista — usado quando ele ja aparece em destaque. */
+  exceto?: string;
+}
+
+const { exceto } = Astro.props;
+const lista = conteudo.nucleos.filter((n) => n.slug !== exceto);
+---
+
+<div class="lista">
+  {lista.map((n) => (
+    <a class="item hv2" href={`nucleo-${n.slug}.html`}>
+      <div class="sigla">{n.sigla}</div>
+      <div class="dados">
+        <div class="nome">{n.nome}</div>
+        <div class="prof">{n.resumo}</div>
+      </div>
+      <span class="seta">→</span>
+    </a>
+  ))}
+</div>
+
+<style>
+  .lista { display: flex; flex-direction: column; gap: 10px; }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 20px;
+    background: var(--cor-superficie);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .sigla {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--cor-tinta);
+    color: var(--cor-papel);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fonte-titulo);
+    font-size: 14px;
+  }
+
+  .dados { flex: 1; min-width: 0; }
+  .nome { font-size: 15.5px; font-weight: 700; line-height: 1.2; }
+  .prof { font-size: 12.5px; color: var(--cor-tinta-58); margin-top: 2px; }
+
+  .seta { font-size: 16px; color: rgba(11, 11, 11, .4); }
+</style>

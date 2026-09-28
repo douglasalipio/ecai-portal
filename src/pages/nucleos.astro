@@ -1,0 +1,99 @@
+---
+/**
+ * Nucleos — mapa esquematico, cartao da sede em destaque e a lista dos
+ * demais. Toda a pagina sai da lista `nucleos` do conteudo; acrescentar um
+ * nucleo la faz aparecer aqui, no mapa e gera a pagina dele.
+ */
+import Base from '../layouts/Base.astro';
+import CabecaPagina from '../components/CabecaPagina.astro';
+import MapaNucleos from '../components/MapaNucleos.astro';
+import ListaNucleos from '../components/ListaNucleos.astro';
+import { sede } from '../dados/conteudo';
+---
+
+<Base titulo="Núcleos" tela="nucleos" arquivo="nucleos.html">
+  <div>
+    <CabecaPagina
+      sobretitulo="Onde estamos"
+      titulo="Nossos núcleos"
+      texto="Cada núcleo tem seu professor, seus horários e sua roda. Todos com a mesma raiz."
+      recuo="24px"
+    />
+
+    <MapaNucleos />
+
+    <div class="corpo sec">
+      <a class="destaque" href={`nucleo-${sede.slug}.html`}>
+        <div class="foto">
+          <img src="fotos/ecai_05.jpg" alt="Foto da sede em Recife" decoding="async" />
+        </div>
+        <div class="texto">
+          <span class="etiqueta">{sede.tag}</span>
+          <div class="nome">{sede.nome}</div>
+          <div class="endereco">{sede.endCurto ?? sede.end} · {sede.prof}</div>
+          <div class="chamada">Ver núcleo →</div>
+        </div>
+      </a>
+
+      <div class="rotulo">Todos os núcleos</div>
+      <ListaNucleos />
+    </div>
+  </div>
+</Base>
+
+<style>
+  .corpo { padding: 26px 20px 34px; background: var(--cor-papel); }
+
+  .destaque {
+    display: block;
+    border-radius: 24px;
+    background: var(--cor-tinta);
+    color: var(--cor-papel);
+    overflow: hidden;
+    margin-bottom: 22px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .foto { height: 170px; filter: grayscale(1) contrast(1.12); }
+  .foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .texto { padding: 18px 18px 20px; }
+
+  .etiqueta {
+    font-size: 9.5px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--cor-tinta);
+    background: var(--cor-verde);
+    padding: 4px 9px;
+    border-radius: var(--raio-pilula);
+  }
+
+  .nome {
+    font-family: var(--fonte-titulo);
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: -.02em;
+    margin: 12px 0 6px;
+  }
+
+  .endereco { font-size: 13.5px; color: rgba(255, 255, 255, .62); margin-bottom: 14px; }
+
+  .chamada {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--fonte-titulo);
+    font-size: 14px;
+    color: var(--cor-verde);
+  }
+
+  .rotulo {
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(11, 11, 11, .45);
+    margin-bottom: 12px;
+  }
+</style>

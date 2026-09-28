@@ -1,0 +1,49 @@
+---
+/**
+ * Grade de fotos, usada na Galeria e no rodape de cada pagina de nucleo.
+ *
+ * tamanho 'largo' ocupa duas colunas no celular e tres no desktop (a regra
+ * .grade-galeria em base.css); 'pequeno' ocupa uma. pos ajusta o corte.
+ */
+import { conteudo } from '../dados/conteudo';
+
+interface Props {
+  /**
+   * Na Galeria a primeira foto esta acima da dobra e carrega de imediato;
+   * no fim da pagina de nucleo, nenhuma esta, entao todas ficam preguicosas.
+   */
+  primeiraAnsiosa?: boolean;
+}
+
+const { primeiraAnsiosa = false } = Astro.props;
+const { galeria } = conteudo;
+---
+
+<div class="grade-galeria grade">
+  {galeria.map((foto, i) => (
+    <div class:list={['quadro', foto.tamanho]}>
+      <img
+        src={foto.src}
+        alt={foto.alt}
+        loading={primeiraAnsiosa && i === 0 ? undefined : 'lazy'}
+        decoding="async"
+        style={`object-position:${foto.pos}`}
+      />
+    </div>
+  ))}
+</div>
+
+<style>
+  .grade { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .quadro {
+    overflow: hidden;
+    /* o preto e branco e do projeto, nao das fotos: os originais em
+       uploads/ estao coloridos */
+    filter: grayscale(1) contrast(1.1);
+  }
+  .quadro.largo { grid-column: span 2; height: 300px; border-radius: 20px; }
+  .quadro.pequeno { height: 150px; border-radius: 18px; }
+
+  .quadro img { width: 100%; height: 100%; object-fit: cover; display: block; }
+</style>

@@ -1,0 +1,72 @@
+---
+/**
+ * Mapa esquematico dos nucleos: fundo listrado e um alfinete por nucleo,
+ * posicionado pelos campos x/y do conteudo (percentuais, nao coordenadas
+ * geograficas — e um desenho, nao um mapa).
+ */
+import { conteudo } from '../dados/conteudo';
+
+const { nucleos } = conteudo;
+---
+
+<div class="mapa sec hero bleed">
+  <span class="rotulo">Onde estamos</span>
+
+  {nucleos.map((n) => (
+    <a class="alfinete" href={`nucleo-${n.slug}.html`} style={`left:${n.x};top:${n.y}`}>
+      <span class="etiqueta">{n.pin}</span>
+      <span class="ponto"></span>
+    </a>
+  ))}
+</div>
+
+<style>
+  .mapa {
+    position: relative;
+    height: 250px;
+    background-color: var(--cor-tinta);
+    background-image: var(--zebra-verde);
+    background-size: 300px 300px;
+    background-repeat: repeat;
+  }
+
+  .rotulo {
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    font-size: 9.5px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .4);
+  }
+
+  .alfinete {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .etiqueta {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--cor-papel);
+    background: var(--cor-tinta-70);
+    padding: 2px 6px;
+    border-radius: var(--raio-pilula);
+    white-space: nowrap;
+  }
+
+  .ponto {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--cor-verde);
+    border: 2px solid var(--cor-tinta);
+  }
+</style>

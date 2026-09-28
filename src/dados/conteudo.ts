@@ -61,6 +61,8 @@ const nucleo = z.object({
   tag: texto,
   prof: texto,
   end: texto,
+  /** Forma curta para o cartao de destaque, onde o endereco inteiro nao cabe. */
+  endCurto: texto.optional(),
   x: z.string(),
   y: z.string(),
   pin: z.string(),

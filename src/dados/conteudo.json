@@ -61,7 +61,8 @@
       "y": "44%",
       "pin": "Recife",
       "mapa": "https://www.google.com/maps/place/R.+da+Uni%C3%A3o,+287+-+Boa+Vista,+Recife+-+PE,+50050-015/@-8.0594583,-34.8809565,17z/data=!3m1!4b1!4m6!3m5!1s0x7ab18bef0cb17b5:0xacee528be2b99e35!8m2!3d-8.0594583!4d-34.8809565!16s%2Fg%2F11c3q441qh",
-      "whatsapp": ""
+      "whatsapp": "",
+      "endCurto": "Rua da União, 287 — Boa Vista"
     },
     {
       "slug": "merida",
