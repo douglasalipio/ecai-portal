@@ -1,0 +1,77 @@
+---
+/**
+ * Casca de toda pagina — herdeira da constante PAGINA do build.py.
+ *
+ * Reune <head>, a coluna .site, o cabecalho fixo, o menu sobreposto e o
+ * rodape. As paginas so entregam o miolo.
+ */
+import { conteudo } from '../dados/conteudo';
+import type { Tela } from '../dados/navegacao';
+import Cabecalho from '../components/Cabecalho.astro';
+import Menu from '../components/Menu.astro';
+import Rodape from '../components/Rodape.astro';
+import '../styles/base.css';
+
+interface Props {
+  /** Titulo curto da pagina. Na home vira o titulo inteiro, sem sufixo. */
+  titulo: string;
+  tela: Tela;
+  /** Nome do arquivo, para montar o canonical. */
+  arquivo: string;
+}
+
+const { titulo, tela, arquivo } = Astro.props;
+const { site } = conteudo;
+const base = site.url.replace(/\/$/, '');
+
+const ehHome = arquivo === 'index.html';
+const tituloFinal = ehHome ? titulo : `${titulo} — ${site.nomeCompleto}`;
+const descricao = ehHome ? site.descricao : `${titulo} · ${site.descricao}`;
+const canonical = `${base}/${ehHome ? '' : arquivo}`;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{tituloFinal}</title>
+    <meta name="description" content={descricao} />
+    <meta name="theme-color" content="#0b0b0b" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="logo-ife.jpg" />
+    <link rel="apple-touch-icon" href="logo-ife.jpg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.nomeCompleto} />
+    <meta property="og:title" content={tituloFinal} />
+    <meta property="og:description" content={descricao} />
+    <meta property="og:image" content={`${base}/compartilhar.jpg`} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="1000" />
+    <meta property="og:image:alt" content="Brasão da Escola de Capoeira Angola IFÉ" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content={`${base}/compartilhar.jpg`} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700;800&display=swap"
+    />
+  </head>
+
+  <body>
+    <main class="site">
+      <Cabecalho tela={tela} />
+      <slot />
+      <Rodape />
+    </main>
+
+    <Menu tela={tela} />
+
+    <script>import '../scripts/app';</script>
+  </body>
+</html>

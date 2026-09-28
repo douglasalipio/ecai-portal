@@ -1,0 +1,53 @@
+/* Tokens de design do site da IFE.
+ *
+ * O site antigo declarava sete variaveis de cor no body e nao usava nenhuma:
+ * as ~470 ocorrencias de hex estavam inline em cada elemento, herdadas do
+ * export da ferramenta de design. Este arquivo e a fonte unica dessas
+ * decisoes — nenhum componente deve escrever hex direto.
+ *
+ * Nomes em portugues para acompanhar o resto do projeto (.rodape-cols,
+ * .grade-galeria, .cartaz ja eram assim).
+ */
+
+:root {
+  /* ---- cor ---------------------------------------------------------- */
+  /* frequencia no site antigo: branco 256x, preto 105x, verde 78x */
+  --cor-papel: #ffffff;        /* fundo das secoes claras */
+  --cor-superficie: #f4f2ee;   /* faixa alternada, cartoes */
+  --cor-tinta: #0b0b0b;        /* texto e fundo das secoes escuras */
+  --cor-moldura: #dcd9d3;      /* fundo fora da coluna do site */
+
+  --cor-verde: #3f9b46;        /* acento: botoes, destaque, foco */
+  --cor-verde-medio: #34803a;  /* estado intermediario */
+  --cor-verde-escuro: #24632a; /* links sobre fundo claro — contraste AA */
+
+  --cor-divisa: rgba(11, 11, 11, .14);
+  --cor-veu: rgba(11, 11, 11, .55);       /* fundo do menu sobreposto */
+  --cor-tinta-70: rgba(11, 11, 11, .70);  /* etiqueta sobre foto */
+  --cor-tinta-58: rgba(11, 11, 11, .58);  /* texto secundario */
+  --cor-papel-82: rgba(255, 255, 255, .82); /* texto sobre foto escura */
+  --cor-papel-75: rgba(255, 255, 255, .75); /* navegacao em repouso */
+  --cor-papel-72: rgba(255, 255, 255, .72);
+  --cor-papel-50: rgba(255, 255, 255, .50); /* borda de botao vazado */
+
+  /* ---- tipografia ---------------------------------------------------- */
+  --fonte-titulo: "Caprasimo", Georgia, serif;
+  --fonte-texto: "Figtree", system-ui, -apple-system, sans-serif;
+
+  /* ---- largura da coluna --------------------------------------------- */
+  /* O design so previa celular. Os degraus acima de 480px foram acrescentados
+     depois, na mao, e sao o que faz o site funcionar no desktop. */
+  --largura-celular: 480px;
+  --largura-tablet: 720px;
+  --largura-desktop: 1180px;
+  --largura-amplo: 1320px;
+
+  /* respiro lateral por degrau */
+  --respiro-tablet: 44px;
+  --respiro-desktop: 170px;
+  --respiro-amplo: 240px;
+
+  /* ---- outros -------------------------------------------------------- */
+  --raio-pilula: 999px;
+  --sombra-coluna: 0 0 80px rgba(11, 11, 11, .22);
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ecai-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Site da Escola de Capoeira Angola IFE — ecai.net.br",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "comparar": "python3 ferramentas/comparar.py _referencia dist",
+    "deploy": "ESTRITO=1 npm run build && firebase deploy --only hosting:capoeira"
+  },
+  "dependencies": {
+    "astro": "^5.14.1",
+    "sharp": "^0.34.4"
+  }
+}

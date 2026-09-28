@@ -1,0 +1,144 @@
+/* Estilo base do site — herdeiro do CSS_BASE que vivia dentro do build.py.
+ *
+ * Mesmos valores computados de antes; o que muda e a origem: agora vem de
+ * tokens.css em vez de hex repetido. Qualquer diferenca visivel aqui e um
+ * erro de transcricao, nao uma decisao de design.
+ */
+
+@import './tokens.css';
+@import './zebra.css';
+
+* { -webkit-tap-highlight-color: transparent; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cor-moldura);
+  font-family: var(--fonte-texto);
+}
+
+a { color: var(--cor-verde-escuro); text-underline-offset: 3px; }
+img { max-width: 100%; }
+
+.site {
+  max-width: var(--largura-celular);
+  margin: 0 auto;
+  background: var(--cor-papel);
+  color: var(--cor-tinta);
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+}
+
+@media (min-width: 520px) {
+  .site { box-shadow: var(--sombra-coluna); }
+}
+
+/* menu: overlay real, sem depender de runtime */
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: none;
+  background: var(--cor-veu);
+}
+.menu.aberto { display: block; }
+
+/* o painel do menu traz inset:0 inline (heranca do prototipo): precisa de
+   !important para virar coluna centrada em vez de colar na borda esquerda */
+.menu > div {
+  position: fixed !important;
+  inset: 0 auto 0 50% !important;
+  width: 100% !important;
+  max-width: var(--largura-celular) !important;
+  transform: translateX(-50%) !important;
+}
+body.travado { overflow: hidden; }
+
+/* acordeao do FAQ, antes controlado por estado do prototipo */
+.faq-r { display: none; }
+.faq.aberto .faq-r { display: block; }
+
+/* rolagem horizontal das galerias sem barra visivel */
+.zs { scrollbar-width: none; }
+.zs::-webkit-scrollbar { width: 0; height: 0; }
+
+:focus-visible { outline: 2px solid var(--cor-verde); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+
+/* ---------- telas maiores ----------
+   O arquivo de design so previa celular e tudo usava estilo inline, que vence
+   folha de estilo — dai os !important abaixo. Conforme cada pagina vira
+   componente, o inline correspondente sai e o !important pode cair junto. */
+.nav-desk { display: none; }
+
+@media (min-width: 820px) {
+  .site { max-width: var(--largura-tablet); }
+  .sec:not(.bleed) {
+    padding-left: var(--respiro-tablet) !important;
+    padding-right: var(--respiro-tablet) !important;
+  }
+}
+
+@media (min-width: 1120px) {
+  .site { max-width: var(--largura-desktop); }
+
+  /* respiro lateral: o conteudo fica em ~840px, o fundo ocupa a largura toda.
+     As secoes .bleed ficam de fora porque posicionam filhos em absoluto. */
+  .sec:not(.bleed) {
+    padding-left: var(--respiro-desktop) !important;
+    padding-right: var(--respiro-desktop) !important;
+  }
+
+  /* so a capa cresce; as tarjas de zebra mantem a altura original */
+  .sec.hero { height: 520px !important; }
+
+  /* o texto e os botoes da capa acompanham o mesmo respiro das secoes */
+  .sec.hero > .hero-rodape,
+  .sec.hero > div[style*="bottom:0"] {
+    padding-left: var(--respiro-desktop) !important;
+    padding-right: var(--respiro-desktop) !important;
+    padding-bottom: 40px !important;
+  }
+  .sec.hero > .hero-rodape > .hero-acoes,
+  .sec.hero > div[style*="bottom:0"] > div[style*="display:flex"] { max-width: 440px; }
+
+  /* barra de navegacao no lugar do menu sanduiche */
+  .nav-desk { display: flex; gap: 24px; align-items: center; }
+  .nav-desk a {
+    color: var(--cor-papel-75);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: .02em;
+    white-space: nowrap;
+  }
+  .nav-desk a:hover { color: var(--cor-papel); }
+  .nav-desk a[aria-current="page"] { color: var(--cor-verde); }
+  .menu-btn { display: none !important; }
+
+  /* a linha de texto nao deve atravessar a tela inteira */
+  .sec p, .sec > div > p { max-width: 66ch; }
+
+  /* galeria em tres colunas */
+  .grade-galeria { grid-template-columns: 1fr 1fr 1fr !important; }
+  .grade-galeria > div { height: 240px !important; }
+  .grade-galeria > .largo,
+  .grade-galeria > div[style*="span 2"] {
+    grid-column: span 3 !important;
+    height: 420px !important;
+  }
+
+  /* o cartaz e retrato: limitar a largura evita corte agressivo */
+  .cartaz { max-width: 460px; height: 600px !important; }
+
+  /* rodape em quatro colunas */
+  .rodape-cols { grid-template-columns: 1.2fr 1fr 1fr !important; gap: 32px !important; }
+}
+
+@media (min-width: 1400px) {
+  .site { max-width: var(--largura-amplo); }
+  .sec:not(.bleed) {
+    padding-left: var(--respiro-amplo) !important;
+    padding-right: var(--respiro-amplo) !important;
+  }
+}

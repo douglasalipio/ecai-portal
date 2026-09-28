@@ -1,0 +1,157 @@
+---
+/**
+ * Menu sobreposto do celular. Fica fora de .site, no fim do body, para poder
+ * cobrir a coluna inteira.
+ *
+ * O prototipo controlava a abertura por estado da ferramenta de design; aqui
+ * e uma classe .aberto alternada pelo app.ts, e o CSS de base.css garante que
+ * o painel centralize na coluna em vez de colar na borda esquerda.
+ */
+import { menu, type Tela } from '../dados/navegacao';
+
+interface Props {
+  tela: Tela;
+}
+
+const { tela } = Astro.props;
+
+/** Secoes anunciadas no rodape do menu mas ainda sem pagina. */
+const EM_BREVE = ['O Grupo', 'Loja', 'Contato'];
+---
+
+<div class="menu" id="menu">
+  <div class="painel">
+    <div class="painel-topo">
+      <span class="painel-rotulo">Navegação</span>
+
+      {/* Repete a nav do cabecalho e nunca aparece para ninguem: no celular e
+          display:none, e no desktop o .menu-btn some, entao o painel nao abre.
+          Herdado do export de design; mantido so para esta migracao fechar
+          identica ao site atual. Sai no passo de limpeza. */}
+      <nav class="nav-desk">
+        {menu.map((i) => <a href={i.url}>{i.rotulo}</a>)}
+      </nav>
+
+      <button class="menu-btn hv1 fechar" onclick="alternarMenu(event)" aria-label="Fechar">✕</button>
+    </div>
+
+    <div class="painel-lista">
+      {menu.map((i) => {
+        const aqui = i.tela === tela;
+        return (
+          <a href={i.url} aria-current={aqui ? 'page' : undefined}>
+            <span class:list={['item-nome', { aqui }]}>{i.rotulo}</span>
+            <span class="item-marca">{aqui ? '●' : '→'}</span>
+          </a>
+        );
+      })}
+
+      <div class="breve-rotulo">Em breve</div>
+      <div class="breve-lista">
+        {EM_BREVE.map((s) => <span class="pilula">{s}</span>)}
+      </div>
+
+      <a class="cta hv2" href="aulas.html">Aula experimental grátis</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .painel {
+    position: absolute;
+    inset: 0;
+    z-index: 40;
+    background: var(--cor-tinta);
+    color: var(--cor-papel);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .painel-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+    padding: 0 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, .14);
+  }
+  .painel-rotulo {
+    font-size: 10px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .5);
+  }
+
+  .fechar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .28);
+    background: transparent;
+    color: var(--cor-papel);
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .painel-lista {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px 20px 20px;
+  }
+  .painel-lista a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  .item-nome {
+    font-family: var(--fonte-titulo);
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: -.02em;
+    color: var(--cor-papel);
+  }
+  /* a pagina em que o visitante esta fica verde e ganha ● no lugar da seta */
+  .item-nome.aqui { color: var(--cor-verde); }
+  .item-marca { font-size: 14px; color: rgba(255, 255, 255, .35); }
+
+  .breve-rotulo {
+    margin-top: 22px;
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .4);
+  }
+  .breve-lista { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .pilula {
+    font-size: 12px;
+    padding: 8px 13px;
+    border-radius: var(--raio-pilula);
+    border: 1px solid rgba(255, 255, 255, .2);
+    color: rgba(255, 255, 255, .55);
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 26px;
+    border: 0;
+    border-radius: var(--raio-pilula);
+    background: var(--cor-verde);
+    color: var(--cor-tinta);
+    font-family: var(--fonte-titulo);
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>

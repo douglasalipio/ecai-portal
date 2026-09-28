@@ -1,0 +1,85 @@
+---
+/**
+ * Galeria — grade de fotos montada a partir da lista `galeria` do conteudo.
+ *
+ * tamanho: 'largo' ocupa as duas colunas do celular (tres no desktop, via
+ * .grade-galeria em base.css); 'pequeno' ocupa uma. pos ajusta o
+ * enquadramento do corte, ex.: 'center 20%' puxa para cima.
+ */
+import Base from '../layouts/Base.astro';
+import { conteudo } from '../dados/conteudo';
+
+const { galeria } = conteudo;
+---
+
+<Base titulo="Galeria" tela="galeria" arquivo="galeria.html">
+  <div>
+    <div class="cabeca sec">
+      <span class="sobretitulo">Acervo</span>
+      <h1>Galeria</h1>
+      <p>Fotos das rodas, das aulas e dos nossos encontros.</p>
+    </div>
+
+    <div class="corpo sec">
+      <div class="grade-galeria grade">
+        {galeria.map((foto, i) => (
+          <div class:list={['quadro', foto.tamanho]}>
+            <img
+              src={foto.src}
+              alt={foto.alt}
+              loading={i === 0 ? undefined : 'lazy'}
+              decoding="async"
+              style={`object-position:${foto.pos}`}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .cabeca { padding: 30px 20px 22px; background: var(--cor-papel); }
+  .corpo { padding: 8px 20px 34px; background: var(--cor-papel); }
+
+  .sobretitulo {
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(11, 11, 11, .45);
+  }
+
+  h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 42px;
+    line-height: .94;
+    letter-spacing: -.025em;
+    text-transform: uppercase;
+    margin: 10px 0 12px;
+  }
+
+  p {
+    margin: 0 0 18px;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: rgba(11, 11, 11, .7);
+  }
+
+  .grade { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .quadro {
+    overflow: hidden;
+    /* o tratamento preto e branco e do projeto, nao das fotos: os originais
+       ficam coloridos em uploads/ */
+    filter: grayscale(1) contrast(1.1);
+  }
+  .quadro.largo { grid-column: span 2; height: 300px; border-radius: 20px; }
+  .quadro.pequeno { height: 150px; border-radius: 18px; }
+
+  .quadro img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>

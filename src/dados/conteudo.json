@@ -1,0 +1,324 @@
+{
+  "site": {
+    "nome": "IFÉ",
+    "nomeCompleto": "Escola de Capoeira Angola IFÉ",
+    "descricao": "Escola de Capoeira Angola IFÉ, de Mestre Baygon. Capoeira Angola em Recife: aulas, núcleos, roda e história.",
+    "url": "https://ecai.net.br",
+    "sede": "Rua da União, 287 — Recife/PE",
+    "instagram": "https://instagram.com/ecai.pe",
+    "instagramHandle": "@ecai.pe",
+    "whatsapp": "",
+    "mapaSede": "https://www.google.com/maps/place/R.+da+Uni%C3%A3o,+287+-+Boa+Vista,+Recife+-+PE,+50050-015/@-8.0594583,-34.8809565,17z/data=!3m1!4b1!4m6!3m5!1s0x7ab18bef0cb17b5:0xacee528be2b99e35!8m2!3d-8.0594583!4d-34.8809565!16s%2Fg%2F11c3q441qh",
+    "mapaMuafro": "https://www.google.com/maps/place/Museu+de+Artes+Afro-Brasil+Rolando+Toro/@-8.0628595,-34.8730768,17z/data=!4m6!3m5!1s0x7ab18a4d054e197:0x22461ca6f1df9460!8m2!3d-8.0628595!4d-34.8730768!16s%2Fg%2F11g69hl1n3",
+    "_leia_me_mapas": "mapaSede/mapaMuafro alimentam os links de endereco do rodape e do evento.",
+    "ano": "2026",
+    "cidade": "Recife, Pernambuco",
+    "inscricaoEvento": "https://docs.google.com/forms/d/e/1FAIpQLSdjzM8gW7Ict5GXIi6GXk96bwQ7CyDNJfUXFH7hKTBZ0rbsOQ/viewform",
+    "contatoAula": "",
+    "_leia_me_links": "inscricaoEvento = formulario do Meu Patua (botoes do evento). contatoAula = destino do botao 'Aula experimental'; vazio usa whatsapp e, sem ele, o Instagram.",
+    "videoCapa": "video/mestre.mp4",
+    "_leia_me_video": "Video da capa. Toca mudo, em loop. A foto de roda-quadra.jpg serve de poster enquanto carrega. Apague o campo para voltar a foto.",
+    "mapaPacoDoFrevo": "https://www.google.com/maps/search/?api=1&query=Pa%C3%A7o%20do%20Frevo%2C%20Pra%C3%A7a%20do%20Arsenal%20da%20Marinha%2C%2091%2C%20Recife",
+    "mapaCasaBulicosa": "https://www.google.com/maps/search/?api=1&query=Casa%20Buli%C3%A7osa%2C%20Rua%20Capit%C3%A3o%20Lima%2C%20269%2C%20Santo%20Amaro%2C%20Recife"
+  },
+  "nucleos": [
+    {
+      "slug": "juazeiro-do-norte",
+      "sigla": "JN",
+      "nome": "Juazeiro do Norte · CE",
+      "resumo": "Treinel Paulinho",
+      "tag": "Núcleo",
+      "prof": "Treinel Paulinho",
+      "end": "Juazeiro do Norte/CE",
+      "x": "50%",
+      "y": "34%",
+      "pin": "Juazeiro do Norte",
+      "whatsapp": ""
+    },
+    {
+      "slug": "olinda",
+      "sigla": "OL",
+      "nome": "Olinda",
+      "resumo": "Contra-mestre Leo",
+      "tag": "Núcleo",
+      "prof": "Contra-mestre Leo",
+      "end": "Olinda/PE",
+      "x": "80%",
+      "y": "26%",
+      "pin": "Olinda",
+      "whatsapp": ""
+    },
+    {
+      "slug": "recife",
+      "sigla": "RE",
+      "nome": "Recife · Boa Vista",
+      "sede": true,
+      "resumo": "Seg a sex · Mestre Baygon",
+      "tag": "Sede principal",
+      "prof": "Mestre Baygon",
+      "end": "Rua da União, 287 — Boa Vista, Recife/PE",
+      "x": "72%",
+      "y": "44%",
+      "pin": "Recife",
+      "mapa": "https://www.google.com/maps/place/R.+da+Uni%C3%A3o,+287+-+Boa+Vista,+Recife+-+PE,+50050-015/@-8.0594583,-34.8809565,17z/data=!3m1!4b1!4m6!3m5!1s0x7ab18bef0cb17b5:0xacee528be2b99e35!8m2!3d-8.0594583!4d-34.8809565!16s%2Fg%2F11c3q441qh",
+      "whatsapp": ""
+    },
+    {
+      "slug": "merida",
+      "sigla": "MY",
+      "nome": "Mérida · Yucatán",
+      "resumo": "Treinel Cavalheiro",
+      "tag": "Núcleo internacional",
+      "prof": "Treinel Cavalheiro",
+      "end": "Mérida, Yucatán, México",
+      "x": "16%",
+      "y": "52%",
+      "pin": "Mérida",
+      "whatsapp": ""
+    }
+  ],
+  "horarios": [
+    {
+      "dia": "Segunda a sexta",
+      "turma": "Turma mista",
+      "hora": "19h30–21h",
+      "bg": "#ffffff"
+    },
+    {
+      "dia": "Terça e quinta",
+      "turma": "Turma mista",
+      "hora": "18h30–19h30",
+      "bg": "#f4f2ee"
+    }
+  ],
+  "pilares": [
+    {
+      "n": "01",
+      "titulo": "Tradição viva",
+      "texto": "Cantamos em português, tocamos ao vivo e chamamos os mais velhos pelo nome que a roda deu."
+    },
+    {
+      "n": "02",
+      "titulo": "Comunidade",
+      "texto": "Família treina junto: pais, filhos e vizinhos na mesma roda, aos sábados."
+    },
+    {
+      "n": "03",
+      "titulo": "Disciplina gentil",
+      "texto": "Cobramos presença e respeito — o resto o corpo aprende no tempo dele."
+    }
+  ],
+  "linhagem": [
+    {
+      "nome": "Mestre ⟨Nome⟩",
+      "nota": "⟨18XX–19XX⟩"
+    },
+    {
+      "nome": "Mestre ⟨Nome⟩",
+      "nota": "formou em ⟨19XX⟩"
+    },
+    {
+      "nome": "Mestre Baygon",
+      "nota": "nosso mestre"
+    },
+    {
+      "nome": "⟨6⟩ professores formados",
+      "nota": "hoje"
+    }
+  ],
+  "fundadores": [
+    {
+      "slot": "cap-fund-1",
+      "foto": "fotos/galeria-1.jpg",
+      "pos": "center 20%",
+      "papel": "Contra-mestre",
+      "apelido": "Leonardo de Souza",
+      "nome": "",
+      "trajetoria": ""
+    },
+    {
+      "slot": "cap-fund-2",
+      "foto": "fotos/gabi-contra-mestre.jpg",
+      "pos": "center 23%",
+      "papel": "Contra-mestre",
+      "apelido": "Gabriela Conde",
+      "nome": "",
+      "trajetoria": ""
+    }
+  ],
+  "marcos": [
+    {
+      "ano": "⟨19XX⟩",
+      "titulo": "Fundação",
+      "texto": "Primeira aula no quintal de ⟨Bairro⟩, com ⟨11⟩ alunos e um berimbau emprestado."
+    },
+    {
+      "ano": "⟨19XX⟩",
+      "titulo": "Primeiros núcleos",
+      "texto": "Olinda e Cariri abrem no mesmo ano, com alunos da primeira turma dando aula."
+    },
+    {
+      "ano": "⟨19XX⟩",
+      "titulo": "Primeiro batizado",
+      "texto": "⟨40⟩ batizados e a criação do sistema de cordas do grupo."
+    },
+    {
+      "ano": "⟨20XX⟩",
+      "titulo": "Sede própria",
+      "texto": "A sede de Recife é inaugurada — chão de madeira e parede pintada pelos alunos."
+    },
+    {
+      "ano": "⟨20XX⟩",
+      "titulo": "Travessia",
+      "texto": "Primeiro núcleo fora do Brasil, no México."
+    }
+  ],
+  "turmas": [
+    {
+      "nome": "Turma mista",
+      "idade": "Todas as idades",
+      "texto": "Uma turma só, para iniciantes e veteranos, crianças e adultos: ginga, esquiva, instrumentos e canto — cada um no seu tempo, na mesma roda. Escolha o horário que couber na sua semana.",
+      "dias": [
+        "Seg a sex · 19h30–21h",
+        "Ter e qui · 18h30–19h30"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "p": "Preciso ter experiência?",
+      "r": "Nenhuma. Muita gente chega sem nunca ter feito capoeira, e não é preciso preparo para entrar na roda — a gente aprende junto, no ritmo de cada um."
+    },
+    {
+      "p": "Que roupa devo levar?",
+      "r": "Calça folgada, de preferência preta ou branca, camiseta e pé no chão."
+    },
+    {
+      "p": "Tem idade mínima ou máxima?",
+      "r": "A turma infantil começa aos ⟨5⟩ anos e a adulta não tem teto: temos alunos de ⟨60+⟩ treinando toda semana."
+    },
+    {
+      "p": "Tem corda, como em outras capoeiras?",
+      "r": "Não. Na Capoeira Angola não existe sistema de cordas."
+    }
+  ],
+  "eventos": [
+    {
+      "dia": "20",
+      "mes": "set",
+      "tipo": "Domingo · 13h",
+      "titulo": "Formação: Vozes do Berimbau — Corpo, Sinal e Ginga",
+      "nomes": "com Poli Alves",
+      "local": "Paço do Frevo · Praça do Arsenal da Marinha, 91",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Pa%C3%A7o%20do%20Frevo%2C%20Pra%C3%A7a%20do%20Arsenal%20da%20Marinha%2C%2091%2C%20Recife"
+    },
+    {
+      "dia": "24",
+      "mes": "set",
+      "tipo": "Quinta · 19h",
+      "titulo": "Vivência de danças africanas: Encontro de Mandinga",
+      "nomes": "com Professora Natty Ananindeu e Danzáfrica Manden",
+      "local": "Sede da ECAI · Rua da União, 287",
+      "mapa": "https://www.google.com/maps/place/R.+da+Uni%C3%A3o,+287+-+Boa+Vista,+Recife+-+PE,+50050-015/@-8.0594583,-34.8809565,17z/data=!3m1!4b1!4m6!3m5!1s0x7ab18bef0cb17b5:0xacee528be2b99e35!8m2!3d-8.0594583!4d-34.8809565!16s%2Fg%2F11c3q441qh"
+    },
+    {
+      "dia": "25",
+      "mes": "set",
+      "tipo": "Sexta · 19h",
+      "titulo": "Cerimônia de abertura",
+      "nomes": "Afoxé Omonilê Ogunjá · Roda de abertura",
+      "local": "Sede da ECAI · Rua da União, 287",
+      "mapa": "https://www.google.com/maps/place/R.+da+Uni%C3%A3o,+287+-+Boa+Vista,+Recife+-+PE,+50050-015/@-8.0594583,-34.8809565,17z/data=!3m1!4b1!4m6!3m5!1s0x7ab18bef0cb17b5:0xacee528be2b99e35!8m2!3d-8.0594583!4d-34.8809565!16s%2Fg%2F11c3q441qh"
+    },
+    {
+      "dia": "26",
+      "mes": "set",
+      "tipo": "Sábado · a partir das 8h",
+      "titulo": "Encontro no MUAFRO",
+      "nomes": "8h Mestra Tati · 10h Mestre Marron · 12h Almoço · 14h Professora Natty · 16h Orun Santana · 17h Roda",
+      "local": "MUAFRO · Rua Matriz e Barros, 328",
+      "mapa": "https://www.google.com/maps/place/Museu+de+Artes+Afro-Brasil+Rolando+Toro/@-8.0628595,-34.8730768,17z/data=!4m6!3m5!1s0x7ab18a4d054e197:0x22461ca6f1df9460!8m2!3d-8.0628595!4d-34.8730768!16s%2Fg%2F11g69hl1n3"
+    },
+    {
+      "dia": "26",
+      "mes": "set",
+      "tipo": "Sábado · 20h",
+      "titulo": "Cultural",
+      "nomes": "Grupo Pinga Coco · Samba Mourão (Mestre Véo) · Regente Joaquim · Mauro Delê",
+      "local": "Casa Buliçosa · Rua Capitão Lima, 269 — Santo Amaro",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Casa%20Buli%C3%A7osa%2C%20Rua%20Capit%C3%A3o%20Lima%2C%20269%2C%20Santo%20Amaro%2C%20Recife"
+    },
+    {
+      "dia": "27",
+      "mes": "set",
+      "tipo": "Domingo · a partir das 9h",
+      "titulo": "Encerramento",
+      "nomes": "9h Mestre Negoativo · 11h Andala Quituxe · 13h Almoço · 15h Mestre Célio · 17h Mestre Baygon, arrastão e roda de encerramento",
+      "local": "MUAFRO · roda de encerramento na Av. Rio Branco",
+      "mapa": "https://www.google.com/maps/place/Museu+de+Artes+Afro-Brasil+Rolando+Toro/@-8.0628595,-34.8730768,17z/data=!4m6!3m5!1s0x7ab18a4d054e197:0x22461ca6f1df9460!8m2!3d-8.0628595!4d-34.8730768!16s%2Fg%2F11g69hl1n3"
+    },
+    {
+      "dia": "23",
+      "mes": "out",
+      "tipo": "Sexta · 19h30",
+      "titulo": "Roda aberta na sede",
+      "nomes": "",
+      "local": "Sede da ECAI · Rua da União, 287",
+      "mapa": "https://www.google.com/maps/place/R.+da+Uni%C3%A3o,+287+-+Boa+Vista,+Recife+-+PE,+50050-015/@-8.0594583,-34.8809565,17z/data=!3m1!4b1!4m6!3m5!1s0x7ab18bef0cb17b5:0xacee528be2b99e35!8m2!3d-8.0594583!4d-34.8809565!16s%2Fg%2F11c3q441qh"
+    }
+  ],
+  "galeria": [
+    {
+      "src": "fotos/galeria-3.jpg",
+      "alt": "A bateria durante a roda",
+      "tamanho": "largo",
+      "pos": "center center"
+    },
+    {
+      "src": "fotos/grupo-sede.jpg",
+      "alt": "O grupo reunido na sede",
+      "tamanho": "pequeno",
+      "pos": "center center"
+    },
+    {
+      "src": "fotos/galeria-1.jpg",
+      "alt": "Cantando e tocando berimbau na roda de rua",
+      "tamanho": "pequeno",
+      "pos": "center 22%"
+    },
+    {
+      "src": "fotos/galeria-5.jpg",
+      "alt": "Tocando berimbau na roda",
+      "tamanho": "pequeno",
+      "pos": "center 20%"
+    },
+    {
+      "src": "fotos/grupo-aberto.jpg",
+      "alt": "O grupo reunido ao ar livre",
+      "tamanho": "pequeno",
+      "pos": "center center"
+    },
+    {
+      "src": "fotos/patua-2.jpg",
+      "alt": "Capoeiristas na rua durante o Meu Patuá",
+      "tamanho": "pequeno",
+      "pos": "center 22%"
+    },
+    {
+      "src": "fotos/patua-3.jpg",
+      "alt": "A bateria durante o Meu Patuá",
+      "tamanho": "pequeno",
+      "pos": "center center"
+    },
+    {
+      "src": "fotos/patua-4.jpg",
+      "alt": "Na sede durante o Meu Patuá",
+      "tamanho": "largo",
+      "pos": "center 28%"
+    }
+  ],
+  "destaquesHome": [],
+  "paginasOcultas": [
+    "mestre"
+  ]
+}

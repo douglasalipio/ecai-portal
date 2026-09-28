@@ -1,0 +1,148 @@
+---
+/**
+ * Rodape — repete a navegacao inteira, os horarios e o endereco da sede.
+ *
+ * Vale notar: e ele que faz o site continuar utilizavel sem JavaScript, ja
+ * que o menu do topo depende de script para abrir.
+ */
+import { conteudo, sede } from '../dados/conteudo';
+import { menu } from '../dados/navegacao';
+
+const { site, horarios } = conteudo;
+
+/** Botao principal: WhatsApp se houver, senao Instagram. */
+const contato = site.contatoAula || site.whatsapp || site.instagram;
+---
+
+<footer class="rodape sec">
+  <div class="zebra zebra-verde tarja"></div>
+
+  <div class="marca">
+    <img src="logo-ife.jpg" alt="" width="56" height="56" />
+    <div>
+      <div class="marca-nome">Escola de Capoeira<br />Angola IFÉ</div>
+      <div class="marca-mestre">{sede.prof}</div>
+    </div>
+  </div>
+
+  <div class="rodape-cols">
+    <div>
+      <div class="rotulo">Navegação</div>
+      {menu.map((i) => <a class="link" href={i.url}>{i.rotulo}</a>)}
+    </div>
+
+    <div>
+      <div class="rotulo">Treinos</div>
+      {horarios.map((h) => (
+        <div class="linha">{h.dia}<span class="fraco"> · {h.hora}</span></div>
+      ))}
+
+      <div class="rotulo rotulo-espacado">Sede</div>
+      <a class="endereco" href={site.mapaSede} target="_blank" rel="noopener" title="Abrir no Google Maps">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <span>{site.sede}</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="botoes">
+    <a class="botao vazado" href={site.instagram} target="_blank" rel="noopener">{site.instagramHandle}</a>
+    <a class="botao cheio" href={contato} target="_blank" rel="noopener">Aula experimental</a>
+  </div>
+
+  <div class="creditos">© {site.ano} {site.nomeCompleto} · {site.cidade}</div>
+</footer>
+
+<style>
+  .rodape {
+    padding: 30px 20px 26px;
+    background: var(--cor-tinta);
+    color: rgba(255, 255, 255, .7);
+  }
+
+  .tarja { height: 14px; margin-bottom: 22px; }
+
+  .marca { display: flex; align-items: center; gap: 13px; margin-bottom: 26px; }
+  .marca img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--cor-papel);
+    flex: none;
+  }
+  .marca-nome {
+    font-family: var(--fonte-titulo);
+    font-size: 19px;
+    color: var(--cor-papel);
+    text-transform: uppercase;
+    letter-spacing: -.01em;
+    line-height: 1.05;
+  }
+  .marca-mestre {
+    font-size: 10.5px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--cor-verde);
+    margin-top: 7px;
+  }
+
+  .rodape-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px 18px;
+    margin-bottom: 26px;
+  }
+
+  .rotulo {
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .42);
+    margin-bottom: 10px;
+  }
+  .rotulo-espacado { margin-top: 20px; }
+
+  .link, .linha, .endereco {
+    font-size: 13.5px;
+    line-height: 1.45;
+    padding: 3px 0;
+    color: var(--cor-papel);
+  }
+  .link { display: block; text-decoration: none; }
+  .fraco { color: rgba(255, 255, 255, .55); }
+
+  .endereco {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    text-decoration: none;
+  }
+  .endereco svg { flex: none; margin-top: 2px; }
+
+  .botoes { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: var(--raio-pilula);
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  .vazado { border: 1px solid rgba(255, 255, 255, .24); color: var(--cor-papel); }
+  .cheio { background: var(--cor-verde); color: var(--cor-tinta); border: 0; }
+
+  .creditos {
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    padding-top: 16px;
+    font-size: 11.5px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, .4);
+  }
+</style>

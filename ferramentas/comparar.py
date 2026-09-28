@@ -18,10 +18,14 @@ Uso:  python3 ferramentas/comparar.py _referencia dist
       python3 ferramentas/comparar.py _referencia dist index.html
 """
 
+import json
 import os
 import re
 import sys
 from html.parser import HTMLParser
+
+ACEITAS = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                       "diferencas-aceitas.json")
 
 # nomes com hash de conteudo mudam a cada build sem que nada de fato mude
 HASH = re.compile(r"\.[0-9a-f]{8}\.(css|js)$")
@@ -91,8 +95,12 @@ class Extrator(HTMLParser):
 
     # -- resultado ---------------------------------------------------------
     def resultado(self):
+        # Os nos de texto sao juntados com um espaco, nao concatenados: entre
+        # <div>A</div><div>B</div> o build.py nao punha nada e o Astro poe uma
+        # quebra de linha. Visualmente identico, e concatenar acusaria "AB" vs
+        # "A B" como diferenca. Por no separador nos dois lados, empatam.
         return {
-            "texto": espacos("".join(self.texto)),
+            "texto": " ".join(p for p in (espacos(t) for t in self.texto) if p),
             "titulos": self.titulos,
             "links": self.links,
             "imagens": self.imagens,
@@ -106,7 +114,7 @@ def extrair(caminho):
         return e.resultado()
 
 
-def diferenca_lista(antes, depois, limite=8):
+def diferenca_lista(antes, depois):
     """So o que entrou e o que saiu, preservando repeticoes."""
     restante = list(depois)
     sumiram = []
@@ -115,7 +123,7 @@ def diferenca_lista(antes, depois, limite=8):
             restante.remove(item)
         else:
             sumiram.append(item)
-    return sumiram[:limite], restante[:limite]
+    return sumiram, restante
 
 
 def diferenca_texto(antes, depois):
@@ -129,17 +137,41 @@ def diferenca_texto(antes, depois):
     return (i, antes[ini:i + 90], depois[ini:i + 90])
 
 
-def comparar(ref, novo, nome):
+def carregar_aceitas():
+    """Desvios conscientes, para o relatorio so mostrar o que ninguem decidiu."""
+    if not os.path.exists(ACEITAS):
+        return []
+    with open(ACEITAS, encoding="utf-8") as f:
+        return json.load(f).get("aceitas", [])
+
+
+def filtrar(itens, aceitas, pagina, tipo, lado):
+    """Remove uma ocorrencia por entrada aceita que casar."""
+    sobrando = list(itens)
+    for a in aceitas:
+        if a.get("tipo") != tipo or a.get("lado") != lado:
+            continue
+        if a.get("pagina") not in ("*", pagina):
+            continue
+        alvo = tuple(a["item"])
+        if alvo in sobrando:
+            sobrando.remove(alvo)
+    return sobrando
+
+
+def comparar(ref, novo, nome, aceitas=()):
     a, b = extrair(ref), extrair(novo)
     problemas = []
 
     for campo, rotulo in (("titulos", "titulos"), ("links", "links"), ("imagens", "imagens")):
         sumiram, surgiram = diferenca_lista(a[campo], b[campo])
+        sumiram = filtrar(sumiram, aceitas, nome, campo, "fora")
+        surgiram = filtrar(surgiram, aceitas, nome, campo, "novo")
         if sumiram or surgiram:
             linhas = []
-            for x in sumiram:
+            for x in sumiram[:8]:
                 linhas.append("      - %s" % (x,))
-            for x in surgiram:
+            for x in surgiram[:8]:
                 linhas.append("      + %s" % (x,))
             problemas.append("   %s (%d fora, %d novos)\n%s"
                              % (rotulo, len(sumiram), len(surgiram), "\n".join(linhas)))
@@ -169,6 +201,7 @@ def main():
         if not paginas:
             sys.exit("nao achei %s em %s" % (so, ref))
 
+    aceitas = carregar_aceitas()
     ok = faltando = 0
     for p in paginas:
         destino = os.path.join(novo, p)
@@ -176,7 +209,7 @@ def main():
             print("\n%s\n   AUSENTE em %s" % (p, novo))
             faltando += 1
             continue
-        if comparar(os.path.join(ref, p), destino, p):
+        if comparar(os.path.join(ref, p), destino, p, aceitas):
             ok += 1
 
     total = len(paginas)

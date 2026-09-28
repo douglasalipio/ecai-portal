@@ -1,0 +1,5 @@
+{
+  "_leia_me": "Diferencas conscientes entre o site antigo (_referencia/) e o novo. Cada entrada precisa de motivo: sem motivo, e regressao disfarcada de decisao. tipo: links | imagens | titulos. lado: 'fora' (existia e saiu) ou 'novo' (entrou). pagina: nome do arquivo ou '*'.",
+  "aceitas": [],
+  "_nota": "Vazia de proposito. A migracao para Astro fecha com zero desvios: o que for limpeza (markup morto, estilo inline) acontece em commits proprios depois que as 9 paginas baterem, para cada mudanca ser visivel no diff."
+}
