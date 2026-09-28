@@ -24,21 +24,34 @@ from collections import Counter
 SAIDA = os.path.join("src", "styles", "zebra.css")
 URI = re.compile(r"url\('(data:image/svg\+xml,[^']+)'\)")
 
-CABECALHO = """/* Tarja de zebra — a faixa listrada que separa as secoes.
+CABECALHO = """/* Zebra — o padrao listrado que o site usa como tarja e como fundo.
  *
  * Gerado por ferramentas/extrair-zebra.py a partir do HTML do site antigo.
  * Nao edite a mao: rode o script de novo.
  *
- * Cada variante sai de duas formas:
- *   --zebra-<nome>   custom property, para quem precisa do valor (o mapa de
- *                    nucleos usa como background-image com outro size)
- *   .zebra-<nome>    classe pronta, para a tarja horizontal de 14px
+ * Use sempre duas classes: uma de GEOMETRIA e uma de COR.
  *
- * O nome e .zebra-<cor>[-<opacidade>]; a opacidade so aparece quando nao e 1.
+ *   .zebra          tarja horizontal        300px 100%, repeat-x
+ *   .zebra-campo    fundo ladrilhado        300px 300px, repeat
+ *   .zebra-risco    risco esticado          100% 100%, repeat-x
+ *
+ *   .zebra-verde .zebra-branca .zebra-preta .zebra-branca-07 ...
+ *
+ * Exemplo:  <div class="zebra zebra-branca"></div>
+ *           <div class="zebra-campo zebra-branca-10"></div>
+ *
+ * A cor tambem sai como --zebra-<nome>, para quando so o valor serve.
+ *
+ * O nome e <cor>[-<opacidade>]; a opacidade so aparece quando nao e 1.
  */
 """
 
-BASE = ".zebra { background-repeat: repeat-x; background-size: 300px 100%; }"
+BASE = """/* geometria */
+.zebra       { background-repeat: repeat-x; background-size: 300px 100%; }
+.zebra-campo { background-repeat: repeat;   background-size: 300px 300px; }
+.zebra-risco { background-repeat: repeat-x; background-size: 100% 100%; }
+
+/* cor */"""
 
 CORES = {"#3f9b46": "verde", "#ffffff": "branca", "#0b0b0b": "preta"}
 

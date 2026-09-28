@@ -16,7 +16,7 @@ const contato = site.contatoAula || site.whatsapp || site.instagram;
 <Base titulo="Aulas e horários" tela="aulas" arquivo="aulas.html">
   <div>
     <div class="capa sec">
-      <div class="listras"></div>
+      <div class="listras zebra-campo zebra-branca-07"></div>
       <span class="sobretitulo">Turmas</span>
       <h1>Venha jogar com a gente</h1>
       <p>Sem experiência, sem uniforme, sem idade certa. A primeira aula é gratuita e você só precisa de roupa leve.</p>
@@ -40,7 +40,7 @@ const contato = site.contatoAula || site.whatsapp || site.instagram;
       </div>
     </div>
 
-    <div class="zebra zebra-branca divisa sec bleed"></div>
+    <div class="zebra zebra-preta divisa sec bleed"></div>
 
     <div class="experimental sec">
       <h2>Aula experimental</h2>
@@ -65,14 +65,7 @@ const contato = site.contatoAula || site.whatsapp || site.instagram;
     position: relative;
     overflow: hidden;
   }
-  .listras {
-    position: absolute;
-    inset: 0;
-    background-image: var(--zebra-verde);
-    background-size: 300px 300px;
-    background-repeat: repeat;
-    pointer-events: none;
-  }
+  .listras { position: absolute; inset: 0; pointer-events: none; }
   .capa > :not(.listras) { position: relative; }
 
   .sobretitulo {

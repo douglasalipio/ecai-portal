@@ -6,28 +6,70 @@
       "tipo": "classes",
       "lado": "novo",
       "item": "zebra",
-      "motivo": "gancho de CSS que substituiu estilo inline: o site antigo pintava a tarja e a foto larga com style= no elemento, e as regras de desktop casavam no texto do atributo ([style*=\"span 2\"]). Agora sao classes."
+      "motivo": "classe de zebra que substituiu o data-URI no style=. O canal 'zebra' confere cor e geometria de cada tarja na ordem, entao aceitar o nome aqui nao deixa passar variante trocada."
+    },
+    {
+      "pagina": "*",
+      "tipo": "classes",
+      "lado": "novo",
+      "item": "zebra-campo",
+      "motivo": "classe de zebra que substituiu o data-URI no style=. O canal 'zebra' confere cor e geometria de cada tarja na ordem, entao aceitar o nome aqui nao deixa passar variante trocada."
+    },
+    {
+      "pagina": "*",
+      "tipo": "classes",
+      "lado": "novo",
+      "item": "zebra-risco",
+      "motivo": "classe de zebra que substituiu o data-URI no style=. O canal 'zebra' confere cor e geometria de cada tarja na ordem, entao aceitar o nome aqui nao deixa passar variante trocada."
     },
     {
       "pagina": "*",
       "tipo": "classes",
       "lado": "novo",
       "item": "zebra-verde",
-      "motivo": "gancho de CSS que substituiu estilo inline: o site antigo pintava a tarja e a foto larga com style= no elemento, e as regras de desktop casavam no texto do atributo ([style*=\"span 2\"]). Agora sao classes."
+      "motivo": "classe de zebra que substituiu o data-URI no style=. O canal 'zebra' confere cor e geometria de cada tarja na ordem, entao aceitar o nome aqui nao deixa passar variante trocada."
     },
     {
       "pagina": "*",
       "tipo": "classes",
       "lado": "novo",
       "item": "zebra-branca",
-      "motivo": "gancho de CSS que substituiu estilo inline: o site antigo pintava a tarja e a foto larga com style= no elemento, e as regras de desktop casavam no texto do atributo ([style*=\"span 2\"]). Agora sao classes."
+      "motivo": "classe de zebra que substituiu o data-URI no style=. O canal 'zebra' confere cor e geometria de cada tarja na ordem, entao aceitar o nome aqui nao deixa passar variante trocada."
+    },
+    {
+      "pagina": "*",
+      "tipo": "classes",
+      "lado": "novo",
+      "item": "zebra-preta",
+      "motivo": "classe de zebra que substituiu o data-URI no style=. O canal 'zebra' confere cor e geometria de cada tarja na ordem, entao aceitar o nome aqui nao deixa passar variante trocada."
+    },
+    {
+      "pagina": "*",
+      "tipo": "classes",
+      "lado": "novo",
+      "item": "zebra-branca-07",
+      "motivo": "classe de zebra que substituiu o data-URI no style=. O canal 'zebra' confere cor e geometria de cada tarja na ordem, entao aceitar o nome aqui nao deixa passar variante trocada."
+    },
+    {
+      "pagina": "*",
+      "tipo": "classes",
+      "lado": "novo",
+      "item": "zebra-branca-08",
+      "motivo": "classe de zebra que substituiu o data-URI no style=. O canal 'zebra' confere cor e geometria de cada tarja na ordem, entao aceitar o nome aqui nao deixa passar variante trocada."
+    },
+    {
+      "pagina": "*",
+      "tipo": "classes",
+      "lado": "novo",
+      "item": "zebra-branca-10",
+      "motivo": "classe de zebra que substituiu o data-URI no style=. O canal 'zebra' confere cor e geometria de cada tarja na ordem, entao aceitar o nome aqui nao deixa passar variante trocada."
     },
     {
       "pagina": "*",
       "tipo": "classes",
       "lado": "novo",
       "item": "largo",
-      "motivo": "gancho de CSS que substituiu estilo inline: o site antigo pintava a tarja e a foto larga com style= no elemento, e as regras de desktop casavam no texto do atributo ([style*=\"span 2\"]). Agora sao classes."
+      "motivo": "a foto larga da grade: antes [style*=\"span 2\"], agora .largo."
     },
     {
       "pagina": "index.html",
@@ -44,5 +86,6 @@
       "motivo": "mesma regra de desktop de antes, que casava em [style*=\"bottom:0\"] e [style*=\"display:flex\"] dentro da capa. Sem esses nomes o botao da capa ocupa a largura toda."
     }
   ],
-  "_nota": "So entram desvios de classe, e todos sao 'novo': nenhuma classe que a referencia usava foi perdida. Texto, titulos, links e imagens fecham sem nenhuma excecao nas 9 paginas."
+  "_nota": "Todos os desvios sao 'novo': nenhuma classe que a referencia usava foi perdida. Sao ganchos de CSS que substituiram estilo inline. Texto, titulos, links, imagens e a sequencia de zebras fecham sem excecao nas 9 paginas.",
+  "_licao": "Aceitar 'zebra-verde' e 'zebra-branca' em bloco escondeu um erro real: 4 das 9 paginas ficaram com a tarja da cor errada e o comparador aprovou. Dai o canal 'zebra', que confere a sequencia de cor e geometria. Aceitar um NOME nunca deve significar aceitar o VALOR."
 }

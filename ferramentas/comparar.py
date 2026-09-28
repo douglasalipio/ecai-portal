@@ -14,6 +14,12 @@ percebe:
   links      href + rotulo, na ordem
   imagens    src + alt, na ordem
   classes    quantas vezes cada classe global aparece
+  zebra      a sequencia de tarjas listradas, com cor e geometria
+
+O canal de zebra existe porque o padrao listrado aparece em seis variantes
+(verde, branca, preta, e brancas a 7%, 8% e 10%) e em tres geometrias. No
+site antigo isso vinha em data-URI dentro do style=; aqui sao classes. Trocar
+uma pela outra nao muda texto nem contagem de classe — so a cor na tela.
 
 O canal de classes existe porque as tres primeiras nao veem layout. As regras
 de desktop moram em src/styles/*.css e dependem de nomes exatos: perder um
@@ -30,6 +36,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 from html.parser import HTMLParser
 
 ACEITAS = os.path.join(os.path.dirname(os.path.abspath(__file__)),
@@ -172,6 +179,57 @@ def diferenca_texto(antes, depois):
     return (i, antes[ini:i + 90], depois[ini:i + 90])
 
 
+CORES_ZEBRA = {"#3f9b46": "verde", "#ffffff": "branca", "#0b0b0b": "preta"}
+URI_ZEBRA = re.compile(r"url\('(data:image/svg\+xml,[^']+)'\)")
+GEOMETRIA = {
+    ("300px 100%", "repeat-x"): "tarja",
+    ("300px 300px", "repeat"): "campo",
+    ("100% 100%", "repeat-x"): "risco",
+}
+
+
+def nome_zebra(cor, opacidade):
+    base = CORES_ZEBRA.get(cor.lower(), cor.lower())
+    return base if float(opacidade) >= 1 else "%s-%02d" % (base, round(float(opacidade) * 100))
+
+
+def zebras_de_referencia(html):
+    """No site antigo a zebra vinha como data-URI no proprio style=."""
+    achadas = []
+    for m in re.finditer(r'style="([^"]*?)"', html):
+        estilo = m.group(1)
+        uri = URI_ZEBRA.search(estilo)
+        if not uri:
+            continue
+        svg = urllib.parse.unquote(uri.group(1).split(",", 1)[1])
+        cor = re.search(r"fill='(#[0-9a-fA-F]{6})'", svg)
+        if not cor:
+            continue
+        opa = re.search(r"fill-opacity='([\d.]+)'", svg)
+        size = re.search(r"background-size:([^;\"]+)", estilo)
+        rep = re.search(r"background-repeat:([^;\"]+)", estilo)
+        geo = GEOMETRIA.get((size.group(1).strip() if size else "",
+                             rep.group(1).strip() if rep else ""), "?")
+        achadas.append((nome_zebra(cor.group(1), opa.group(1) if opa else "1"), geo))
+    return achadas
+
+
+GEO_CLASSE = {"zebra": "tarja", "zebra-campo": "campo", "zebra-risco": "risco"}
+
+
+def zebras_de_build(html):
+    """No site novo sao duas classes: uma de geometria, uma de cor."""
+    achadas = []
+    for m in re.finditer(r'class="([^"]*)"', html):
+        classes = m.group(1).split()
+        geo = next((GEO_CLASSE[c] for c in classes if c in GEO_CLASSE), None)
+        cor = next((c[len("zebra-"):] for c in classes
+                    if c.startswith("zebra-") and c not in GEO_CLASSE), None)
+        if geo and cor:
+            achadas.append((cor, geo))
+    return achadas
+
+
 def carregar_aceitas():
     """Desvios conscientes, para o relatorio so mostrar o que ninguem decidiu."""
     if not os.path.exists(ACEITAS):
@@ -207,6 +265,14 @@ def filtrar(itens, aceitas, pagina, tipo, lado):
 def comparar(ref, novo, nome, aceitas=()):
     a, b = extrair(ref), extrair(novo)
     problemas = []
+
+    with open(ref, encoding="utf-8") as f:
+        za = zebras_de_referencia(f.read())
+    with open(novo, encoding="utf-8") as f:
+        zb = zebras_de_build(f.read())
+    if za != zb:
+        problemas.append("   zebra: a sequencia nao bate\n      - %s\n      + %s"
+                         % (za, zb))
 
     for campo, rotulo in (("titulos", "titulos"), ("links", "links"),
                           ("imagens", "imagens"), ("classes", "classes globais")):

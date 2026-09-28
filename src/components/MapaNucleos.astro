@@ -9,7 +9,7 @@ import { conteudo } from '../dados/conteudo';
 const { nucleos } = conteudo;
 ---
 
-<div class="mapa sec hero bleed">
+<div class="mapa zebra-campo zebra-branca-08 sec hero bleed">
   <span class="rotulo">Onde estamos</span>
 
   {nucleos.map((n) => (
@@ -25,9 +25,6 @@ const { nucleos } = conteudo;
     position: relative;
     height: 250px;
     background-color: var(--cor-tinta);
-    background-image: var(--zebra-verde);
-    background-size: 300px 300px;
-    background-repeat: repeat;
   }
 
   .rotulo {

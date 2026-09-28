@@ -9,8 +9,10 @@ texto escrito direto no componente:
 
   1. placeholder ⟨assim⟩ sobrando em qualquer pagina
   2. link interno apontando para arquivo que nao existe
-  3. src/poster/href de imagem, video ou CSS sem arquivo no disco
-  4. imagem sem o atributo alt (alt="" e valido: marca a decorativa)
+  3. src/poster de imagem ou video sem arquivo no disco
+  4. og:image / twitter:image apontando para arquivo que nao foi publicado —
+     eles so aparecem em <meta>, entao nenhum <img> os denuncia
+  5. imagem sem o atributo alt (alt="" e valido: marca a decorativa)
 
 Uso:  python3 ferramentas/verificar.py [pasta]      (padrao: dist)
 """
@@ -31,11 +33,18 @@ class Coletor(HTMLParser):
         self.links = []     # href internos
         self.arquivos = []  # src/poster internos
         self.sem_alt = []   # src de <img> sem o atributo alt
+        self.sociais = []   # og:image e twitter:image
 
     def handle_starttag(self, tag, attrs):
         d = dict(attrs)
         if tag == "a" and d.get("href") and not EXTERNO.match(d["href"]):
             self.links.append(d["href"].split("#")[0])
+        # a imagem de compartilhamento vive so em <meta>, com URL absoluta
+        if tag == "meta":
+            chave = d.get("property") or d.get("name") or ""
+            if chave in ("og:image", "twitter:image") and d.get("content"):
+                self.sociais.append(d["content"])
+
         for campo in ("src", "poster"):
             v = d.get(campo)
             if v and not EXTERNO.match(v):
@@ -79,6 +88,13 @@ def main():
         for alvo in sorted(set(c.arquivos)):
             if not os.path.exists(os.path.join(pasta, alvo)):
                 problemas.append("%s: arquivo %s nao foi publicado" % (nome, alvo))
+
+        for url in sorted(set(c.sociais)):
+            # sao absolutas (https://ecai.net.br/brasao.jpg): interessa o caminho
+            rel = url.split("://", 1)[-1].split("/", 1)[-1] if "://" in url else url
+            if not os.path.exists(os.path.join(pasta, rel)):
+                problemas.append("%s: imagem de compartilhamento %s nao foi publicada"
+                                 % (nome, rel))
 
         for src in sorted(set(c.sem_alt)):
             avisos.append("%s: <img src=\"%s\"> sem atributo alt" % (nome, src))
