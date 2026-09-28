@@ -1,0 +1,58 @@
+---
+/**
+ * Atracoes de um evento — porte da funcao _atracoes do build.py.
+ *
+ * O campo `nomes` do conteudo e uma linha so, com os itens separados por
+ * " · " e a hora na frente de cada um ("8h Mestra Tati · 10h Mestre
+ * Marron"). Sem separar hora de nome, a grade do dia vira um bloco corrido
+ * em que "8h", "Mestra Tati" e "Almoco" tem todos o mesmo peso.
+ *
+ * Acima de dois itens vira grade, uma linha por atracao; com um ou dois,
+ * fica em linha unica separada por ponto.
+ */
+interface Props {
+  nomes: string;
+}
+
+const { nomes } = Astro.props;
+
+const HORA = /^(\d{1,2}h\d{0,2})\s+(.+)$/;
+
+const itens = nomes
+  .split('·')
+  .map((i) => i.trim())
+  .filter(Boolean)
+  .map((item) => {
+    const m = HORA.exec(item);
+    return m ? { hora: m[1]!, nome: m[2]! } : { hora: null, nome: item };
+  });
+
+const emGrade = itens.length > 2;
+---
+
+{emGrade
+  ? itens.map((i) => (
+      <div class="linha">
+        {i.hora && <span class="hora">{i.hora}</span>}
+        <span class="nome">{i.nome}</span>
+      </div>
+    ))
+  : itens.map((i, k) => (
+      <>
+        {k > 0 && <span class="ponto"> · </span>}
+        {i.hora && <span class="hora">{i.hora}</span>}
+        <span class="nome">{i.nome}</span>
+      </>
+    ))}
+
+<style>
+  .linha { padding: 1px 0; }
+  .hora {
+    display: inline-block;
+    min-width: 44px;
+    font-weight: 700;
+    color: var(--cor-verde-escuro);
+  }
+  .nome { font-weight: 600; color: rgba(11, 11, 11, .85); }
+  .ponto { color: rgba(11, 11, 11, .35); }
+</style>

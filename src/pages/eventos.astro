@@ -1,0 +1,218 @@
+---
+/**
+ * Eventos e agenda — abertura, o evento em destaque, o calendario e as
+ * fotos de edicoes anteriores.
+ */
+import Base from '../layouts/Base.astro';
+import CabecaPagina from '../components/CabecaPagina.astro';
+import GradeGaleria from '../components/GradeGaleria.astro';
+import Atracoes from '../components/Atracoes.astro';
+import { conteudo } from '../dados/conteudo';
+
+const { site, destaque, eventos } = conteudo;
+---
+
+<Base titulo="Eventos e agenda" tela="eventos" arquivo="eventos.html">
+  <div>
+    {/* ⟨2026⟩ e placeholder de verdade, hoje no ar. Fica igual ao publicado
+        ate alguem decidir o texto; ferramentas/verificar.py acusa. */}
+    <CabecaPagina
+      sobretitulo="Agenda ⟨2026⟩"
+      titulo="Eventos e rodas"
+      texto="Encontros, oficinas e rodas abertas. Roda aberta é aberta mesmo: pode chegar, sentar e ficar o tempo que quiser — sem inscrição, sem uniforme e sem precisar saber jogar."
+    />
+
+    <div class="destaque sec">
+      <div class="zebra zebra-verde tarja"></div>
+
+      <div class="dentro">
+        <span class="etiqueta">{destaque.etiqueta}</span>
+        <h2>{destaque.titulo}</h2>
+        <div class="lema">{destaque.lema}</div>
+        <div class="resumo">{destaque.resumo}</div>
+
+        <div class="cartaz">
+          <img src={destaque.cartaz} alt={destaque.cartazAlt} decoding="async" />
+        </div>
+
+        <div class="resumo">{destaque.convite}</div>
+
+        <div class="precos">
+          {destaque.precos.map((p) => (
+            <div class="preco">
+              <div class="preco-rotulo">{p.rotulo}</div>
+              <div class="preco-valor">{p.valor}</div>
+            </div>
+          ))}
+        </div>
+
+        <a class="inscrever hv2" href={site.inscricaoEvento} target="_blank">{destaque.botao}</a>
+      </div>
+    </div>
+
+    <div class="calendario sec">
+      <div class="rotulo">Calendário</div>
+      <div class="pilha">
+        {eventos.map((e) => (
+          <div class="evento">
+            <div class="data">
+              <span class="dia">{e.dia}</span>
+              <span class="mes">{e.mes}</span>
+            </div>
+            <div class="detalhe">
+              <div class="tipo">{e.tipo}</div>
+              <div class="titulo">{e.titulo}</div>
+              {e.nomes && <div class="nomes"><Atracoes nomes={e.nomes} /></div>}
+              <div class="local">
+                <a href={e.mapa} target="_blank" rel="noopener">{e.local}</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="anteriores sec">
+      <h2 class="titulo-anteriores">Edições anteriores</h2>
+      <GradeGaleria />
+    </div>
+  </div>
+</Base>
+
+<style>
+  .destaque {
+    position: relative;
+    margin: 0 0 8px;
+    padding: 26px 20px 30px;
+    background: var(--cor-tinta);
+    color: var(--cor-papel);
+    overflow: hidden;
+  }
+  .tarja { position: absolute; top: 0; left: 0; width: 100%; height: 26px; }
+  .dentro { margin-top: 14px; }
+
+  .etiqueta {
+    font-size: 9.5px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--cor-tinta);
+    background: var(--cor-verde);
+    padding: 4px 9px;
+    border-radius: var(--raio-pilula);
+  }
+
+  .destaque h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 31px;
+    line-height: .98;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    margin: 14px 0 8px;
+  }
+
+  .lema {
+    font-family: var(--fonte-titulo);
+    font-size: 16px;
+    color: var(--cor-verde);
+    margin-bottom: 12px;
+  }
+
+  .resumo { font-size: 14px; color: var(--cor-papel-72); margin-bottom: 14px; }
+  .dentro > .resumo:last-of-type { margin-bottom: 16px; }
+
+  .cartaz { height: 450px; border-radius: 20px; overflow: hidden; margin-bottom: 16px; }
+  .cartaz img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .precos { display: flex; gap: 10px; margin-bottom: 16px; }
+  .preco { flex: 1; padding: 14px; border-radius: 18px; border: 1px solid rgba(255, 255, 255, .2); }
+  .preco-rotulo {
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .5);
+    margin-bottom: 4px;
+  }
+  .preco-valor { font-family: var(--fonte-titulo); font-size: 22px; }
+
+  .inscrever {
+    width: 100%;
+    min-height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: var(--raio-pilula);
+    background: var(--cor-verde);
+    color: var(--cor-tinta);
+    font-family: var(--fonte-titulo);
+    font-size: 14.5px;
+    text-decoration: none;
+  }
+
+  .calendario { padding: 28px 20px 32px; background: var(--cor-papel); }
+  .rotulo {
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(11, 11, 11, .45);
+    margin-bottom: 14px;
+  }
+  .pilha { display: flex; flex-direction: column; gap: 10px; }
+
+  .evento {
+    display: flex;
+    gap: 14px;
+    align-items: stretch;
+    padding: 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(11, 11, 11, .12);
+  }
+  .data {
+    flex: none;
+    width: 56px;
+    border-radius: 14px;
+    background: var(--cor-tinta);
+    color: var(--cor-papel);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+  }
+  .dia { font-family: var(--fonte-titulo); font-size: 20px; line-height: 1; }
+  .mes {
+    font-size: 9.5px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--cor-verde);
+    margin-top: 2px;
+  }
+
+  .detalhe { flex: 1; min-width: 0; }
+  .tipo {
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(11, 11, 11, .45);
+    margin-bottom: 3px;
+  }
+  .detalhe .titulo { font-size: 15px; font-weight: 700; line-height: 1.25; }
+  .nomes {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: rgba(11, 11, 11, .72);
+    margin-top: 6px;
+  }
+  .local { font-size: 12.5px; color: var(--cor-tinta-58); margin-top: 3px; }
+  .local a { color: inherit; }
+
+  .anteriores { padding: 0 20px 40px; background: var(--cor-papel); }
+  .titulo-anteriores {
+    font-family: var(--fonte-titulo);
+    font-size: 26px;
+    line-height: 1;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+</style>

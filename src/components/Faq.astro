@@ -1,0 +1,60 @@
+---
+/**
+ * Acordeao de perguntas frequentes. O primeiro item ja nasce aberto; o
+ * app.ts cuida de abrir um e fechar os outros, e de trocar + por –.
+ *
+ * .faq / .faq-r / .faq-i ficam em base.css, sem escopo, porque o script
+ * procura por esses nomes no documento inteiro.
+ */
+import { conteudo } from '../dados/conteudo';
+
+const { faqs } = conteudo;
+---
+
+<div class="lista">
+  {faqs.map((f, i) => (
+    <div class:list={['faq', { aberto: i === 0 }]}>
+      <div class="pergunta" data-faq={String(i)}>
+        <span class="texto">{f.p}</span>
+        <span class="faq-i">+</span>
+      </div>
+      <div class="faq-r">{f.r}</div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .lista { display: flex; flex-direction: column; gap: 8px; }
+
+  .faq { border-radius: 20px; background: var(--cor-superficie); overflow: hidden; }
+
+  .pergunta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px;
+    cursor: pointer;
+  }
+  .texto { font-size: 14.5px; font-weight: 700; line-height: 1.35; }
+
+  .faq-i {
+    flex: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--cor-tinta);
+    color: var(--cor-verde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  .faq-r {
+    padding: 0 16px 18px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: rgba(11, 11, 11, .68);
+  }
+</style>

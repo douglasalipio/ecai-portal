@@ -138,8 +138,22 @@ const site = z.object({
   mapaCasaBulicosa: z.string().url(),
 });
 
+/** O evento em destaque na pagina de Eventos. Estava cravado no markup. */
+const destaque = z.object({
+  etiqueta: texto,
+  titulo: texto,
+  lema: texto,
+  resumo: texto,
+  cartaz: arquivoExistente,
+  cartazAlt: texto,
+  convite: texto,
+  precos: z.array(z.object({ rotulo: texto, valor: texto })),
+  botao: texto,
+});
+
 const esquema = z.object({
   site,
+  destaque,
   nucleos: z.array(nucleo).min(1),
   horarios: z.array(horario),
   pilares: z.array(pilar),

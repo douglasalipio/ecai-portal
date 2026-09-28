@@ -21,6 +21,26 @@
     "mapaPacoDoFrevo": "https://www.google.com/maps/search/?api=1&query=Pa%C3%A7o%20do%20Frevo%2C%20Pra%C3%A7a%20do%20Arsenal%20da%20Marinha%2C%2091%2C%20Recife",
     "mapaCasaBulicosa": "https://www.google.com/maps/search/?api=1&query=Casa%20Buli%C3%A7osa%2C%20Rua%20Capit%C3%A3o%20Lima%2C%20269%2C%20Santo%20Amaro%2C%20Recife"
   },
+  "destaque": {
+    "etiqueta": "Destaque do ano",
+    "titulo": "6º Encontro de Culturas e Tradições Meu Patuá",
+    "lema": "“A Capoeira é simples, só basta ter amor.”",
+    "resumo": "24 a 27 de setembro · Sede da ECAI, MUAFRO e Marco Zero — quatro dias de Capoeira Angola, música, dança, memória, ancestralidade, fundamento e festa.",
+    "cartaz": "evento-meu-patua.jpg",
+    "cartazAlt": "Cartaz do evento",
+    "convite": "Mestras, mestres, artistas, brincantes e comunidades se encontram para trocar saberes, aprender, celebrar e fortalecer caminhos.",
+    "precos": [
+      {
+        "rotulo": "Encontro completo",
+        "valor": "R$ 100"
+      },
+      {
+        "rotulo": "Por diária",
+        "valor": "R$ 50"
+      }
+    ],
+    "botao": "Inscrições abertas"
+  },
   "nucleos": [
     {
       "slug": "juazeiro-do-norte",
