@@ -149,11 +149,37 @@ const destaque = z.object({
   convite: texto,
   precos: z.array(z.object({ rotulo: texto, valor: texto })),
   botao: texto,
+
+  /* A home mostra o mesmo evento em forma curta, com outros textos. */
+  sobretituloHome: texto,
+  resumoHome: texto,
+  quando: texto,
+  onde: texto,
+  precosCurtos: z.array(texto),
+  botaoHome: texto,
+});
+
+/** Textos da home. Estavam no export de design, alguns so alcancaveis pelas
+ *  substituicoes por string — ninguem acharia para editar. */
+const home = z.object({
+  lema: texto,
+  apresentacao: z.object({
+    abertura: texto,
+    paragrafos: z.array(texto),
+    fecho: texto,
+  }),
+  galeriaTitulo: texto,
+  pilaresTitulo: texto,
+  nucleosTitulo: texto,
+  nucleosTexto: texto,
+  /** Quantas fotos da galeria entram na faixa rolante. */
+  fotosNoCarrossel: z.number().int().positive(),
 });
 
 const esquema = z.object({
   site,
   destaque,
+  home,
   nucleos: z.array(nucleo).min(1),
   horarios: z.array(horario),
   pilares: z.array(pilar),

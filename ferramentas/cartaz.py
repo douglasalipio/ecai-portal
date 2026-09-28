@@ -17,11 +17,15 @@ import sys
 
 from PIL import Image, ImageDraw, ImageFont
 
-RAIZ = os.path.dirname(os.path.abspath(__file__))
+# o script vive em ferramentas/, entao a raiz do projeto e um nivel acima
+RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # sempre parte do cartaz intacto, para o script poder rodar de novo
-ORIGEM = os.path.join(RAIZ, "evento-meu-patua.original.png")
+ORIGEM = os.path.join(RAIZ, "origem", "cartaz.original.png")
+# o PNG de 2 MB e intermediario e fica fora do git; quem vai para o site e o
+# JPG, que o Astro publica direto de public/
 SAIDA = os.path.join(RAIZ, "evento-meu-patua.png")
-FONTE = os.path.join(RAIZ, "_fontes", "Oswald.ttf")
+JPG = os.path.join(RAIZ, "public", "evento-meu-patua.jpg")
+FONTE = os.path.join(RAIZ, "origem", "fontes", "Oswald.ttf")
 
 # medidas lidas do proprio cartaz (ver README abaixo)
 COR_TEXTO = (70, 71, 37)
@@ -170,7 +174,7 @@ def main():
     corpo = desenha(im, linhas)
     im.save(SAIDA)
     # versao leve para a web: o PNG original tem ~3 MB, pesado no celular
-    jpg = SAIDA.replace(".png", ".jpg")
+    jpg = JPG
     im.save(jpg, quality=86, optimize=True, progressive=True)
     print("cartaz regravado (corpo %dpx): %s | %s" % (corpo, linhas[0], linhas[1]))
     print("  %s  %.1f KB" % (os.path.basename(jpg), os.path.getsize(jpg) / 1024.0))

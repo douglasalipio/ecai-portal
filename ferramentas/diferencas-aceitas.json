@@ -1,5 +1,48 @@
 {
   "_leia_me": "Diferencas conscientes entre o site antigo (_referencia/) e o novo. Cada entrada precisa de motivo: sem motivo, e regressao disfarcada de decisao. tipo: links | imagens | titulos. lado: 'fora' (existia e saiu) ou 'novo' (entrou). pagina: nome do arquivo ou '*'.",
-  "aceitas": [],
-  "_nota": "Vazia de proposito. A migracao para Astro fecha com zero desvios: o que for limpeza (markup morto, estilo inline) acontece em commits proprios depois que as 9 paginas baterem, para cada mudanca ser visivel no diff."
+  "aceitas": [
+    {
+      "pagina": "*",
+      "tipo": "classes",
+      "lado": "novo",
+      "item": "zebra",
+      "motivo": "gancho de CSS que substituiu estilo inline: o site antigo pintava a tarja e a foto larga com style= no elemento, e as regras de desktop casavam no texto do atributo ([style*=\"span 2\"]). Agora sao classes."
+    },
+    {
+      "pagina": "*",
+      "tipo": "classes",
+      "lado": "novo",
+      "item": "zebra-verde",
+      "motivo": "gancho de CSS que substituiu estilo inline: o site antigo pintava a tarja e a foto larga com style= no elemento, e as regras de desktop casavam no texto do atributo ([style*=\"span 2\"]). Agora sao classes."
+    },
+    {
+      "pagina": "*",
+      "tipo": "classes",
+      "lado": "novo",
+      "item": "zebra-branca",
+      "motivo": "gancho de CSS que substituiu estilo inline: o site antigo pintava a tarja e a foto larga com style= no elemento, e as regras de desktop casavam no texto do atributo ([style*=\"span 2\"]). Agora sao classes."
+    },
+    {
+      "pagina": "*",
+      "tipo": "classes",
+      "lado": "novo",
+      "item": "largo",
+      "motivo": "gancho de CSS que substituiu estilo inline: o site antigo pintava a tarja e a foto larga com style= no elemento, e as regras de desktop casavam no texto do atributo ([style*=\"span 2\"]). Agora sao classes."
+    },
+    {
+      "pagina": "index.html",
+      "tipo": "classes",
+      "lado": "novo",
+      "item": "hero-rodape",
+      "motivo": "mesma regra de desktop de antes, que casava em [style*=\"bottom:0\"] e [style*=\"display:flex\"] dentro da capa. Sem esses nomes o botao da capa ocupa a largura toda."
+    },
+    {
+      "pagina": "index.html",
+      "tipo": "classes",
+      "lado": "novo",
+      "item": "hero-acoes",
+      "motivo": "mesma regra de desktop de antes, que casava em [style*=\"bottom:0\"] e [style*=\"display:flex\"] dentro da capa. Sem esses nomes o botao da capa ocupa a largura toda."
+    }
+  ],
+  "_nota": "So entram desvios de classe, e todos sao 'novo': nenhuma classe que a referencia usava foi perdida. Texto, titulos, links e imagens fecham sem nenhuma excecao nas 9 paginas."
 }

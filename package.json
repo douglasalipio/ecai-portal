@@ -6,11 +6,12 @@
   "description": "Site da Escola de Capoeira Angola IFE — ecai.net.br",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && npm run verificar",
+    "verificar": "python3 ferramentas/verificar.py dist",
+    "comparar": "python3 ferramentas/comparar.py _referencia dist",
     "preview": "astro preview",
     "check": "astro check",
-    "comparar": "python3 ferramentas/comparar.py _referencia dist",
-    "deploy": "ESTRITO=1 npm run build && firebase deploy --only hosting:capoeira"
+    "deploy": "ESTRITO=1 npm run build && npm run comparar && firebase deploy --only hosting:capoeira"
   },
   "dependencies": {
     "astro": "^5.14.1",

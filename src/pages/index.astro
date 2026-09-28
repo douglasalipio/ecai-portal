@@ -1,0 +1,459 @@
+---
+/**
+ * Home — capa em video, apresentacao, proximo evento, faixa rolante da
+ * galeria, pilares e atalho para os nucleos.
+ */
+import Base from '../layouts/Base.astro';
+import { conteudo, sede } from '../dados/conteudo';
+
+const { site, destaque, home, galeria, pilares, nucleos } = conteudo;
+
+const contato = site.contatoAula || site.whatsapp || site.instagram;
+const daFaixa = galeria.slice(0, home.fotosNoCarrossel);
+const outrosNucleos = nucleos.filter((n) => n.slug !== sede.slug);
+---
+
+<Base titulo="IFÉ — Escola de Capoeira Angola · Recife" tela="home" arquivo="index.html">
+  <div>
+    <div class="capa sec hero bleed">
+      <div class="fundo">
+        <video
+          src={site.videoCapa}
+          poster="fotos/roda-quadra.jpg"
+          autoplay muted loop playsinline
+          preload="metadata"
+          aria-label="Roda na sede"></video>
+      </div>
+      <div class="veu"></div>
+
+      <div class="hero-rodape">
+        <div class="lema">
+          <span class="zebra zebra-verde risco"></span>
+          <h1>{home.lema}</h1>
+        </div>
+        <div class="respiro"></div>
+        <div class="acoes hero-acoes">
+          <a class="principal hv2" href="aulas.html">Aula experimental</a>
+          <a class="vazado hv3" href="eventos.html">Eventos</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="zebra zebra-verde divisa sec bleed"></div>
+
+    <div class="apresentacao sec">
+      <p class="abertura">{home.apresentacao.abertura}</p>
+      {home.apresentacao.paragrafos.map((t) => <p class="corrido">{t}</p>)}
+      <p class="fecho">{home.apresentacao.fecho}</p>
+    </div>
+
+    <div class="proximo sec">
+      <div class="listras"></div>
+      <span class="sobretitulo">{destaque.sobretituloHome}</span>
+      <h2>{destaque.titulo}</h2>
+      <p class="resumo">{destaque.resumoHome}</p>
+
+      <div class="quando-onde">
+        <div>
+          <div class="rotulo-claro">Quando</div>
+          <div class="valor">{destaque.quando}</div>
+        </div>
+        <div>
+          <div class="rotulo-claro">Onde</div>
+          <div class="valor">{destaque.onde}</div>
+        </div>
+      </div>
+
+      <div class="cartaz">
+        <img src={destaque.cartaz} alt={destaque.cartazAlt} decoding="async" />
+      </div>
+
+      <div class="pilulas">
+        <a class="pilula-verde hv4" href={site.inscricaoEvento} target="_blank">{destaque.botao}</a>
+        {destaque.precosCurtos.map((p) => <span class="pilula">{p}</span>)}
+      </div>
+
+      <div class="acoes">
+        <a class="inscrever hv4" href={site.inscricaoEvento} target="_blank">{destaque.botaoHome}</a>
+        <a class="vazado hv1" href="eventos.html">Programação</a>
+      </div>
+    </div>
+
+    <div class="faixa sec">
+      <div class="faixa-topo">
+        <div>
+          <span class="sobretitulo-escuro">Galeria</span>
+          <h2 class="faixa-titulo">{home.galeriaTitulo}</h2>
+        </div>
+        <a class="ver-tudo hv5" href="galeria.html">Ver tudo</a>
+      </div>
+
+      <div class="zs trilho" data-carrossel>
+        {daFaixa.map((f, i) => (
+          i === 0 ? (
+            <a class="cartao largo" href="galeria.html">
+              <div class="cartao-foto">
+                <img src={f.src} alt={f.alt} loading="lazy" decoding="async" style={`object-position:${f.pos}`} />
+              </div>
+              <span class="legenda">{f.alt}</span>
+            </a>
+          ) : (
+            <a class="cartao" href="galeria.html">
+              <img src={f.src} alt={f.alt} loading="lazy" decoding="async" style={`object-position:${f.pos}`} />
+            </a>
+          )
+        ))}
+      </div>
+    </div>
+
+    <div class="pilares sec">
+      <h2 class="pilares-titulo">{home.pilaresTitulo}</h2>
+      <div class="pilha">
+        {pilares.map((p) => (
+          <div class="pilar">
+            <div class="numero">{p.n}</div>
+            <div>
+              <div class="pilar-titulo">{p.titulo}</div>
+              <div class="pilar-texto">{p.texto}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="onde sec">
+      <span class="sobretitulo-escuro">Onde treinar</span>
+      <h2 class="onde-titulo">{home.nucleosTitulo}</h2>
+      <p class="onde-texto">{home.nucleosTexto}</p>
+      <div class="seta-linha">
+        <a class="seta hv6" href="nucleos.html">→</a>
+      </div>
+      <div class="atalhos">
+        {outrosNucleos.map((n) => (
+          <a class="atalho hv7" href={`nucleo-${n.slug}.html`}>{n.pin}</a>
+        ))}
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  /* ---- capa ---- */
+  .capa { position: relative; height: 350px; background: var(--cor-tinta); }
+  .fundo { position: absolute; inset: 0; filter: grayscale(1) contrast(1.12); }
+  .fundo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+    display: block;
+  }
+  .veu {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(11, 11, 11, .72) 0%, rgba(11, 11, 11, .18) 42%, rgba(11, 11, 11, .94) 100%);
+    pointer-events: none;
+  }
+  .hero-rodape {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px 20px 26px;
+    color: var(--cor-papel);
+    pointer-events: none;
+  }
+  .lema { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .risco { width: 36px; height: 11px; background-size: 100% 100%; }
+  .lema h1 {
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--cor-papel-72);
+    font-family: inherit;
+    font-weight: 400;
+    margin: 0;
+  }
+  .respiro { height: 6px; }
+
+  .acoes { display: flex; gap: 10px; }
+  .hero-rodape .acoes { pointer-events: auto; }
+
+  .principal, .vazado, .inscrever {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    min-height: 48px;
+    border-radius: var(--raio-pilula);
+    font-family: var(--fonte-titulo);
+    font-size: 14.5px;
+    cursor: pointer;
+  }
+  .principal { flex: 1; border: 0; background: var(--cor-verde); color: var(--cor-tinta); }
+  .vazado {
+    padding: 0 18px;
+    border: 1px solid var(--cor-papel-50);
+    background: transparent;
+    color: var(--cor-papel);
+  }
+  .proximo .vazado { border-color: rgba(255, 255, 255, .42); }
+
+  .divisa { height: 26px; background-color: var(--cor-tinta); }
+
+  /* ---- apresentacao ---- */
+  .apresentacao { padding: 34px 20px 36px; background: var(--cor-papel); }
+  .abertura {
+    margin: 0 0 16px;
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(11, 11, 11, .86);
+  }
+  .corrido {
+    margin: 0 0 15px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(11, 11, 11, .72);
+  }
+  .fecho {
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 1.65;
+    font-weight: 600;
+    color: rgba(11, 11, 11, .88);
+  }
+
+  /* ---- proximo evento ---- */
+  .proximo {
+    position: relative;
+    padding: 34px 20px 40px;
+    background: var(--cor-tinta);
+    color: var(--cor-papel);
+    overflow: hidden;
+  }
+  .listras {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 100%;
+    background-image: var(--zebra-verde);
+    background-size: 300px 300px;
+    background-repeat: repeat;
+    pointer-events: none;
+  }
+  .sobretitulo {
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--cor-verde);
+  }
+  .proximo h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 31px;
+    line-height: .98;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    margin: 12px 0 8px;
+    position: relative;
+  }
+  .resumo {
+    position: relative;
+    margin: 0 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--cor-papel-75);
+  }
+  .quando-onde { display: flex; gap: 20px; margin-bottom: 18px; position: relative; }
+  .rotulo-claro {
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .5);
+    margin-bottom: 4px;
+  }
+  .valor { font-size: 14.5px; font-weight: 600; }
+
+  .cartaz { height: 430px; border-radius: 20px; overflow: hidden; margin-bottom: 18px; }
+  .cartaz img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .pilulas { position: relative; display: flex; gap: 8px; margin-bottom: 18px; }
+  .pilula, .pilula-verde {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 13px;
+    border-radius: var(--raio-pilula);
+  }
+  .pilula { border: 1px solid rgba(255, 255, 255, .28); }
+  .pilula-verde { background: var(--cor-verde); color: var(--cor-tinta); text-decoration: none; }
+
+  .inscrever { flex: 1; background: var(--cor-verde); color: var(--cor-tinta); }
+
+  /* ---- faixa da galeria ---- */
+  .faixa { padding: 30px 0 34px; background: var(--cor-papel); }
+  .faixa-topo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 20px;
+    margin-bottom: 16px;
+  }
+  .sobretitulo-escuro {
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(11, 11, 11, .45);
+  }
+  .faixa-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    margin: 8px 0 0;
+  }
+  .ver-tudo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex: none;
+    min-height: 40px;
+    padding: 0 16px;
+    border-radius: var(--raio-pilula);
+    border: 1px solid rgba(11, 11, 11, .2);
+    background: var(--cor-papel);
+    font-family: var(--fonte-titulo);
+    font-size: 13px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .trilho { display: flex; gap: 10px; overflow-x: auto; padding: 0 20px 4px; }
+  .cartao {
+    display: block;
+    flex: none;
+    width: 180px;
+    height: 290px;
+    border-radius: 22px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    filter: grayscale(1) contrast(1.1);
+  }
+  .cartao img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .cartao.largo {
+    position: relative;
+    width: 230px;
+    background: var(--cor-tinta);
+    filter: none;
+  }
+  .cartao-foto { position: absolute; inset: 0; filter: grayscale(1) contrast(1.12); }
+  .legenda {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--cor-papel);
+    background: var(--cor-tinta-70);
+    padding: 4px 10px;
+    border-radius: var(--raio-pilula);
+  }
+
+  /* ---- pilares ---- */
+  .pilares { padding: 34px 20px 8px; background: var(--cor-papel); }
+  .pilares-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 29px;
+    line-height: 1;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+  }
+  .pilha { display: flex; flex-direction: column; gap: 12px; }
+  .pilar {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 16px;
+    border-radius: 20px;
+    background: var(--cor-superficie);
+  }
+  .numero {
+    flex: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--cor-tinta);
+    color: var(--cor-verde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fonte-titulo);
+    font-size: 15px;
+  }
+  .pilar-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: -.01em;
+    margin-bottom: 3px;
+  }
+  .pilar-texto { font-size: 13.5px; line-height: 1.5; color: rgba(11, 11, 11, .66); }
+
+  /* ---- nucleos ---- */
+  .onde { padding: 34px 20px 40px; background: var(--cor-papel); }
+  .onde-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 31px;
+    line-height: 1;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    margin: 10px 0 10px;
+  }
+  .onde-texto {
+    margin: 0 0 18px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(11, 11, 11, .66);
+  }
+  .seta-linha { display: flex; gap: 8px; margin-bottom: 16px; }
+  .seta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 0;
+    background: var(--cor-tinta);
+    color: var(--cor-papel);
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .atalhos { display: flex; flex-wrap: wrap; gap: 8px; }
+  .atalho {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 1px solid rgba(11, 11, 11, .18);
+    background: var(--cor-papel);
+    border-radius: var(--raio-pilula);
+    padding: 9px 15px;
+    font-family: var(--fonte-texto);
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+</style>

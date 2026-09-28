@@ -13,11 +13,19 @@ percebe:
   titulos    a sequencia de h1..h6, que e o esqueleto da pagina
   links      href + rotulo, na ordem
   imagens    src + alt, na ordem
+  classes    quantas vezes cada classe global aparece
+
+O canal de classes existe porque as tres primeiras nao veem layout. As regras
+de desktop moram em src/styles/*.css e dependem de nomes exatos: perder um
+hero-acoes, ou ganhar um .cartaz onde nao havia, muda a pagina inteira sem
+mexer em uma virgula do texto. So entram as classes que essas folhas de fato
+usam — as outras sao escolha de componente e variam de proposito.
 
 Uso:  python3 ferramentas/comparar.py _referencia dist
       python3 ferramentas/comparar.py _referencia dist index.html
 """
 
+import glob
 import json
 import os
 import re
@@ -31,6 +39,27 @@ ACEITAS = os.path.join(os.path.dirname(os.path.abspath(__file__)),
 HASH = re.compile(r"\.[0-9a-f]{8}\.(css|js)$")
 IGNORAR_TEXTO = {"script", "style", "template"}
 TITULOS = {"h1", "h2", "h3", "h4", "h5", "h6"}
+
+ESTILOS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                       "src", "styles")
+SELETOR_CLASSE = re.compile(r"\.(-?[_a-zA-Z][_a-zA-Z0-9-]*)")
+
+
+def classes_globais():
+    """Nomes de classe que as folhas globais usam — as que mudam layout."""
+    nomes = set()
+    if not os.path.isdir(ESTILOS):
+        return nomes
+    for arq in sorted(glob.glob(os.path.join(ESTILOS, "*.css"))):
+        with open(arq, encoding="utf-8") as f:
+            css = f.read()
+        # so a parte de seletor, antes de cada bloco de declaracoes
+        for trecho in re.findall(r"([^{}]+)\{", css):
+            nomes.update(SELETOR_CLASSE.findall(trecho))
+    return nomes
+
+
+GLOBAIS = classes_globais()
 
 
 def normalizar(url):
@@ -48,6 +77,7 @@ class Extrator(HTMLParser):
         self.titulos = []
         self.links = []
         self.imagens = []
+        self.classes = []
         self._pilha = []
         self._coletando = []   # (tipo, destino, pedacos) para links e titulos
 
@@ -58,6 +88,10 @@ class Extrator(HTMLParser):
     def handle_starttag(self, tag, attrs):
         d = dict(attrs)
         self._pilha.append(tag)
+
+        for c in (d.get("class") or "").split():
+            if c in GLOBAIS:
+                self.classes.append(c)
 
         if tag == "img":
             self.imagens.append((normalizar(d.get("src")), espacos(d.get("alt") or "")))
@@ -104,6 +138,7 @@ class Extrator(HTMLParser):
             "titulos": self.titulos,
             "links": self.links,
             "imagens": self.imagens,
+            "classes": sorted(self.classes),
         }
 
 
@@ -146,16 +181,26 @@ def carregar_aceitas():
 
 
 def filtrar(itens, aceitas, pagina, tipo, lado):
-    """Remove uma ocorrencia por entrada aceita que casar."""
+    """Tira do relatorio o que ja foi decidido.
+
+    Para links/imagens/titulos, cada entrada aceita vale por uma ocorrencia —
+    assim um link a mais que o previsto continua aparecendo. Para classes,
+    vale por todas: uma classe nova aparece tantas vezes quantas secoes a
+    usam, e listar cada uma seria ruido.
+    """
     sobrando = list(itens)
     for a in aceitas:
         if a.get("tipo") != tipo or a.get("lado") != lado:
             continue
         if a.get("pagina") not in ("*", pagina):
             continue
-        alvo = tuple(a["item"])
-        if alvo in sobrando:
-            sobrando.remove(alvo)
+        if tipo == "classes":
+            alvo = a["item"]
+            sobrando = [c for c in sobrando if c != alvo]
+        else:
+            alvo = tuple(a["item"])
+            if alvo in sobrando:
+                sobrando.remove(alvo)
     return sobrando
 
 
@@ -163,7 +208,8 @@ def comparar(ref, novo, nome, aceitas=()):
     a, b = extrair(ref), extrair(novo)
     problemas = []
 
-    for campo, rotulo in (("titulos", "titulos"), ("links", "links"), ("imagens", "imagens")):
+    for campo, rotulo in (("titulos", "titulos"), ("links", "links"),
+                          ("imagens", "imagens"), ("classes", "classes globais")):
         sumiram, surgiram = diferenca_lista(a[campo], b[campo])
         sumiram = filtrar(sumiram, aceitas, nome, campo, "fora")
         surgiram = filtrar(surgiram, aceitas, nome, campo, "novo")

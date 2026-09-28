@@ -39,7 +39,33 @@
         "valor": "R$ 50"
       }
     ],
-    "botao": "Inscrições abertas"
+    "botao": "Inscrições abertas",
+    "sobretituloHome": "Próximo evento",
+    "resumoHome": "Cinco dias de Capoeira Angola, música, dança, memória, culturas tradicionais, ancestralidade, fundamento e festa.",
+    "quando": "20–27 set · 2026",
+    "onde": "Sede ECAI · MUAFRO · Paço do Frevo · Casa Buliçosa",
+    "precosCurtos": [
+      "R$ 100 completo",
+      "R$ 50 diária"
+    ],
+    "botaoHome": "Quero me inscrever"
+  },
+  "home": {
+    "lema": "A capoeira é simples, só basta ter amor",
+    "apresentacao": {
+      "abertura": "Somos a Escola de Capoeira Angola Ifé, sob a guiança e coordenação do Mestre Baygon.",
+      "paragrafos": [
+        "Vivemos e compartilhamos a Capoeira Angola no chão, no canto e na roda, com respeito por quem veio antes e compromisso com quem virá depois.",
+        "Recebemos a tradição como herança viva: preservamos suas raízes, ressignificamos seus caminhos e mantemos a roda em movimento.",
+        "Nosso exercício é também enfrentar as marcas das opressões coloniais e construir outros modos de existir, aprender e conviver — com uma perspectiva decolonial, inclusiva e diversa."
+      ],
+      "fecho": "Porque a Capoeira que acreditamos é aquela que honra a ancestralidade, acolhe a diferença e abre caminhos para o futuro."
+    },
+    "galeriaTitulo": "A roda por dentro",
+    "pilaresTitulo": "O que a roda ensina",
+    "nucleosTitulo": "Encontre um núcleo perto de você",
+    "nucleosTexto": "São 4 núcleos: Recife (sede), Olinda, Juazeiro do Norte (CE) e Mérida, no México. A primeira aula é sempre por nossa conta.",
+    "fotosNoCarrossel": 6
   },
   "nucleos": [
     {

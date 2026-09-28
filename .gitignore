@@ -1,18 +1,19 @@
-# saida gerada — sempre reconstruivel com o build
+# saida gerada — sempre reconstruivel com npm run build
 dist/
+
+# cache do Astro e dependencias
+.astro/
+node_modules/
 
 # cache de deploy do Firebase
 .firebase/
-
-# dependencias
-node_modules/
 
 # IDE e sistema
 .idea/
 .DS_Store
 .vscode/
 
-# intermediario do cartaz: 2,1 MB regeraveis por cartaz.py a partir do .original.png.
-# O .jpg fica versionado de proposito — e o arquivo que o site publica, e assim o
-# build nao passa a depender do Pillow estar instalado.
+# intermediario do cartaz: 2 MB regeraveis por ferramentas/cartaz.py a partir
+# de origem/cartaz.original.png. O JPG publicado fica versionado em public/,
+# de proposito, para o build nao passar a depender do Pillow instalado.
 evento-meu-patua.png
