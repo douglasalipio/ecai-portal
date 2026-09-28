@@ -23,12 +23,15 @@ const PUBLICO = join(process.cwd(), 'public');
 /**
  * Placeholders do rascunho original: ⟨Nome⟩, ⟨19XX⟩, ⟨5⟩.
  *
- * Tres deles estao no ar hoje (⟨5⟩ e ⟨60+⟩ no FAQ, ⟨2026⟩ em eventos), entao
- * barrar o build por padrao pararia de gerar um site que hoje funciona. Sao
- * avisos em todo build e viram erro com ESTRITO=1, que e como `npm run deploy`
- * roda — publicar exige texto de verdade, desenvolver nao.
+ * Aqui e sempre aviso, nunca erro, e a razao importa: este arquivo nao sabe
+ * quais paginas serao publicadas. A maior parte dos placeholders vive em
+ * `linhagem` e `marcos`, que so aparecem na pagina do Mestre — hoje listada
+ * em paginasOcultas. Barrar o deploy por causa deles seria barrar por
+ * conteudo que ninguem ve.
+ *
+ * Quem barra e ferramentas/verificar.py, que le o HTML ja gerado e portanto
+ * so acusa o que de fato foi para o ar. Checar o resultado, nao a fonte.
  */
-const ESTRITO = process.env.ESTRITO === '1';
 const placeholders: string[] = [];
 
 const semPlaceholder = (campo: string, base: z.ZodString = z.string()) =>
@@ -36,14 +39,7 @@ const semPlaceholder = (campo: string, base: z.ZodString = z.string()) =>
     const achados = s.match(/⟨[^⟩]*⟩/g);
     if (!achados) return;
     const onde = `${ctx.path.join('.') || campo}: ${achados.join(' ')}`;
-    if (ESTRITO) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: `sobrou placeholder ${achados.join(' ')} — preencha antes de publicar`,
-      });
-    } else if (!placeholders.includes(onde)) {
-      placeholders.push(onde);
-    }
+    if (!placeholders.includes(onde)) placeholders.push(onde);
   });
 
 /** Caminho como o navegador ve, "fotos/galeria-3.jpg" — resolvido em public/. */
@@ -225,7 +221,8 @@ if (placeholders.length) {
   console.warn(
     `\n⚠  ${placeholders.length} placeholder(s) ainda no conteudo — vao para o ar assim:\n` +
       placeholders.map((p) => `     ${p}`).join('\n') +
-      `\n   ESTRITO=1 transforma isso em erro (e o que npm run deploy faz).\n`,
+      `\n   Os que chegarem a uma pagina publicada barram o deploy` +
+      ` (ferramentas/verificar.py).\n`,
   );
 }
 
