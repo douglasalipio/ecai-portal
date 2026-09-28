@@ -1,0 +1,86 @@
+{
+  "loja": {
+    "whatsapp": "",
+    "sobretitulo": "Loja",
+    "titulo": "Feito na roda",
+    "chamada": "Instrumentos, roupas e bijuterias da escola. Escolha o que gostou e mande a lista pra gente no WhatsApp — o frete a gente combina por lá, pro Brasil e pra fora.",
+    "avisoFrete": "Os preços são dos produtos. O frete é combinado no WhatsApp, caso a caso — inclusive para fora do Brasil."
+  },
+  "categorias": [
+    {
+      "slug": "instrumentos",
+      "nome": "Instrumentos"
+    },
+    {
+      "slug": "roupas",
+      "nome": "Roupas"
+    },
+    {
+      "slug": "bijuterias",
+      "nome": "Bijuterias"
+    }
+  ],
+  "_leia_me_preco": "preco em CENTAVOS, inteiro: 45000 = R$ 450,00. Somar dinheiro em float acumula erro de arredondamento.",
+  "_leia_me_variacoes": "Deixe [] quando o produto e unico. Com variacoes, cada opcao vira uma linha separada na lista.",
+  "_leia_me_exemplo": "Os tres produtos abaixo sao EXEMPLO, com fotos emprestadas da galeria. Troque por produtos e fotos de verdade antes de tirar 'loja' de paginasOcultas.",
+  "produtos": [
+    {
+      "slug": "berimbau",
+      "nome": "Berimbau",
+      "categoria": "instrumentos",
+      "preco": 45000,
+      "descricao": "Verga de biriba, cabaça, arame e caxixi. Montado e afinado na escola.",
+      "fotos": [
+        "fotos/galeria-5.jpg"
+      ],
+      "variacoes": [],
+      "disponivel": true,
+      "exemplo": true
+    },
+    {
+      "slug": "camiseta-ife",
+      "nome": "Camiseta IFÉ",
+      "categoria": "roupas",
+      "preco": 7000,
+      "descricao": "Algodão, com o brasão da escola no peito.",
+      "fotos": [
+        "fotos/grupo-sede.jpg"
+      ],
+      "variacoes": [
+        {
+          "nome": "Tamanho",
+          "opcoes": [
+            "P",
+            "M",
+            "G",
+            "GG"
+          ]
+        }
+      ],
+      "disponivel": true,
+      "exemplo": true
+    },
+    {
+      "slug": "colar-contas",
+      "nome": "Colar de contas",
+      "categoria": "bijuterias",
+      "preco": 4500,
+      "descricao": "Feito à mão pelos alunos da escola.",
+      "fotos": [
+        "fotos/patua-2.jpg"
+      ],
+      "variacoes": [
+        {
+          "nome": "Cor",
+          "opcoes": [
+            "Branco",
+            "Verde",
+            "Preto"
+          ]
+        }
+      ],
+      "disponivel": true,
+      "exemplo": true
+    }
+  ]
+}

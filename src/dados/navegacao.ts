@@ -7,7 +7,7 @@
 
 import { conteudo } from './conteudo';
 
-export type Tela = 'home' | 'mestre' | 'nucleos' | 'aulas' | 'eventos' | 'galeria' | 'nucleo';
+export type Tela = 'home' | 'mestre' | 'nucleos' | 'aulas' | 'eventos' | 'galeria' | 'nucleo' | 'loja';
 
 type Item = { rotulo: string; tela: Tela; url: string };
 
@@ -18,6 +18,7 @@ const TODAS: Item[] = [
   { rotulo: 'Aulas', tela: 'aulas', url: 'aulas.html' },
   { rotulo: 'Eventos e Agenda', tela: 'eventos', url: 'eventos.html' },
   { rotulo: 'Galeria', tela: 'galeria', url: 'galeria.html' },
+  { rotulo: 'Loja', tela: 'loja', url: 'loja.html' },
 ];
 
 const ocultas = new Set(conteudo.paginasOcultas);

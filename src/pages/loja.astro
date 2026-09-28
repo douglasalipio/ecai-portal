@@ -1,0 +1,62 @@
+---
+/**
+ * Vitrine. Agrupa por categoria, na ordem definida no produtos.json.
+ *
+ * A loja nao cobra: a pessoa junta o que gostou e manda a lista no WhatsApp,
+ * onde o frete e combinado. O aviso de frete aparece aqui e na gaveta, para
+ * ninguem chegar no fim achando que o preco era final.
+ */
+import Base from '../layouts/Base.astro';
+import CabecaPagina from '../components/CabecaPagina.astro';
+import CartaoProduto from '../components/CartaoProduto.astro';
+import { loja, porCategoria } from '../dados/produtos';
+---
+
+<Base titulo="Loja" tela="loja" arquivo="loja.html">
+  <div>
+    <CabecaPagina
+      sobretitulo={loja.sobretitulo}
+      titulo={loja.titulo}
+      texto={loja.chamada}
+      recuo="24px"
+    />
+
+    <div class="aviso sec">{loja.avisoFrete}</div>
+
+    {porCategoria.map((c) => (
+      <div class="categoria sec">
+        <h2>{c.nome}</h2>
+        <div class="grade">
+          {c.itens.map((p) => <CartaoProduto produto={p} />)}
+        </div>
+      </div>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .aviso {
+    padding: 0 20px 20px;
+    background: var(--cor-papel);
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--cor-tinta-58);
+  }
+
+  .categoria { padding: 6px 20px 30px; background: var(--cor-papel); }
+
+  h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+
+  .grade { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 12px; }
+
+  @media (min-width: 1120px) {
+    .grade { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

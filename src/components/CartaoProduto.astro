@@ -1,0 +1,41 @@
+---
+/** Cartao do produto na vitrine. Leva para a pagina; nao adiciona daqui,
+ *  porque produto com variacao precisa da escolha antes. */
+import { emReais, type Produto } from '../dados/produtos';
+
+interface Props { produto: Produto }
+const { produto } = Astro.props;
+---
+
+<a class="cartao hv2" href={`produto-${produto.slug}.html`}>
+  <div class="foto">
+    <img src={produto.fotos[0]} alt={produto.nome} loading="lazy" decoding="async" />
+  </div>
+  <div class="texto">
+    <div class="nome">{produto.nome}</div>
+    <div class="preco">{emReais(produto.preco)}</div>
+  </div>
+</a>
+
+<style>
+  .cartao {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  .foto {
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--cor-superficie);
+  }
+  .foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .texto { padding: 10px 2px 0; }
+  .nome { font-size: 14.5px; font-weight: 700; line-height: 1.25; }
+  .preco {
+    font-family: var(--fonte-titulo);
+    font-size: 16px;
+    margin-top: 4px;
+  }
+</style>

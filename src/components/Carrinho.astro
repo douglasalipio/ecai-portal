@@ -1,0 +1,205 @@
+---
+/**
+ * Gaveta da lista de interesse. Fica no fim do body, fora da coluna, para
+ * cobrir a tela inteira — mesmo arranjo do Menu.
+ *
+ * Embute o catalogo minimo (slug, nome, preco) num <script type="application/
+ * json">, para o carrinho.ts saber o que mostrar sem nenhuma requisicao.
+ */
+import { produtos, loja, emReais } from '../dados/produtos';
+
+const catalogo = Object.fromEntries(
+  produtos.map((p) => [p.slug, {
+    nome: p.nome,
+    preco: p.preco,
+    variacaoNome: p.variacoes[0]?.nome ?? '',
+  }]),
+);
+---
+
+<script id="catalogo-loja" type="application/json" set:html={JSON.stringify(catalogo)} />
+
+<div class="lista-fundo" id="lista" hidden data-whatsapp={loja.whatsapp}>
+  <aside class="painel" role="dialog" aria-modal="true" aria-label="Sua lista">
+    <header>
+      <span class="rotulo">Sua lista</span>
+      <button class="fechar" data-lista-fechar aria-label="Fechar">✕</button>
+    </header>
+
+    <div class="corpo" data-lista-corpo></div>
+
+    <footer>
+      <div class="soma">
+        <span>Produtos</span>
+        <strong data-lista-total>{emReais(0)}</strong>
+      </div>
+      <p class="frete">{loja.avisoFrete}</p>
+      <a class="pedir" data-lista-pedir href="#" target="_blank" rel="noopener">Pedir no WhatsApp</a>
+      <button class="limpar" data-lista-limpar>Esvaziar lista</button>
+    </footer>
+  </aside>
+</div>
+
+<style>
+  .lista-fundo {
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    background: var(--cor-veu);
+    display: flex;
+    justify-content: center;
+  }
+  .lista-fundo[hidden] { display: none; }
+
+  .painel {
+    width: 100%;
+    max-width: var(--largura-celular);
+    background: var(--cor-papel);
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+    padding: 0 16px;
+    background: var(--cor-tinta);
+    color: var(--cor-papel);
+    flex: none;
+  }
+  .rotulo {
+    font-size: 10px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .5);
+  }
+  .fechar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .28);
+    background: transparent;
+    color: var(--cor-papel);
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .corpo { flex: 1; overflow-y: auto; padding: 16px 16px 4px; }
+
+  /* As linhas da lista sao criadas por innerHTML e nao recebem o atributo de
+     escopo do Astro, entao precisam de :global dentro do escopo do .corpo. */
+  .corpo :global(.item) {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--cor-divisa);
+  }
+  .corpo :global(.dados) { flex: 1; min-width: 0; }
+  .corpo :global(.nome) { font-size: 14.5px; font-weight: 700; line-height: 1.25; }
+  .corpo :global(.variacao) {
+    font-size: 12px;
+    color: var(--cor-tinta-58);
+    margin-top: 2px;
+  }
+  .corpo :global(.preco) { font-size: 12.5px; color: var(--cor-tinta-58); margin-top: 3px; }
+
+  .corpo :global(.qtd) {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex: none;
+    border: 1px solid var(--cor-divisa);
+    border-radius: var(--raio-pilula);
+  }
+  .corpo :global(.qtd button) {
+    width: 32px;
+    height: 32px;
+    border: 0;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    color: inherit;
+  }
+  .corpo :global(.qtd span) {
+    min-width: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .corpo :global(.tirar) {
+    flex: none;
+    width: 28px;
+    height: 28px;
+    border: 0;
+    background: transparent;
+    color: var(--cor-tinta-58);
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .corpo :global(.vazia) {
+    margin: 24px 0;
+    text-align: center;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--cor-tinta-58);
+  }
+
+  footer {
+    flex: none;
+    padding: 14px 16px 18px;
+    border-top: 1px solid var(--cor-divisa);
+    background: var(--cor-superficie);
+  }
+  .soma {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .soma span { font-size: 12.5px; color: var(--cor-tinta-58); }
+  .soma strong { font-family: var(--fonte-titulo); font-size: 22px; }
+
+  .frete {
+    margin: 0 0 12px;
+    font-size: 11.5px;
+    line-height: 1.45;
+    color: var(--cor-tinta-58);
+  }
+
+  .pedir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    border-radius: var(--raio-pilula);
+    background: var(--cor-verde);
+    color: var(--cor-tinta);
+    font-family: var(--fonte-titulo);
+    font-size: 15px;
+    text-decoration: none;
+  }
+  .pedir[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+
+  .limpar {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    padding: 8px;
+    border: 0;
+    background: transparent;
+    color: var(--cor-tinta-58);
+    font-size: 12.5px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+</style>
+
+<script>import '../scripts/loja';</script>

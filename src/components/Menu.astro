@@ -15,8 +15,13 @@ interface Props {
 
 const { tela } = Astro.props;
 
-/** Secoes anunciadas no rodape do menu mas ainda sem pagina. */
-const EM_BREVE = ['O Grupo', 'Loja', 'Contato'];
+/**
+ * Secoes anunciadas no rodape do menu mas ainda sem pagina. O filtro tira
+ * sozinho o que ja virou item de menu — publicar a Loja a remove daqui sem
+ * ninguem precisar lembrar.
+ */
+const EM_BREVE = ['O Grupo', 'Loja', 'Contato']
+  .filter((n) => !menu.some((i) => i.rotulo === n));
 ---
 
 <div class="menu" id="menu">

@@ -10,6 +10,7 @@ import type { Tela } from '../dados/navegacao';
 import Cabecalho from '../components/Cabecalho.astro';
 import Menu from '../components/Menu.astro';
 import Rodape from '../components/Rodape.astro';
+import Carrinho from '../components/Carrinho.astro';
 import '../styles/base.css';
 
 interface Props {
@@ -21,6 +22,10 @@ interface Props {
 }
 
 const { titulo, tela, arquivo } = Astro.props;
+
+/* A gaveta e o JS da loja so entram onde servem: as paginas de conteudo
+   seguem com o script de ~1,7 KB de sempre. */
+const naLoja = tela === 'loja';
 const { site } = conteudo;
 const base = site.url.replace(/\/$/, '');
 
@@ -65,12 +70,13 @@ const canonical = `${base}/${ehHome ? '' : arquivo}`;
 
   <body>
     <main class="site">
-      <Cabecalho tela={tela} />
+      <Cabecalho tela={tela} mostrarLista={naLoja} />
       <slot />
       <Rodape />
     </main>
 
     <Menu tela={tela} />
+    {naLoja && <Carrinho />}
 
     <script>import '../scripts/app';</script>
   </body>

@@ -10,9 +10,11 @@ import { menu, type Tela } from '../dados/navegacao';
 
 interface Props {
   tela: Tela;
+  /** Botao da lista de interesse; so nas paginas da loja. */
+  mostrarLista?: boolean;
 }
 
-const { tela } = Astro.props;
+const { tela, mostrarLista = false } = Astro.props;
 const { site } = conteudo;
 ---
 
@@ -31,11 +33,24 @@ const { site } = conteudo;
     ))}
   </nav>
 
-  <button class="menu-btn hv1" onclick="alternarMenu(event)" aria-label="Menu" aria-controls="menu" aria-expanded="false">
-    <span></span>
-    <span class="verde"></span>
-    <span></span>
-  </button>
+  <div class="acoes">
+    {mostrarLista && (
+      <button class="lista-btn hv1" data-lista-abrir aria-label="Ver minha lista">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <path d="M3 6h18"></path>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span class="conta" data-lista-conta hidden>0</span>
+      </button>
+    )}
+
+    <button class="menu-btn hv1" onclick="alternarMenu(event)" aria-label="Menu" aria-controls="menu" aria-expanded="false">
+      <span></span>
+      <span class="verde"></span>
+      <span></span>
+    </button>
+  </div>
 </div>
 
 <style>
@@ -82,6 +97,38 @@ const { site } = conteudo;
     color: rgba(255, 255, 255, .5);
     margin-top: 3px;
   }
+
+  .acoes { display: flex; align-items: center; gap: 8px; }
+
+  .lista-btn {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .28);
+    background: transparent;
+    color: var(--cor-papel);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .conta {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: var(--raio-pilula);
+    background: var(--cor-verde);
+    color: var(--cor-tinta);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: center;
+  }
+  .conta[hidden] { display: none; }
 
   .menu-btn {
     width: 42px;
