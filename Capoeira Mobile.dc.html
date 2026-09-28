@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-55c76319-11ee-44ca-adbc-c864fca55849/styles.css">
+<script src="_ds/organic-55c76319-11ee-44ca-adbc-c864fca55849/_ds_bundle.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700;800&display=swap">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#dcd9d3;font-family:"Figtree",system-ui,sans-serif}
+a{color:#24632a;text-underline-offset:3px}
+a:hover{color:#0b0b0b}
+.zs::-webkit-scrollbar{width:0}
+</style>
+</helmet>
+
+<div style="--color-bg:#ffffff;--color-surface:#f4f2ee;--color-text:#0b0b0b;--color-accent:#3f9b46;--color-accent-600:#34803a;--color-accent-700:#24632a;--color-divider:rgba(11,11,11,.14);min-height:100vh;display:flex;flex-direction:column;align-items:center;gap:18px;padding:36px 20px 60px;box-sizing:border-box;background:#dcd9d3">
+
+  <div style="display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(11,11,11,.5)">
+    <span style="width:44px;height:12px;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20300%20300%27%20preserveAspectRatio%3D%27none%27%3E%3Cg%20fill%3D%27%230b0b0b%27%20fill-opacity%3D%271%27%3E%3Cpath%20d%3D%27M17.3%200%20C17.3%2025.0%2C11.2%2025.0%2C11.2%2050%20C11.2%2075.0%2C13.4%2075.0%2C13.4%20100%20C13.4%20125.0%2C8.3%20125.0%2C8.3%20150%20C8.3%20175.0%2C15.3%20175.0%2C15.3%20200%20C15.3%20225.0%2C10.7%20225.0%2C10.7%20250%20C10.7%20275.0%2C20.9%20275.0%2C20.9%20300%20L26.3%20300%20C26.3%20275.0%2C29.0%20275.0%2C29.0%20250%20C29.0%20225.0%2C30.5%20225.0%2C30.5%20200%20C30.5%20175.0%2C27.3%20175.0%2C27.3%20150%20C27.3%20125.0%2C29.5%20125.0%2C29.5%20100%20C29.5%2075.0%2C25.1%2075.0%2C25.1%2050%20C25.1%2025.0%2C26.5%2025.0%2C26.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M54.5%200%20C54.5%2025.0%2C56.4%2025.0%2C56.4%2050%20C56.4%2075.0%2C54.6%2075.0%2C54.6%20100%20C54.6%20125.0%2C51.7%20125.0%2C51.7%20150%20C51.7%20175.0%2C57.5%20175.0%2C57.5%20200%20C57.5%20225.0%2C50.3%20225.0%2C50.3%20250%20C50.3%20275.0%2C59.2%20275.0%2C59.2%20300%20L65.9%20300%20C65.9%20275.0%2C58.1%20275.0%2C58.1%20250%20C58.1%20225.0%2C67.3%20225.0%2C67.3%20200%20C67.3%20175.0%2C57.9%20175.0%2C57.9%20150%20C57.9%20125.0%2C62.6%20125.0%2C62.6%20100%20C62.6%2075.0%2C63.0%2075.0%2C63.0%2050%20C63.0%2025.0%2C61.5%2025.0%2C61.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M84.3%200%20C84.3%2025.0%2C83.0%2025.0%2C83.0%2050%20C83.0%2075.0%2C73.8%2075.0%2C73.8%20100%20C73.8%20125.0%2C81.1%20125.0%2C81.1%20150%20C81.1%20175.0%2C81.5%20175.0%2C81.5%20200%20C81.5%20225.0%2C74.9%20225.0%2C74.9%20250%20C74.9%20275.0%2C84.8%20275.0%2C84.8%20300%20L96.2%20300%20C96.2%20275.0%2C102.2%20275.0%2C102.2%20250%20C102.2%20225.0%2C103.5%20225.0%2C103.5%20200%20C103.5%20175.0%2C101.9%20175.0%2C101.9%20150%20C101.9%20125.0%2C103.6%20125.0%2C103.6%20100%20C103.6%2075.0%2C104.4%2075.0%2C104.4%2050%20C104.4%2025.0%2C98.1%2025.0%2C98.1%200%20Z%27%2F%3E%3Cpath%20d%3D%27M129.2%200%20C129.2%2025.0%2C128.2%2025.0%2C128.2%2050%20C128.2%2075.0%2C132.5%2075.0%2C132.5%20100%20C132.5%20125.0%2C133.3%20125.0%2C133.3%20150%20C133.3%20175.0%2C134.1%20175.0%2C134.1%20200%20C134.1%20225.0%2C129.2%20225.0%2C129.2%20250%20C129.2%20275.0%2C135.4%20275.0%2C135.4%20300%20L139.6%20300%20C139.6%20275.0%2C139.5%20275.0%2C139.5%20250%20C139.5%20225.0%2C147.0%20225.0%2C147.0%20200%20C147.0%20175.0%2C144.7%20175.0%2C144.7%20150%20C144.7%20125.0%2C142.9%20125.0%2C142.9%20100%20C142.9%2075.0%2C142.5%2075.0%2C142.5%2050%20C142.5%2025.0%2C138.4%2025.0%2C138.4%200%20Z%27%2F%3E%3Cpath%20d%3D%27M160.4%200%20C160.4%2025.0%2C161.1%2025.0%2C161.1%2050%20C161.1%2075.0%2C165.4%2075.0%2C165.4%20100%20C165.4%20125.0%2C159.4%20125.0%2C159.4%20150%20C159.4%20175.0%2C157.7%20175.0%2C157.7%20200%20C157.7%20225.0%2C159.8%20225.0%2C159.8%20250%20C159.8%20275.0%2C163.5%20275.0%2C163.5%20300%20L171.8%20300%20C171.8%20275.0%2C179.2%20275.0%2C179.2%20250%20C179.2%20225.0%2C181.1%20225.0%2C181.1%20200%20C181.1%20175.0%2C179.4%20175.0%2C179.4%20150%20C179.4%20125.0%2C183.7%20125.0%2C183.7%20100%20C183.7%2075.0%2C182.5%2075.0%2C182.5%2050%20C182.5%2025.0%2C170.5%2025.0%2C170.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M211.6%200%20C211.6%2025.0%2C205.7%2025.0%2C205.7%2050%20C205.7%2075.0%2C211.3%2075.0%2C211.3%20100%20C211.3%20125.0%2C212.1%20125.0%2C212.1%20150%20C212.1%20175.0%2C210.7%20175.0%2C210.7%20200%20C210.7%20225.0%2C209.9%20225.0%2C209.9%20250%20C209.9%20275.0%2C207.0%20275.0%2C207.0%20300%20L213.5%20300%20C213.5%20275.0%2C215.2%20275.0%2C215.2%20250%20C215.2%20225.0%2C218.2%20225.0%2C218.2%20200%20C218.2%20175.0%2C220.4%20175.0%2C220.4%20150%20C220.4%20125.0%2C219.9%20125.0%2C219.9%20100%20C219.9%2075.0%2C213.7%2075.0%2C213.7%2050%20C213.7%2025.0%2C217.3%2025.0%2C217.3%200%20Z%27%2F%3E%3Cpath%20d%3D%27M236.7%200%20C236.7%2025.0%2C233.3%2025.0%2C233.3%2050%20C233.3%2075.0%2C227.7%2075.0%2C227.7%20100%20C227.7%20125.0%2C229.0%20125.0%2C229.0%20150%20C229.0%20175.0%2C234.2%20175.0%2C234.2%20200%20C234.2%20225.0%2C225.7%20225.0%2C225.7%20250%20C225.7%20275.0%2C236.0%20275.0%2C236.0%20300%20L255.1%20300%20C255.1%20275.0%2C258.1%20275.0%2C258.1%20250%20C258.1%20225.0%2C259.5%20225.0%2C259.5%20200%20C259.5%20175.0%2C253.2%20175.0%2C253.2%20150%20C253.2%20125.0%2C259.6%20125.0%2C259.6%20100%20C259.6%2075.0%2C262.4%2075.0%2C262.4%2050%20C262.4%2025.0%2C249.6%2025.0%2C249.6%200%20Z%27%2F%3E%3Cpath%20d%3D%27M284.2%200%20C284.2%2025.0%2C276.5%2025.0%2C276.5%2050%20C276.5%2075.0%2C285.6%2075.0%2C285.6%20100%20C285.6%20125.0%2C277.1%20125.0%2C277.1%20150%20C277.1%20175.0%2C282.6%20175.0%2C282.6%20200%20C282.6%20225.0%2C281.7%20225.0%2C281.7%20250%20C281.7%20275.0%2C279.7%20275.0%2C279.7%20300%20L286.9%20300%20C286.9%20275.0%2C293.5%20275.0%2C293.5%20250%20C293.5%20225.0%2C293.6%20225.0%2C293.6%20200%20C293.6%20175.0%2C285.4%20175.0%2C285.4%20150%20C285.4%20125.0%2C294.4%20125.0%2C294.4%20100%20C294.4%2075.0%2C288.0%2075.0%2C288.0%2050%20C288.0%2025.0%2C289.5%2025.0%2C289.5%200%20Z%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');background-size:100% 100%;background-repeat:repeat-x"></span>
+    <span>Site mobile · protótipo navegável</span>
+  </div>
+
+  <div style="width:392px;height:848px;border-radius:44px;background:#0b0b0b;padding:10px;box-shadow:0 24px 60px rgba(11,11,11,.32);box-sizing:border-box">
+    <div class="zs" style="position:relative;width:100%;height:100%;border-radius:35px;overflow:hidden;background:#ffffff;color:#0b0b0b">
+
+      <div class="zs" style="position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:none">
+
+        <div style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;height:62px;padding:0 16px;background:#0b0b0b;color:#ffffff;border-bottom:1px solid rgba(255,255,255,.14)">
+          <div onClick="{{ goHome }}" style="display:flex;align-items:center;gap:9px;cursor:pointer">
+            <img src="logo-ife.jpg" alt="Escola de Capoeira Angola IFÉ" style="width:38px;height:38px;border-radius:50%;object-fit:cover;background:#ffffff">
+            <div style="display:flex;flex-direction:column;line-height:1">
+              <span style="font-family:'Caprasimo',system-ui;font-size:15px;letter-spacing:.01em">IFÉ</span>
+              <span style="font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:3px">Escola de Capoeira Angola</span>
+            </div>
+          </div>
+          <button onClick="{{ toggleMenu }}" aria-label="Menu" style="width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer" style-hover="background:rgba(255,255,255,.12)">
+            <span style="width:16px;height:2px;background:#ffffff"></span>
+            <span style="width:16px;height:2px;background:#3f9b46"></span>
+            <span style="width:16px;height:2px;background:#ffffff"></span>
+          </button>
+        </div>
+
+        <!-- ================= INÍCIO ================= -->
+        <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <div style="position:relative;height:430px;background:#0b0b0b">
+            <div style="position:absolute;inset:0;filter:grayscale(1) contrast(1.12)">
+              <image-slot id="cap-hero-roda" src="fotos/ecai_1.jpg" shape="rect" fit="cover" placeholder="Foto/vídeo da roda (destaque)"></image-slot>
+            </div>
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,11,.72) 0%,rgba(11,11,11,.18) 42%,rgba(11,11,11,.94) 100%);pointer-events:none"></div>
+            <div style="position:absolute;left:0;right:0;bottom:0;padding:20px 20px 26px;color:#ffffff;pointer-events:none">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+                <span style="width:36px;height:11px;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20300%20300%27%20preserveAspectRatio%3D%27none%27%3E%3Cg%20fill%3D%27%233f9b46%27%20fill-opacity%3D%271%27%3E%3Cpath%20d%3D%27M17.3%200%20C17.3%2025.0%2C11.2%2025.0%2C11.2%2050%20C11.2%2075.0%2C13.4%2075.0%2C13.4%20100%20C13.4%20125.0%2C8.3%20125.0%2C8.3%20150%20C8.3%20175.0%2C15.3%20175.0%2C15.3%20200%20C15.3%20225.0%2C10.7%20225.0%2C10.7%20250%20C10.7%20275.0%2C20.9%20275.0%2C20.9%20300%20L26.3%20300%20C26.3%20275.0%2C29.0%20275.0%2C29.0%20250%20C29.0%20225.0%2C30.5%20225.0%2C30.5%20200%20C30.5%20175.0%2C27.3%20175.0%2C27.3%20150%20C27.3%20125.0%2C29.5%20125.0%2C29.5%20100%20C29.5%2075.0%2C25.1%2075.0%2C25.1%2050%20C25.1%2025.0%2C26.5%2025.0%2C26.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M54.5%200%20C54.5%2025.0%2C56.4%2025.0%2C56.4%2050%20C56.4%2075.0%2C54.6%2075.0%2C54.6%20100%20C54.6%20125.0%2C51.7%20125.0%2C51.7%20150%20C51.7%20175.0%2C57.5%20175.0%2C57.5%20200%20C57.5%20225.0%2C50.3%20225.0%2C50.3%20250%20C50.3%20275.0%2C59.2%20275.0%2C59.2%20300%20L65.9%20300%20C65.9%20275.0%2C58.1%20275.0%2C58.1%20250%20C58.1%20225.0%2C67.3%20225.0%2C67.3%20200%20C67.3%20175.0%2C57.9%20175.0%2C57.9%20150%20C57.9%20125.0%2C62.6%20125.0%2C62.6%20100%20C62.6%2075.0%2C63.0%2075.0%2C63.0%2050%20C63.0%2025.0%2C61.5%2025.0%2C61.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M84.3%200%20C84.3%2025.0%2C83.0%2025.0%2C83.0%2050%20C83.0%2075.0%2C73.8%2075.0%2C73.8%20100%20C73.8%20125.0%2C81.1%20125.0%2C81.1%20150%20C81.1%20175.0%2C81.5%20175.0%2C81.5%20200%20C81.5%20225.0%2C74.9%20225.0%2C74.9%20250%20C74.9%20275.0%2C84.8%20275.0%2C84.8%20300%20L96.2%20300%20C96.2%20275.0%2C102.2%20275.0%2C102.2%20250%20C102.2%20225.0%2C103.5%20225.0%2C103.5%20200%20C103.5%20175.0%2C101.9%20175.0%2C101.9%20150%20C101.9%20125.0%2C103.6%20125.0%2C103.6%20100%20C103.6%2075.0%2C104.4%2075.0%2C104.4%2050%20C104.4%2025.0%2C98.1%2025.0%2C98.1%200%20Z%27%2F%3E%3Cpath%20d%3D%27M129.2%200%20C129.2%2025.0%2C128.2%2025.0%2C128.2%2050%20C128.2%2075.0%2C132.5%2075.0%2C132.5%20100%20C132.5%20125.0%2C133.3%20125.0%2C133.3%20150%20C133.3%20175.0%2C134.1%20175.0%2C134.1%20200%20C134.1%20225.0%2C129.2%20225.0%2C129.2%20250%20C129.2%20275.0%2C135.4%20275.0%2C135.4%20300%20L139.6%20300%20C139.6%20275.0%2C139.5%20275.0%2C139.5%20250%20C139.5%20225.0%2C147.0%20225.0%2C147.0%20200%20C147.0%20175.0%2C144.7%20175.0%2C144.7%20150%20C144.7%20125.0%2C142.9%20125.0%2C142.9%20100%20C142.9%2075.0%2C142.5%2075.0%2C142.5%2050%20C142.5%2025.0%2C138.4%2025.0%2C138.4%200%20Z%27%2F%3E%3Cpath%20d%3D%27M160.4%200%20C160.4%2025.0%2C161.1%2025.0%2C161.1%2050%20C161.1%2075.0%2C165.4%2075.0%2C165.4%20100%20C165.4%20125.0%2C159.4%20125.0%2C159.4%20150%20C159.4%20175.0%2C157.7%20175.0%2C157.7%20200%20C157.7%20225.0%2C159.8%20225.0%2C159.8%20250%20C159.8%20275.0%2C163.5%20275.0%2C163.5%20300%20L171.8%20300%20C171.8%20275.0%2C179.2%20275.0%2C179.2%20250%20C179.2%20225.0%2C181.1%20225.0%2C181.1%20200%20C181.1%20175.0%2C179.4%20175.0%2C179.4%20150%20C179.4%20125.0%2C183.7%20125.0%2C183.7%20100%20C183.7%2075.0%2C182.5%2075.0%2C182.5%2050%20C182.5%2025.0%2C170.5%2025.0%2C170.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M211.6%200%20C211.6%2025.0%2C205.7%2025.0%2C205.7%2050%20C205.7%2075.0%2C211.3%2075.0%2C211.3%20100%20C211.3%20125.0%2C212.1%20125.0%2C212.1%20150%20C212.1%20175.0%2C210.7%20175.0%2C210.7%20200%20C210.7%20225.0%2C209.9%20225.0%2C209.9%20250%20C209.9%20275.0%2C207.0%20275.0%2C207.0%20300%20L213.5%20300%20C213.5%20275.0%2C215.2%20275.0%2C215.2%20250%20C215.2%20225.0%2C218.2%20225.0%2C218.2%20200%20C218.2%20175.0%2C220.4%20175.0%2C220.4%20150%20C220.4%20125.0%2C219.9%20125.0%2C219.9%20100%20C219.9%2075.0%2C213.7%2075.0%2C213.7%2050%20C213.7%2025.0%2C217.3%2025.0%2C217.3%200%20Z%27%2F%3E%3Cpath%20d%3D%27M236.7%200%20C236.7%2025.0%2C233.3%2025.0%2C233.3%2050%20C233.3%2075.0%2C227.7%2075.0%2C227.7%20100%20C227.7%20125.0%2C229.0%20125.0%2C229.0%20150%20C229.0%20175.0%2C234.2%20175.0%2C234.2%20200%20C234.2%20225.0%2C225.7%20225.0%2C225.7%20250%20C225.7%20275.0%2C236.0%20275.0%2C236.0%20300%20L255.1%20300%20C255.1%20275.0%2C258.1%20275.0%2C258.1%20250%20C258.1%20225.0%2C259.5%20225.0%2C259.5%20200%20C259.5%20175.0%2C253.2%20175.0%2C253.2%20150%20C253.2%20125.0%2C259.6%20125.0%2C259.6%20100%20C259.6%2075.0%2C262.4%2075.0%2C262.4%2050%20C262.4%2025.0%2C249.6%2025.0%2C249.6%200%20Z%27%2F%3E%3Cpath%20d%3D%27M284.2%200%20C284.2%2025.0%2C276.5%2025.0%2C276.5%2050%20C276.5%2075.0%2C285.6%2075.0%2C285.6%20100%20C285.6%20125.0%2C277.1%20125.0%2C277.1%20150%20C277.1%20175.0%2C282.6%20175.0%2C282.6%20200%20C282.6%20225.0%2C281.7%20225.0%2C281.7%20250%20C281.7%20275.0%2C279.7%20275.0%2C279.7%20300%20L286.9%20300%20C286.9%20275.0%2C293.5%20275.0%2C293.5%20250%20C293.5%20225.0%2C293.6%20225.0%2C293.6%20200%20C293.6%20175.0%2C285.4%20175.0%2C285.4%20150%20C285.4%20125.0%2C294.4%20125.0%2C294.4%20100%20C294.4%2075.0%2C288.0%2075.0%2C288.0%2050%20C288.0%2025.0%2C289.5%2025.0%2C289.5%200%20Z%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');background-size:100% 100%;background-repeat:repeat-x"></span>
+                <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.72)">Escola de Capoeira Angola · Recife</span>
+              </div>
+              <h1 style="font-family:'Caprasimo',system-ui;font-size:46px;line-height:.92;letter-spacing:-.02em;text-transform:uppercase;margin:0 0 12px;text-wrap:balance">A zebra<br>não corre<br>sozinha</h1>
+              <p style="margin:0 0 20px;font-size:14.5px;line-height:1.5;max-width:300px;color:rgba(255,255,255,.82)">Somos a Escola de Capoeira Angola IFÉ, de Mestre Baygon. Ensinamos capoeira como ela nos foi passada: no chão, no canto e na roda — com respeito por quem veio antes.</p>
+              <div style="display:flex;gap:10px;pointer-events:auto">
+                <button onClick="{{ goAulas }}" style="flex:1;min-height:48px;border:0;border-radius:999px;background:#3f9b46;color:#0b0b0b;font-family:'Caprasimo',system-ui;font-size:14.5px;cursor:pointer" style-hover="background:#34803a">Aula experimental</button>
+                <button onClick="{{ goNucleos }}" style="min-height:48px;padding:0 18px;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:transparent;color:#ffffff;font-family:'Caprasimo',system-ui;font-size:14.5px;cursor:pointer" style-hover="background:rgba(255,255,255,.14)">Núcleos</button>
+              </div>
+            </div>
+          </div>
+
+          <sc-if value="{{ stripes }}" hint-placeholder-val="{{ true }}">
+            <div style="height:26px;background:#0b0b0b;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20300%20300%27%20preserveAspectRatio%3D%27none%27%3E%3Cg%20fill%3D%27%23ffffff%27%20fill-opacity%3D%271%27%3E%3Cpath%20d%3D%27M17.3%200%20C17.3%2025.0%2C11.2%2025.0%2C11.2%2050%20C11.2%2075.0%2C13.4%2075.0%2C13.4%20100%20C13.4%20125.0%2C8.3%20125.0%2C8.3%20150%20C8.3%20175.0%2C15.3%20175.0%2C15.3%20200%20C15.3%20225.0%2C10.7%20225.0%2C10.7%20250%20C10.7%20275.0%2C20.9%20275.0%2C20.9%20300%20L26.3%20300%20C26.3%20275.0%2C29.0%20275.0%2C29.0%20250%20C29.0%20225.0%2C30.5%20225.0%2C30.5%20200%20C30.5%20175.0%2C27.3%20175.0%2C27.3%20150%20C27.3%20125.0%2C29.5%20125.0%2C29.5%20100%20C29.5%2075.0%2C25.1%2075.0%2C25.1%2050%20C25.1%2025.0%2C26.5%2025.0%2C26.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M54.5%200%20C54.5%2025.0%2C56.4%2025.0%2C56.4%2050%20C56.4%2075.0%2C54.6%2075.0%2C54.6%20100%20C54.6%20125.0%2C51.7%20125.0%2C51.7%20150%20C51.7%20175.0%2C57.5%20175.0%2C57.5%20200%20C57.5%20225.0%2C50.3%20225.0%2C50.3%20250%20C50.3%20275.0%2C59.2%20275.0%2C59.2%20300%20L65.9%20300%20C65.9%20275.0%2C58.1%20275.0%2C58.1%20250%20C58.1%20225.0%2C67.3%20225.0%2C67.3%20200%20C67.3%20175.0%2C57.9%20175.0%2C57.9%20150%20C57.9%20125.0%2C62.6%20125.0%2C62.6%20100%20C62.6%2075.0%2C63.0%2075.0%2C63.0%2050%20C63.0%2025.0%2C61.5%2025.0%2C61.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M84.3%200%20C84.3%2025.0%2C83.0%2025.0%2C83.0%2050%20C83.0%2075.0%2C73.8%2075.0%2C73.8%20100%20C73.8%20125.0%2C81.1%20125.0%2C81.1%20150%20C81.1%20175.0%2C81.5%20175.0%2C81.5%20200%20C81.5%20225.0%2C74.9%20225.0%2C74.9%20250%20C74.9%20275.0%2C84.8%20275.0%2C84.8%20300%20L96.2%20300%20C96.2%20275.0%2C102.2%20275.0%2C102.2%20250%20C102.2%20225.0%2C103.5%20225.0%2C103.5%20200%20C103.5%20175.0%2C101.9%20175.0%2C101.9%20150%20C101.9%20125.0%2C103.6%20125.0%2C103.6%20100%20C103.6%2075.0%2C104.4%2075.0%2C104.4%2050%20C104.4%2025.0%2C98.1%2025.0%2C98.1%200%20Z%27%2F%3E%3Cpath%20d%3D%27M129.2%200%20C129.2%2025.0%2C128.2%2025.0%2C128.2%2050%20C128.2%2075.0%2C132.5%2075.0%2C132.5%20100%20C132.5%20125.0%2C133.3%20125.0%2C133.3%20150%20C133.3%20175.0%2C134.1%20175.0%2C134.1%20200%20C134.1%20225.0%2C129.2%20225.0%2C129.2%20250%20C129.2%20275.0%2C135.4%20275.0%2C135.4%20300%20L139.6%20300%20C139.6%20275.0%2C139.5%20275.0%2C139.5%20250%20C139.5%20225.0%2C147.0%20225.0%2C147.0%20200%20C147.0%20175.0%2C144.7%20175.0%2C144.7%20150%20C144.7%20125.0%2C142.9%20125.0%2C142.9%20100%20C142.9%2075.0%2C142.5%2075.0%2C142.5%2050%20C142.5%2025.0%2C138.4%2025.0%2C138.4%200%20Z%27%2F%3E%3Cpath%20d%3D%27M160.4%200%20C160.4%2025.0%2C161.1%2025.0%2C161.1%2050%20C161.1%2075.0%2C165.4%2075.0%2C165.4%20100%20C165.4%20125.0%2C159.4%20125.0%2C159.4%20150%20C159.4%20175.0%2C157.7%20175.0%2C157.7%20200%20C157.7%20225.0%2C159.8%20225.0%2C159.8%20250%20C159.8%20275.0%2C163.5%20275.0%2C163.5%20300%20L171.8%20300%20C171.8%20275.0%2C179.2%20275.0%2C179.2%20250%20C179.2%20225.0%2C181.1%20225.0%2C181.1%20200%20C181.1%20175.0%2C179.4%20175.0%2C179.4%20150%20C179.4%20125.0%2C183.7%20125.0%2C183.7%20100%20C183.7%2075.0%2C182.5%2075.0%2C182.5%2050%20C182.5%2025.0%2C170.5%2025.0%2C170.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M211.6%200%20C211.6%2025.0%2C205.7%2025.0%2C205.7%2050%20C205.7%2075.0%2C211.3%2075.0%2C211.3%20100%20C211.3%20125.0%2C212.1%20125.0%2C212.1%20150%20C212.1%20175.0%2C210.7%20175.0%2C210.7%20200%20C210.7%20225.0%2C209.9%20225.0%2C209.9%20250%20C209.9%20275.0%2C207.0%20275.0%2C207.0%20300%20L213.5%20300%20C213.5%20275.0%2C215.2%20275.0%2C215.2%20250%20C215.2%20225.0%2C218.2%20225.0%2C218.2%20200%20C218.2%20175.0%2C220.4%20175.0%2C220.4%20150%20C220.4%20125.0%2C219.9%20125.0%2C219.9%20100%20C219.9%2075.0%2C213.7%2075.0%2C213.7%2050%20C213.7%2025.0%2C217.3%2025.0%2C217.3%200%20Z%27%2F%3E%3Cpath%20d%3D%27M236.7%200%20C236.7%2025.0%2C233.3%2025.0%2C233.3%2050%20C233.3%2075.0%2C227.7%2075.0%2C227.7%20100%20C227.7%20125.0%2C229.0%20125.0%2C229.0%20150%20C229.0%20175.0%2C234.2%20175.0%2C234.2%20200%20C234.2%20225.0%2C225.7%20225.0%2C225.7%20250%20C225.7%20275.0%2C236.0%20275.0%2C236.0%20300%20L255.1%20300%20C255.1%20275.0%2C258.1%20275.0%2C258.1%20250%20C258.1%20225.0%2C259.5%20225.0%2C259.5%20200%20C259.5%20175.0%2C253.2%20175.0%2C253.2%20150%20C253.2%20125.0%2C259.6%20125.0%2C259.6%20100%20C259.6%2075.0%2C262.4%2075.0%2C262.4%2050%20C262.4%2025.0%2C249.6%2025.0%2C249.6%200%20Z%27%2F%3E%3Cpath%20d%3D%27M284.2%200%20C284.2%2025.0%2C276.5%2025.0%2C276.5%2050%20C276.5%2075.0%2C285.6%2075.0%2C285.6%20100%20C285.6%20125.0%2C277.1%20125.0%2C277.1%20150%20C277.1%20175.0%2C282.6%20175.0%2C282.6%20200%20C282.6%20225.0%2C281.7%20225.0%2C281.7%20250%20C281.7%20275.0%2C279.7%20275.0%2C279.7%20300%20L286.9%20300%20C286.9%20275.0%2C293.5%20275.0%2C293.5%20250%20C293.5%20225.0%2C293.6%20225.0%2C293.6%20200%20C293.6%20175.0%2C285.4%20175.0%2C285.4%20150%20C285.4%20125.0%2C294.4%20125.0%2C294.4%20100%20C294.4%2075.0%2C288.0%2075.0%2C288.0%2050%20C288.0%2025.0%2C289.5%2025.0%2C289.5%200%20Z%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');background-size:300px 100%;background-repeat:repeat-x"></div>
+          </sc-if>
+
+          <div style="padding:30px 0 34px;background:#ffffff">
+            <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:0 20px;margin-bottom:16px">
+              <div>
+                <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,11,11,.45)">Galeria</span>
+                <h2 style="font-family:'Caprasimo',system-ui;font-size:30px;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:8px 0 0">A roda por dentro</h2>
+              </div>
+              <button onClick="{{ goGaleria }}" style="flex:none;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid rgba(11,11,11,.2);background:#ffffff;font-family:'Caprasimo',system-ui;font-size:13px;cursor:pointer" style-hover="background:#f4f2ee">Ver tudo</button>
+            </div>
+            <div class="zs" style="display:flex;gap:10px;overflow-x:auto;padding:0 20px 4px;scrollbar-width:none">
+              <div onClick="{{ goGaleria }}" style="position:relative;flex:none;width:230px;height:290px;border-radius:22px;overflow:hidden;background:#0b0b0b;cursor:pointer">
+                <div style="position:absolute;inset:0;filter:grayscale(1) contrast(1.12)">
+                  <image-slot id="cap-home-gal-1" src="fotos/roda-sede.jpg" shape="rect" fit="cover" placeholder="Roda na sede"></image-slot>
+                </div>
+                <span style="position:absolute;left:12px;bottom:12px;font-size:11px;font-weight:700;color:#ffffff;background:rgba(11,11,11,.7);padding:4px 10px;border-radius:999px">Roda na sede</span>
+              </div>
+              <div onClick="{{ goGaleria }}" style="flex:none;width:180px;height:290px;border-radius:22px;overflow:hidden;filter:grayscale(1) contrast(1.1);cursor:pointer">
+                <image-slot id="cap-home-gal-2" src="fotos/ecai_06.jpg" shape="rect" fit="cover" placeholder="Berimbaus"></image-slot>
+              </div>
+              <div onClick="{{ goGaleria }}" style="flex:none;width:180px;height:290px;border-radius:22px;overflow:hidden;filter:grayscale(1) contrast(1.1);cursor:pointer">
+                <image-slot id="cap-home-gal-3" src="fotos/ecai_03.jpg" shape="rect" fit="cover" placeholder="Aula na sede"></image-slot>
+              </div>
+              <div onClick="{{ goGaleria }}" style="flex:none;width:180px;height:290px;border-radius:22px;overflow:hidden;filter:grayscale(1) contrast(1.1);cursor:pointer">
+                <image-slot id="cap-home-gal-4" src="fotos/ecai_04.jpg" shape="rect" fit="cover" placeholder="Roda de rua"></image-slot>
+              </div>
+            </div>
+          </div>
+
+          <sc-if value="{{ showNextEvent }}" hint-placeholder-val="{{ true }}">
+          <div style="position:relative;padding:34px 20px 40px;background:#0b0b0b;color:#ffffff;overflow:hidden">
+            <div style="position:absolute;top:0;right:0;width:150px;height:100%;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20300%20300%27%20preserveAspectRatio%3D%27none%27%3E%3Cg%20fill%3D%27%23ffffff%27%20fill-opacity%3D%270.10%27%3E%3Cpath%20d%3D%27M17.3%200%20C17.3%2025.0%2C11.2%2025.0%2C11.2%2050%20C11.2%2075.0%2C13.4%2075.0%2C13.4%20100%20C13.4%20125.0%2C8.3%20125.0%2C8.3%20150%20C8.3%20175.0%2C15.3%20175.0%2C15.3%20200%20C15.3%20225.0%2C10.7%20225.0%2C10.7%20250%20C10.7%20275.0%2C20.9%20275.0%2C20.9%20300%20L26.3%20300%20C26.3%20275.0%2C29.0%20275.0%2C29.0%20250%20C29.0%20225.0%2C30.5%20225.0%2C30.5%20200%20C30.5%20175.0%2C27.3%20175.0%2C27.3%20150%20C27.3%20125.0%2C29.5%20125.0%2C29.5%20100%20C29.5%2075.0%2C25.1%2075.0%2C25.1%2050%20C25.1%2025.0%2C26.5%2025.0%2C26.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M54.5%200%20C54.5%2025.0%2C56.4%2025.0%2C56.4%2050%20C56.4%2075.0%2C54.6%2075.0%2C54.6%20100%20C54.6%20125.0%2C51.7%20125.0%2C51.7%20150%20C51.7%20175.0%2C57.5%20175.0%2C57.5%20200%20C57.5%20225.0%2C50.3%20225.0%2C50.3%20250%20C50.3%20275.0%2C59.2%20275.0%2C59.2%20300%20L65.9%20300%20C65.9%20275.0%2C58.1%20275.0%2C58.1%20250%20C58.1%20225.0%2C67.3%20225.0%2C67.3%20200%20C67.3%20175.0%2C57.9%20175.0%2C57.9%20150%20C57.9%20125.0%2C62.6%20125.0%2C62.6%20100%20C62.6%2075.0%2C63.0%2075.0%2C63.0%2050%20C63.0%2025.0%2C61.5%2025.0%2C61.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M84.3%200%20C84.3%2025.0%2C83.0%2025.0%2C83.0%2050%20C83.0%2075.0%2C73.8%2075.0%2C73.8%20100%20C73.8%20125.0%2C81.1%20125.0%2C81.1%20150%20C81.1%20175.0%2C81.5%20175.0%2C81.5%20200%20C81.5%20225.0%2C74.9%20225.0%2C74.9%20250%20C74.9%20275.0%2C84.8%20275.0%2C84.8%20300%20L96.2%20300%20C96.2%20275.0%2C102.2%20275.0%2C102.2%20250%20C102.2%20225.0%2C103.5%20225.0%2C103.5%20200%20C103.5%20175.0%2C101.9%20175.0%2C101.9%20150%20C101.9%20125.0%2C103.6%20125.0%2C103.6%20100%20C103.6%2075.0%2C104.4%2075.0%2C104.4%2050%20C104.4%2025.0%2C98.1%2025.0%2C98.1%200%20Z%27%2F%3E%3Cpath%20d%3D%27M129.2%200%20C129.2%2025.0%2C128.2%2025.0%2C128.2%2050%20C128.2%2075.0%2C132.5%2075.0%2C132.5%20100%20C132.5%20125.0%2C133.3%20125.0%2C133.3%20150%20C133.3%20175.0%2C134.1%20175.0%2C134.1%20200%20C134.1%20225.0%2C129.2%20225.0%2C129.2%20250%20C129.2%20275.0%2C135.4%20275.0%2C135.4%20300%20L139.6%20300%20C139.6%20275.0%2C139.5%20275.0%2C139.5%20250%20C139.5%20225.0%2C147.0%20225.0%2C147.0%20200%20C147.0%20175.0%2C144.7%20175.0%2C144.7%20150%20C144.7%20125.0%2C142.9%20125.0%2C142.9%20100%20C142.9%2075.0%2C142.5%2075.0%2C142.5%2050%20C142.5%2025.0%2C138.4%2025.0%2C138.4%200%20Z%27%2F%3E%3Cpath%20d%3D%27M160.4%200%20C160.4%2025.0%2C161.1%2025.0%2C161.1%2050%20C161.1%2075.0%2C165.4%2075.0%2C165.4%20100%20C165.4%20125.0%2C159.4%20125.0%2C159.4%20150%20C159.4%20175.0%2C157.7%20175.0%2C157.7%20200%20C157.7%20225.0%2C159.8%20225.0%2C159.8%20250%20C159.8%20275.0%2C163.5%20275.0%2C163.5%20300%20L171.8%20300%20C171.8%20275.0%2C179.2%20275.0%2C179.2%20250%20C179.2%20225.0%2C181.1%20225.0%2C181.1%20200%20C181.1%20175.0%2C179.4%20175.0%2C179.4%20150%20C179.4%20125.0%2C183.7%20125.0%2C183.7%20100%20C183.7%2075.0%2C182.5%2075.0%2C182.5%2050%20C182.5%2025.0%2C170.5%2025.0%2C170.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M211.6%200%20C211.6%2025.0%2C205.7%2025.0%2C205.7%2050%20C205.7%2075.0%2C211.3%2075.0%2C211.3%20100%20C211.3%20125.0%2C212.1%20125.0%2C212.1%20150%20C212.1%20175.0%2C210.7%20175.0%2C210.7%20200%20C210.7%20225.0%2C209.9%20225.0%2C209.9%20250%20C209.9%20275.0%2C207.0%20275.0%2C207.0%20300%20L213.5%20300%20C213.5%20275.0%2C215.2%20275.0%2C215.2%20250%20C215.2%20225.0%2C218.2%20225.0%2C218.2%20200%20C218.2%20175.0%2C220.4%20175.0%2C220.4%20150%20C220.4%20125.0%2C219.9%20125.0%2C219.9%20100%20C219.9%2075.0%2C213.7%2075.0%2C213.7%2050%20C213.7%2025.0%2C217.3%2025.0%2C217.3%200%20Z%27%2F%3E%3Cpath%20d%3D%27M236.7%200%20C236.7%2025.0%2C233.3%2025.0%2C233.3%2050%20C233.3%2075.0%2C227.7%2075.0%2C227.7%20100%20C227.7%20125.0%2C229.0%20125.0%2C229.0%20150%20C229.0%20175.0%2C234.2%20175.0%2C234.2%20200%20C234.2%20225.0%2C225.7%20225.0%2C225.7%20250%20C225.7%20275.0%2C236.0%20275.0%2C236.0%20300%20L255.1%20300%20C255.1%20275.0%2C258.1%20275.0%2C258.1%20250%20C258.1%20225.0%2C259.5%20225.0%2C259.5%20200%20C259.5%20175.0%2C253.2%20175.0%2C253.2%20150%20C253.2%20125.0%2C259.6%20125.0%2C259.6%20100%20C259.6%2075.0%2C262.4%2075.0%2C262.4%2050%20C262.4%2025.0%2C249.6%2025.0%2C249.6%200%20Z%27%2F%3E%3Cpath%20d%3D%27M284.2%200%20C284.2%2025.0%2C276.5%2025.0%2C276.5%2050%20C276.5%2075.0%2C285.6%2075.0%2C285.6%20100%20C285.6%20125.0%2C277.1%20125.0%2C277.1%20150%20C277.1%20175.0%2C282.6%20175.0%2C282.6%20200%20C282.6%20225.0%2C281.7%20225.0%2C281.7%20250%20C281.7%20275.0%2C279.7%20275.0%2C279.7%20300%20L286.9%20300%20C286.9%20275.0%2C293.5%20275.0%2C293.5%20250%20C293.5%20225.0%2C293.6%20225.0%2C293.6%20200%20C293.6%20175.0%2C285.4%20175.0%2C285.4%20150%20C285.4%20125.0%2C294.4%20125.0%2C294.4%20100%20C294.4%2075.0%2C288.0%2075.0%2C288.0%2050%20C288.0%2025.0%2C289.5%2025.0%2C289.5%200%20Z%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');background-size:300px 300px;background-repeat:repeat;pointer-events:none"></div>
+            <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#3f9b46">Próximo evento</span>
+            <h2 style="font-family:'Caprasimo',system-ui;font-size:31px;line-height:.98;letter-spacing:-.02em;text-transform:uppercase;margin:12px 0 8px;position:relative">6º Encontro de Culturas e Tradições Meu Patuá</h2>
+            <p style="position:relative;margin:0 0 16px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.75)">Quatro dias de Capoeira Angola, música, dança, memória, culturas tradicionais, ancestralidade, fundamento e festa.</p>
+            <div style="display:flex;gap:20px;margin-bottom:18px;position:relative">
+              <div>
+                <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:4px">Quando</div>
+                <div style="font-size:14.5px;font-weight:600">24–27 set · 2026</div>
+              </div>
+              <div>
+                <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:4px">Onde</div>
+                <div style="font-size:14.5px;font-weight:600">Sede ECAI · MUAFRO · Marco Zero</div>
+              </div>
+            </div>
+            <div style="height:430px;border-radius:20px;overflow:hidden;margin-bottom:18px">
+              <image-slot id="cap-home-evento" shape="rect" fit="cover" src="evento-meu-patua.png" placeholder="Cartaz do evento"></image-slot>
+            </div>
+            <div style="position:relative;display:flex;gap:8px;margin-bottom:18px">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjzM8gW7Ict5GXIi6GXk96bwQ7CyDNJfUXFH7hKTBZ0rbsOQ/viewform" target="_blank" style="font-size:12px;font-weight:600;padding:8px 13px;border-radius:999px;background:#3f9b46;color:#0b0b0b;text-decoration:none" style-hover="background:#34803a;color:#0b0b0b">Inscrições abertas</a>
+              <span style="font-size:12px;font-weight:600;padding:8px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.28)">R$ 100 completo</span>
+              <span style="font-size:12px;font-weight:600;padding:8px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.28)">R$ 50 diária</span>
+            </div>
+            <div style="display:flex;gap:10px">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjzM8gW7Ict5GXIi6GXk96bwQ7CyDNJfUXFH7hKTBZ0rbsOQ/viewform" target="_blank" style="flex:1;min-height:48px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#3f9b46;color:#0b0b0b;font-family:'Caprasimo',system-ui;font-size:14.5px;text-decoration:none" style-hover="background:#34803a;color:#0b0b0b">Quero me inscrever</a>
+              <button onClick="{{ goMestre }}" style="min-height:48px;padding:0 18px;border:1px solid rgba(255,255,255,.42);border-radius:999px;background:transparent;color:#ffffff;font-family:'Caprasimo',system-ui;font-size:14.5px;cursor:pointer" style-hover="background:rgba(255,255,255,.12)">O Mestre</button>
+            </div>
+          </div>
+
+          <div style="padding:34px 20px 8px;background:#ffffff">
+            <h2 style="font-family:'Caprasimo',system-ui;font-size:29px;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:0 0 20px">O que a roda ensina</h2>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <sc-for list="{{ pilares }}" as="p" hint-placeholder-count="3">
+                <div style="display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:20px;background:#f4f2ee">
+                  <div style="flex:none;width:38px;height:38px;border-radius:50%;background:#0b0b0b;color:#3f9b46;display:flex;align-items:center;justify-content:center;font-family:'Caprasimo',system-ui;font-size:15px">{{ p.n }}</div>
+                  <div>
+                    <div style="font-family:'Caprasimo',system-ui;font-size:17px;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:3px">{{ p.titulo }}</div>
+                    <div style="font-size:13.5px;line-height:1.5;color:rgba(11,11,11,.66)">{{ p.texto }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="padding:34px 20px 40px;background:#ffffff">
+            <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,11,11,.45)">Onde treinar</span>
+            <h2 style="font-family:'Caprasimo',system-ui;font-size:31px;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:10px 0 10px">Encontre um núcleo perto de você</h2>
+            <p style="margin:0 0 18px;font-size:14px;line-height:1.55;color:rgba(11,11,11,.66)">São ⟨5⟩ núcleos: Recife, Olinda, Cariri (CE), Ouro Preto (MG) e México. A primeira aula é sempre por nossa conta.</p>
+            <div style="display:flex;gap:8px;margin-bottom:16px">
+              <input class="input" placeholder="Sua cidade ou bairro" style="flex:1;min-height:48px;border-radius:999px;background:#f4f2ee;border:1px solid rgba(11,11,11,.16);padding:0 16px;font-size:14px;font-family:'Figtree',system-ui">
+              <button onClick="{{ goNucleos }}" style="width:48px;height:48px;border-radius:50%;border:0;background:#0b0b0b;color:#ffffff;cursor:pointer;font-size:15px" style-hover="background:#3a3a3a">→</button>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ chips }}" as="c" hint-placeholder-count="4">
+                <button onClick="{{ c.open }}" style="border:1px solid rgba(11,11,11,.18);background:#ffffff;border-radius:999px;padding:9px 15px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:'Figtree',system-ui" style-hover="border-color:#0b0b0b;background:#f4f2ee">{{ c.nome }}</button>
+              </sc-for>
+            </div>
+          </div>
+
+        </div>
+        </sc-if>
+
+        <!-- ================= MESTRE E FUNDADORES ================= -->
+        <sc-if value="{{ isMestre }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="padding:30px 20px 32px;background:#ffffff">
+            <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,11,11,.45)">A origem</span>
+            <h1 style="font-family:'Caprasimo',system-ui;font-size:40px;line-height:.94;letter-spacing:-.025em;text-transform:uppercase;margin:10px 0 14px">Mestre e fundadores</h1>
+            <p style="margin:0;font-size:14.5px;line-height:1.6;color:rgba(11,11,11,.7)">O grupo nasceu em ⟨19XX⟩, num terreiro de barro no bairro de ⟨Bairro⟩, quando Mestre Baygon e ⟨três⟩ alunos decidiram que a capoeira que aprenderam não podia parar neles.</p>
+          </div>
+
+          <div style="position:relative;background:#0b0b0b;color:#ffffff;overflow:hidden">
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+              <img src="logo-ife.jpg" alt="" style="width:300px;height:300px;border-radius:50%;object-fit:cover;filter:grayscale(1) invert(1) contrast(1.1);opacity:.14">
+            </div>
+            <div style="position:relative;padding:28px 20px 34px">
+              <div style="height:420px;border-radius:24px;overflow:hidden;filter:grayscale(1) contrast(1.15);margin-bottom:20px">
+                <image-slot id="cap-mestre-foto" src="fotos/mestre.jpg" shape="rect" fit="cover" placeholder="Foto de destaque do Mestre"></image-slot>
+              </div>
+              <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#3f9b46">Fundador · Mestre</span>
+              <h2 style="font-family:'Caprasimo',system-ui;font-size:36px;line-height:.98;letter-spacing:-.02em;text-transform:uppercase;margin:10px 0 6px">Mestre Baygon</h2>
+              <div style="font-size:13px;color:rgba(255,255,255,.55);margin-bottom:16px">⟨Nome completo⟩ · ⟨Cidade⟩, ⟨19XX⟩</div>
+              <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.8);margin:0 0 12px">Começou a jogar aos ⟨9⟩ anos, na roda de rua do ⟨Mercado⟩. Formou-se mestre em ⟨19XX⟩ pelas mãos de ⟨Mestre X⟩ e desde então guia o grupo com a mesma ideia: quem aprende, ensina.</p>
+              <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.8);margin:0 0 20px">Hoje toca berimbau, dá aula às terças e diz que o melhor lugar da roda é o pé do berimbau, ouvindo.</p>
+              <div style="height:230px;border-radius:22px;overflow:hidden;filter:grayscale(1) contrast(1.12)">
+                <image-slot id="cap-mestre-foto-2" src="fotos/roda-sede.jpg" shape="rect" fit="cover" placeholder="Roda na sede"></image-slot>
+              </div>
+              <div style="font-size:12px;color:rgba(255,255,255,.5);margin:10px 0 22px">Roda na sede, Rua da União, 287</div>
+              <div style="padding:18px;border-radius:20px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04)">
+                <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px">Linhagem</div>
+                <div style="display:flex;flex-direction:column;gap:0">
+                  <sc-for list="{{ linhagem }}" as="l" hint-placeholder-count="4">
+                    <div style="display:flex;align-items:center;gap:12px;padding:7px 0">
+                      <span style="flex:none;width:9px;height:9px;border-radius:50%;background:#3f9b46"></span>
+                      <span style="font-size:14px;font-weight:600">{{ l.nome }}</span>
+                      <span style="font-size:12px;color:rgba(255,255,255,.45)">{{ l.nota }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <sc-if value="{{ stripes }}" hint-placeholder-val="{{ true }}">
+            <div style="height:26px;background:#ffffff;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20300%20300%27%20preserveAspectRatio%3D%27none%27%3E%3Cg%20fill%3D%27%230b0b0b%27%20fill-opacity%3D%271%27%3E%3Cpath%20d%3D%27M17.3%200%20C17.3%2025.0%2C11.2%2025.0%2C11.2%2050%20C11.2%2075.0%2C13.4%2075.0%2C13.4%20100%20C13.4%20125.0%2C8.3%20125.0%2C8.3%20150%20C8.3%20175.0%2C15.3%20175.0%2C15.3%20200%20C15.3%20225.0%2C10.7%20225.0%2C10.7%20250%20C10.7%20275.0%2C20.9%20275.0%2C20.9%20300%20L26.3%20300%20C26.3%20275.0%2C29.0%20275.0%2C29.0%20250%20C29.0%20225.0%2C30.5%20225.0%2C30.5%20200%20C30.5%20175.0%2C27.3%20175.0%2C27.3%20150%20C27.3%20125.0%2C29.5%20125.0%2C29.5%20100%20C29.5%2075.0%2C25.1%2075.0%2C25.1%2050%20C25.1%2025.0%2C26.5%2025.0%2C26.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M54.5%200%20C54.5%2025.0%2C56.4%2025.0%2C56.4%2050%20C56.4%2075.0%2C54.6%2075.0%2C54.6%20100%20C54.6%20125.0%2C51.7%20125.0%2C51.7%20150%20C51.7%20175.0%2C57.5%20175.0%2C57.5%20200%20C57.5%20225.0%2C50.3%20225.0%2C50.3%20250%20C50.3%20275.0%2C59.2%20275.0%2C59.2%20300%20L65.9%20300%20C65.9%20275.0%2C58.1%20275.0%2C58.1%20250%20C58.1%20225.0%2C67.3%20225.0%2C67.3%20200%20C67.3%20175.0%2C57.9%20175.0%2C57.9%20150%20C57.9%20125.0%2C62.6%20125.0%2C62.6%20100%20C62.6%2075.0%2C63.0%2075.0%2C63.0%2050%20C63.0%2025.0%2C61.5%2025.0%2C61.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M84.3%200%20C84.3%2025.0%2C83.0%2025.0%2C83.0%2050%20C83.0%2075.0%2C73.8%2075.0%2C73.8%20100%20C73.8%20125.0%2C81.1%20125.0%2C81.1%20150%20C81.1%20175.0%2C81.5%20175.0%2C81.5%20200%20C81.5%20225.0%2C74.9%20225.0%2C74.9%20250%20C74.9%20275.0%2C84.8%20275.0%2C84.8%20300%20L96.2%20300%20C96.2%20275.0%2C102.2%20275.0%2C102.2%20250%20C102.2%20225.0%2C103.5%20225.0%2C103.5%20200%20C103.5%20175.0%2C101.9%20175.0%2C101.9%20150%20C101.9%20125.0%2C103.6%20125.0%2C103.6%20100%20C103.6%2075.0%2C104.4%2075.0%2C104.4%2050%20C104.4%2025.0%2C98.1%2025.0%2C98.1%200%20Z%27%2F%3E%3Cpath%20d%3D%27M129.2%200%20C129.2%2025.0%2C128.2%2025.0%2C128.2%2050%20C128.2%2075.0%2C132.5%2075.0%2C132.5%20100%20C132.5%20125.0%2C133.3%20125.0%2C133.3%20150%20C133.3%20175.0%2C134.1%20175.0%2C134.1%20200%20C134.1%20225.0%2C129.2%20225.0%2C129.2%20250%20C129.2%20275.0%2C135.4%20275.0%2C135.4%20300%20L139.6%20300%20C139.6%20275.0%2C139.5%20275.0%2C139.5%20250%20C139.5%20225.0%2C147.0%20225.0%2C147.0%20200%20C147.0%20175.0%2C144.7%20175.0%2C144.7%20150%20C144.7%20125.0%2C142.9%20125.0%2C142.9%20100%20C142.9%2075.0%2C142.5%2075.0%2C142.5%2050%20C142.5%2025.0%2C138.4%2025.0%2C138.4%200%20Z%27%2F%3E%3Cpath%20d%3D%27M160.4%200%20C160.4%2025.0%2C161.1%2025.0%2C161.1%2050%20C161.1%2075.0%2C165.4%2075.0%2C165.4%20100%20C165.4%20125.0%2C159.4%20125.0%2C159.4%20150%20C159.4%20175.0%2C157.7%20175.0%2C157.7%20200%20C157.7%20225.0%2C159.8%20225.0%2C159.8%20250%20C159.8%20275.0%2C163.5%20275.0%2C163.5%20300%20L171.8%20300%20C171.8%20275.0%2C179.2%20275.0%2C179.2%20250%20C179.2%20225.0%2C181.1%20225.0%2C181.1%20200%20C181.1%20175.0%2C179.4%20175.0%2C179.4%20150%20C179.4%20125.0%2C183.7%20125.0%2C183.7%20100%20C183.7%2075.0%2C182.5%2075.0%2C182.5%2050%20C182.5%2025.0%2C170.5%2025.0%2C170.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M211.6%200%20C211.6%2025.0%2C205.7%2025.0%2C205.7%2050%20C205.7%2075.0%2C211.3%2075.0%2C211.3%20100%20C211.3%20125.0%2C212.1%20125.0%2C212.1%20150%20C212.1%20175.0%2C210.7%20175.0%2C210.7%20200%20C210.7%20225.0%2C209.9%20225.0%2C209.9%20250%20C209.9%20275.0%2C207.0%20275.0%2C207.0%20300%20L213.5%20300%20C213.5%20275.0%2C215.2%20275.0%2C215.2%20250%20C215.2%20225.0%2C218.2%20225.0%2C218.2%20200%20C218.2%20175.0%2C220.4%20175.0%2C220.4%20150%20C220.4%20125.0%2C219.9%20125.0%2C219.9%20100%20C219.9%2075.0%2C213.7%2075.0%2C213.7%2050%20C213.7%2025.0%2C217.3%2025.0%2C217.3%200%20Z%27%2F%3E%3Cpath%20d%3D%27M236.7%200%20C236.7%2025.0%2C233.3%2025.0%2C233.3%2050%20C233.3%2075.0%2C227.7%2075.0%2C227.7%20100%20C227.7%20125.0%2C229.0%20125.0%2C229.0%20150%20C229.0%20175.0%2C234.2%20175.0%2C234.2%20200%20C234.2%20225.0%2C225.7%20225.0%2C225.7%20250%20C225.7%20275.0%2C236.0%20275.0%2C236.0%20300%20L255.1%20300%20C255.1%20275.0%2C258.1%20275.0%2C258.1%20250%20C258.1%20225.0%2C259.5%20225.0%2C259.5%20200%20C259.5%20175.0%2C253.2%20175.0%2C253.2%20150%20C253.2%20125.0%2C259.6%20125.0%2C259.6%20100%20C259.6%2075.0%2C262.4%2075.0%2C262.4%2050%20C262.4%2025.0%2C249.6%2025.0%2C249.6%200%20Z%27%2F%3E%3Cpath%20d%3D%27M284.2%200%20C284.2%2025.0%2C276.5%2025.0%2C276.5%2050%20C276.5%2075.0%2C285.6%2075.0%2C285.6%20100%20C285.6%20125.0%2C277.1%20125.0%2C277.1%20150%20C277.1%20175.0%2C282.6%20175.0%2C282.6%20200%20C282.6%20225.0%2C281.7%20225.0%2C281.7%20250%20C281.7%20275.0%2C279.7%20275.0%2C279.7%20300%20L286.9%20300%20C286.9%20275.0%2C293.5%20275.0%2C293.5%20250%20C293.5%20225.0%2C293.6%20225.0%2C293.6%20200%20C293.6%20175.0%2C285.4%20175.0%2C285.4%20150%20C285.4%20125.0%2C294.4%20125.0%2C294.4%20100%20C294.4%2075.0%2C288.0%2075.0%2C288.0%2050%20C288.0%2025.0%2C289.5%2025.0%2C289.5%200%20Z%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');background-size:300px 100%;background-repeat:repeat-x"></div>
+          </sc-if>
+
+          <div style="padding:32px 20px;background:#ffffff">
+            <h2 style="font-family:'Caprasimo',system-ui;font-size:29px;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:0 0 6px">Os fundadores</h2>
+            <p style="margin:0 0 20px;font-size:13.5px;color:rgba(11,11,11,.6)">Quem estava lá no primeiro dia.</p>
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <sc-for list="{{ fundadores }}" as="f" hint-placeholder-count="3">
+                <div style="border-radius:22px;overflow:hidden;background:#f4f2ee">
+                  <div style="height:210px;filter:grayscale(1) contrast(1.1)">
+                    <image-slot id="{{ f.slot }}" src="{{ f.foto }}" shape="rect" fit="cover" placeholder="Foto do fundador"></image-slot>
+                  </div>
+                  <div style="padding:16px 16px 18px">
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+                      <span style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;background:#0b0b0b;color:#3f9b46;padding:4px 9px;border-radius:999px">{{ f.papel }}</span>
+                    </div>
+                    <div style="font-family:'Caprasimo',system-ui;font-size:22px;text-transform:uppercase;letter-spacing:-.02em;line-height:1;margin-bottom:6px">{{ f.apelido }}</div>
+                    <div style="font-size:12px;color:rgba(11,11,11,.5);margin-bottom:10px">{{ f.nome }}</div>
+                    <div style="font-size:13.5px;line-height:1.55;color:rgba(11,11,11,.7)">{{ f.trajetoria }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="padding:34px 20px 36px;background:#0b0b0b;color:#ffffff">
+            <h2 style="font-family:'Caprasimo',system-ui;font-size:29px;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:0 0 22px">Linha do tempo</h2>
+            <div style="display:flex;flex-direction:column">
+              <sc-for list="{{ marcos }}" as="m" hint-placeholder-count="5">
+                <div style="display:flex;gap:16px">
+                  <div style="flex:none;width:56px;text-align:right;font-family:'Caprasimo',system-ui;font-size:16px;color:#3f9b46;padding-top:1px">{{ m.ano }}</div>
+                  <div style="flex:none;width:1px;background:rgba(255,255,255,.22);position:relative">
+                    <span style="position:absolute;top:4px;left:-4px;width:9px;height:9px;border-radius:50%;background:#ffffff"></span>
+                  </div>
+                  <div style="padding:0 0 26px 0">
+                    <div style="font-size:15px;font-weight:700;margin-bottom:4px">{{ m.titulo }}</div>
+                    <div style="font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.62)">{{ m.texto }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="padding:32px 20px 36px;background:#ffffff">
+            <h2 style="font-family:'Caprasimo',system-ui;font-size:27px;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:0 0 16px">Galeria histórica</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px">
+              <div style="grid-column:span 2;height:180px;border-radius:18px;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-hist-1" src="fotos/ecai_2.jpg" shape="rect" fit="cover" placeholder="Roda, anos ⟨80⟩"></image-slot>
+              </div>
+              <div style="height:130px;border-radius:18px;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-hist-2" src="fotos/ecai_05.jpg" shape="rect" fit="cover" placeholder="Primeiro batizado"></image-slot>
+              </div>
+              <div style="height:130px;border-radius:18px;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-hist-3" src="fotos/ecai_09.jpg" shape="rect" fit="cover" placeholder="Sede antiga"></image-slot>
+              </div>
+            </div>
+            <div style="padding:22px;border-radius:24px;background:#f4f2ee;border-left:none">
+              <div style="font-family:'Caprasimo',system-ui;font-size:40px;line-height:.6;color:#3f9b46">“</div>
+              <p style="margin:8px 0 14px;font-size:16px;line-height:1.5;font-weight:500">Entrei com ⟨12⟩ anos só pra brincar. Vinte anos depois, é onde aprendi a ouvir e a levantar do chão.</p>
+              <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(11,11,11,.5)">⟨Apelido⟩ · aluna desde ⟨2006⟩</div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- ================= NÚCLEOS ================= -->
+        <sc-if value="{{ isNucleos }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="padding:30px 20px 24px;background:#ffffff">
+            <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,11,11,.45)">Onde estamos</span>
+            <h1 style="font-family:'Caprasimo',system-ui;font-size:42px;line-height:.94;letter-spacing:-.025em;text-transform:uppercase;margin:10px 0 12px">Nossos núcleos</h1>
+            <p style="margin:0;font-size:14.5px;line-height:1.6;color:rgba(11,11,11,.7)">Cada núcleo tem seu professor, seus horários e sua roda. Todos com a mesma raiz.</p>
+          </div>
+
+          <div style="position:relative;height:250px;background:#0b0b0b;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20300%20300%27%20preserveAspectRatio%3D%27none%27%3E%3Cg%20fill%3D%27%23ffffff%27%20fill-opacity%3D%270.08%27%3E%3Cpath%20d%3D%27M17.3%200%20C17.3%2025.0%2C11.2%2025.0%2C11.2%2050%20C11.2%2075.0%2C13.4%2075.0%2C13.4%20100%20C13.4%20125.0%2C8.3%20125.0%2C8.3%20150%20C8.3%20175.0%2C15.3%20175.0%2C15.3%20200%20C15.3%20225.0%2C10.7%20225.0%2C10.7%20250%20C10.7%20275.0%2C20.9%20275.0%2C20.9%20300%20L26.3%20300%20C26.3%20275.0%2C29.0%20275.0%2C29.0%20250%20C29.0%20225.0%2C30.5%20225.0%2C30.5%20200%20C30.5%20175.0%2C27.3%20175.0%2C27.3%20150%20C27.3%20125.0%2C29.5%20125.0%2C29.5%20100%20C29.5%2075.0%2C25.1%2075.0%2C25.1%2050%20C25.1%2025.0%2C26.5%2025.0%2C26.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M54.5%200%20C54.5%2025.0%2C56.4%2025.0%2C56.4%2050%20C56.4%2075.0%2C54.6%2075.0%2C54.6%20100%20C54.6%20125.0%2C51.7%20125.0%2C51.7%20150%20C51.7%20175.0%2C57.5%20175.0%2C57.5%20200%20C57.5%20225.0%2C50.3%20225.0%2C50.3%20250%20C50.3%20275.0%2C59.2%20275.0%2C59.2%20300%20L65.9%20300%20C65.9%20275.0%2C58.1%20275.0%2C58.1%20250%20C58.1%20225.0%2C67.3%20225.0%2C67.3%20200%20C67.3%20175.0%2C57.9%20175.0%2C57.9%20150%20C57.9%20125.0%2C62.6%20125.0%2C62.6%20100%20C62.6%2075.0%2C63.0%2075.0%2C63.0%2050%20C63.0%2025.0%2C61.5%2025.0%2C61.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M84.3%200%20C84.3%2025.0%2C83.0%2025.0%2C83.0%2050%20C83.0%2075.0%2C73.8%2075.0%2C73.8%20100%20C73.8%20125.0%2C81.1%20125.0%2C81.1%20150%20C81.1%20175.0%2C81.5%20175.0%2C81.5%20200%20C81.5%20225.0%2C74.9%20225.0%2C74.9%20250%20C74.9%20275.0%2C84.8%20275.0%2C84.8%20300%20L96.2%20300%20C96.2%20275.0%2C102.2%20275.0%2C102.2%20250%20C102.2%20225.0%2C103.5%20225.0%2C103.5%20200%20C103.5%20175.0%2C101.9%20175.0%2C101.9%20150%20C101.9%20125.0%2C103.6%20125.0%2C103.6%20100%20C103.6%2075.0%2C104.4%2075.0%2C104.4%2050%20C104.4%2025.0%2C98.1%2025.0%2C98.1%200%20Z%27%2F%3E%3Cpath%20d%3D%27M129.2%200%20C129.2%2025.0%2C128.2%2025.0%2C128.2%2050%20C128.2%2075.0%2C132.5%2075.0%2C132.5%20100%20C132.5%20125.0%2C133.3%20125.0%2C133.3%20150%20C133.3%20175.0%2C134.1%20175.0%2C134.1%20200%20C134.1%20225.0%2C129.2%20225.0%2C129.2%20250%20C129.2%20275.0%2C135.4%20275.0%2C135.4%20300%20L139.6%20300%20C139.6%20275.0%2C139.5%20275.0%2C139.5%20250%20C139.5%20225.0%2C147.0%20225.0%2C147.0%20200%20C147.0%20175.0%2C144.7%20175.0%2C144.7%20150%20C144.7%20125.0%2C142.9%20125.0%2C142.9%20100%20C142.9%2075.0%2C142.5%2075.0%2C142.5%2050%20C142.5%2025.0%2C138.4%2025.0%2C138.4%200%20Z%27%2F%3E%3Cpath%20d%3D%27M160.4%200%20C160.4%2025.0%2C161.1%2025.0%2C161.1%2050%20C161.1%2075.0%2C165.4%2075.0%2C165.4%20100%20C165.4%20125.0%2C159.4%20125.0%2C159.4%20150%20C159.4%20175.0%2C157.7%20175.0%2C157.7%20200%20C157.7%20225.0%2C159.8%20225.0%2C159.8%20250%20C159.8%20275.0%2C163.5%20275.0%2C163.5%20300%20L171.8%20300%20C171.8%20275.0%2C179.2%20275.0%2C179.2%20250%20C179.2%20225.0%2C181.1%20225.0%2C181.1%20200%20C181.1%20175.0%2C179.4%20175.0%2C179.4%20150%20C179.4%20125.0%2C183.7%20125.0%2C183.7%20100%20C183.7%2075.0%2C182.5%2075.0%2C182.5%2050%20C182.5%2025.0%2C170.5%2025.0%2C170.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M211.6%200%20C211.6%2025.0%2C205.7%2025.0%2C205.7%2050%20C205.7%2075.0%2C211.3%2075.0%2C211.3%20100%20C211.3%20125.0%2C212.1%20125.0%2C212.1%20150%20C212.1%20175.0%2C210.7%20175.0%2C210.7%20200%20C210.7%20225.0%2C209.9%20225.0%2C209.9%20250%20C209.9%20275.0%2C207.0%20275.0%2C207.0%20300%20L213.5%20300%20C213.5%20275.0%2C215.2%20275.0%2C215.2%20250%20C215.2%20225.0%2C218.2%20225.0%2C218.2%20200%20C218.2%20175.0%2C220.4%20175.0%2C220.4%20150%20C220.4%20125.0%2C219.9%20125.0%2C219.9%20100%20C219.9%2075.0%2C213.7%2075.0%2C213.7%2050%20C213.7%2025.0%2C217.3%2025.0%2C217.3%200%20Z%27%2F%3E%3Cpath%20d%3D%27M236.7%200%20C236.7%2025.0%2C233.3%2025.0%2C233.3%2050%20C233.3%2075.0%2C227.7%2075.0%2C227.7%20100%20C227.7%20125.0%2C229.0%20125.0%2C229.0%20150%20C229.0%20175.0%2C234.2%20175.0%2C234.2%20200%20C234.2%20225.0%2C225.7%20225.0%2C225.7%20250%20C225.7%20275.0%2C236.0%20275.0%2C236.0%20300%20L255.1%20300%20C255.1%20275.0%2C258.1%20275.0%2C258.1%20250%20C258.1%20225.0%2C259.5%20225.0%2C259.5%20200%20C259.5%20175.0%2C253.2%20175.0%2C253.2%20150%20C253.2%20125.0%2C259.6%20125.0%2C259.6%20100%20C259.6%2075.0%2C262.4%2075.0%2C262.4%2050%20C262.4%2025.0%2C249.6%2025.0%2C249.6%200%20Z%27%2F%3E%3Cpath%20d%3D%27M284.2%200%20C284.2%2025.0%2C276.5%2025.0%2C276.5%2050%20C276.5%2075.0%2C285.6%2075.0%2C285.6%20100%20C285.6%20125.0%2C277.1%20125.0%2C277.1%20150%20C277.1%20175.0%2C282.6%20175.0%2C282.6%20200%20C282.6%20225.0%2C281.7%20225.0%2C281.7%20250%20C281.7%20275.0%2C279.7%20275.0%2C279.7%20300%20L286.9%20300%20C286.9%20275.0%2C293.5%20275.0%2C293.5%20250%20C293.5%20225.0%2C293.6%20225.0%2C293.6%20200%20C293.6%20175.0%2C285.4%20175.0%2C285.4%20150%20C285.4%20125.0%2C294.4%20125.0%2C294.4%20100%20C294.4%2075.0%2C288.0%2075.0%2C288.0%2050%20C288.0%2025.0%2C289.5%2025.0%2C289.5%200%20Z%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');background-size:300px 300px;background-repeat:repeat">
+            <span style="position:absolute;top:14px;left:16px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4)">Mapa · placeholder</span>
+            <sc-for list="{{ pins }}" as="pin" hint-placeholder-count="5">
+              <div onClick="{{ pin.open }}" style="position:absolute;transform:translate(-50%,-100%);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;left:{{ pin.x }};top:{{ pin.y }}">
+                <span style="font-size:10px;font-weight:700;color:#ffffff;background:rgba(11,11,11,.7);padding:2px 6px;border-radius:999px;white-space:nowrap">{{ pin.nome }}</span>
+                <span style="width:14px;height:14px;border-radius:50%;background:#3f9b46;border:2px solid #0b0b0b"></span>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="padding:26px 20px 34px;background:#ffffff">
+            <div onClick="{{ openSede }}" style="border-radius:24px;background:#0b0b0b;color:#ffffff;overflow:hidden;margin-bottom:22px;cursor:pointer">
+              <div style="height:170px;filter:grayscale(1) contrast(1.12)">
+                <image-slot id="cap-sede-foto" src="fotos/ecai_05.jpg" shape="rect" fit="cover" placeholder="Foto da sede em Recife"></image-slot>
+              </div>
+              <div style="padding:18px 18px 20px">
+                <span style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#0b0b0b;background:#3f9b46;padding:4px 9px;border-radius:999px">Sede principal</span>
+                <div style="font-family:'Caprasimo',system-ui;font-size:26px;text-transform:uppercase;letter-spacing:-.02em;margin:12px 0 6px">Recife · ⟨Bairro⟩</div>
+                <div style="font-size:13.5px;color:rgba(255,255,255,.62);margin-bottom:14px">Rua da União, 287 — Recife/PE · Mestre Baygon</div>
+                <div style="display:inline-flex;align-items:center;gap:8px;font-family:'Caprasimo',system-ui;font-size:14px;color:#3f9b46">Ver núcleo →</div>
+              </div>
+            </div>
+
+            <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:12px">Todos os núcleos</div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <sc-for list="{{ nucleos }}" as="n" hint-placeholder-count="6">
+                <div onClick="{{ n.open }}" style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:20px;background:#f4f2ee;cursor:pointer" style-hover="background:#e9e5dd">
+                  <div style="flex:none;width:44px;height:44px;border-radius:50%;background:#0b0b0b;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Caprasimo',system-ui;font-size:14px">{{ n.sigla }}</div>
+                  <div style="flex:1;min-width:0">
+                    <div style="font-size:15.5px;font-weight:700;line-height:1.2">{{ n.nome }}</div>
+                    <div style="font-size:12.5px;color:rgba(11,11,11,.55);margin-top:2px">{{ n.resumo }}</div>
+                  </div>
+                  <span style="font-size:16px;color:rgba(11,11,11,.4)">→</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- ================= NÚCLEO (DETALHE) ================= -->
+        <sc-if value="{{ isNucleo }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="position:relative;height:280px;background:#0b0b0b">
+            <div style="position:absolute;inset:0;filter:grayscale(1) contrast(1.12)">
+              <image-slot id="cap-nucleo-hero" src="fotos/ecai11.jpg" shape="rect" fit="cover" placeholder="Foto do núcleo"></image-slot>
+            </div>
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,11,.6) 0%,rgba(11,11,11,.1) 40%,rgba(11,11,11,.92) 100%);pointer-events:none"></div>
+            <button onClick="{{ goNucleos }}" style="position:absolute;top:16px;left:16px;height:38px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(11,11,11,.45);color:#ffffff;font-size:12.5px;font-weight:600;cursor:pointer;font-family:'Figtree',system-ui" style-hover="background:rgba(11,11,11,.75)">← Núcleos</button>
+            <div style="position:absolute;left:20px;right:20px;bottom:20px;color:#ffffff;pointer-events:none">
+              <span style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#0b0b0b;background:#3f9b46;padding:4px 9px;border-radius:999px">{{ nucleoTag }}</span>
+              <h1 style="font-family:'Caprasimo',system-ui;font-size:34px;line-height:.98;letter-spacing:-.02em;text-transform:uppercase;margin:12px 0 4px">{{ nucleoNome }}</h1>
+              <div style="font-size:13px;color:rgba(255,255,255,.7)">{{ nucleoEndereco }}</div>
+            </div>
+          </div>
+
+          <div style="padding:24px 20px 30px;background:#ffffff">
+            <div style="display:flex;gap:10px;margin-bottom:24px">
+              <button style="flex:1;min-height:50px;border:0;border-radius:999px;background:#3f9b46;color:#0b0b0b;font-family:'Caprasimo',system-ui;font-size:14.5px;cursor:pointer" style-hover="background:#34803a">WhatsApp do núcleo</button>
+              <button style="width:50px;height:50px;border-radius:50%;border:1px solid rgba(11,11,11,.2);background:#ffffff;cursor:pointer;font-size:16px" style-hover="background:#f4f2ee">↗</button>
+            </div>
+
+            <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:12px">Horários</div>
+            <div style="border-radius:20px;overflow:hidden;border:1px solid rgba(11,11,11,.12);margin-bottom:26px">
+              <sc-for list="{{ horarios }}" as="h" hint-placeholder-count="4">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px;border-bottom:1px solid rgba(11,11,11,.08);background:{{ h.bg }}">
+                  <div>
+                    <div style="font-size:14.5px;font-weight:700">{{ h.dia }}</div>
+                    <div style="font-size:12.5px;color:rgba(11,11,11,.55)">{{ h.turma }}</div>
+                  </div>
+                  <div style="font-family:'Caprasimo',system-ui;font-size:15px">{{ h.hora }}</div>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="display:flex;gap:14px;align-items:center;padding:16px;border-radius:22px;background:#f4f2ee;margin-bottom:26px">
+              <div style="flex:none;width:64px;height:64px;border-radius:50%;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-nucleo-prof" src="fotos/ecai_07.jpg" shape="circle" fit="cover" placeholder="Prof."></image-slot>
+              </div>
+              <div>
+                <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(11,11,11,.5);margin-bottom:3px">Professor responsável</div>
+                <div style="font-family:'Caprasimo',system-ui;font-size:19px;text-transform:uppercase;letter-spacing:-.01em">{{ nucleoProf }}</div>
+                <div style="font-size:12.5px;color:rgba(11,11,11,.58)">Corda ⟨cor⟩ · desde ⟨20XX⟩</div>
+              </div>
+            </div>
+
+            <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:12px">Fotos do núcleo</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div style="height:140px;border-radius:18px;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-nucleo-f1" src="fotos/ecai_1.jpg" shape="rect" fit="cover" placeholder="Treino"></image-slot>
+              </div>
+              <div style="height:140px;border-radius:18px;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-nucleo-f2" src="fotos/ecai_06.jpg" shape="rect" fit="cover" placeholder="Roda"></image-slot>
+              </div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- ================= AULAS ================= -->
+        <sc-if value="{{ isAulas }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="padding:30px 20px 26px;background:#0b0b0b;color:#ffffff;position:relative;overflow:hidden">
+            <div style="position:absolute;inset:0;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20300%20300%27%20preserveAspectRatio%3D%27none%27%3E%3Cg%20fill%3D%27%23ffffff%27%20fill-opacity%3D%270.07%27%3E%3Cpath%20d%3D%27M17.3%200%20C17.3%2025.0%2C11.2%2025.0%2C11.2%2050%20C11.2%2075.0%2C13.4%2075.0%2C13.4%20100%20C13.4%20125.0%2C8.3%20125.0%2C8.3%20150%20C8.3%20175.0%2C15.3%20175.0%2C15.3%20200%20C15.3%20225.0%2C10.7%20225.0%2C10.7%20250%20C10.7%20275.0%2C20.9%20275.0%2C20.9%20300%20L26.3%20300%20C26.3%20275.0%2C29.0%20275.0%2C29.0%20250%20C29.0%20225.0%2C30.5%20225.0%2C30.5%20200%20C30.5%20175.0%2C27.3%20175.0%2C27.3%20150%20C27.3%20125.0%2C29.5%20125.0%2C29.5%20100%20C29.5%2075.0%2C25.1%2075.0%2C25.1%2050%20C25.1%2025.0%2C26.5%2025.0%2C26.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M54.5%200%20C54.5%2025.0%2C56.4%2025.0%2C56.4%2050%20C56.4%2075.0%2C54.6%2075.0%2C54.6%20100%20C54.6%20125.0%2C51.7%20125.0%2C51.7%20150%20C51.7%20175.0%2C57.5%20175.0%2C57.5%20200%20C57.5%20225.0%2C50.3%20225.0%2C50.3%20250%20C50.3%20275.0%2C59.2%20275.0%2C59.2%20300%20L65.9%20300%20C65.9%20275.0%2C58.1%20275.0%2C58.1%20250%20C58.1%20225.0%2C67.3%20225.0%2C67.3%20200%20C67.3%20175.0%2C57.9%20175.0%2C57.9%20150%20C57.9%20125.0%2C62.6%20125.0%2C62.6%20100%20C62.6%2075.0%2C63.0%2075.0%2C63.0%2050%20C63.0%2025.0%2C61.5%2025.0%2C61.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M84.3%200%20C84.3%2025.0%2C83.0%2025.0%2C83.0%2050%20C83.0%2075.0%2C73.8%2075.0%2C73.8%20100%20C73.8%20125.0%2C81.1%20125.0%2C81.1%20150%20C81.1%20175.0%2C81.5%20175.0%2C81.5%20200%20C81.5%20225.0%2C74.9%20225.0%2C74.9%20250%20C74.9%20275.0%2C84.8%20275.0%2C84.8%20300%20L96.2%20300%20C96.2%20275.0%2C102.2%20275.0%2C102.2%20250%20C102.2%20225.0%2C103.5%20225.0%2C103.5%20200%20C103.5%20175.0%2C101.9%20175.0%2C101.9%20150%20C101.9%20125.0%2C103.6%20125.0%2C103.6%20100%20C103.6%2075.0%2C104.4%2075.0%2C104.4%2050%20C104.4%2025.0%2C98.1%2025.0%2C98.1%200%20Z%27%2F%3E%3Cpath%20d%3D%27M129.2%200%20C129.2%2025.0%2C128.2%2025.0%2C128.2%2050%20C128.2%2075.0%2C132.5%2075.0%2C132.5%20100%20C132.5%20125.0%2C133.3%20125.0%2C133.3%20150%20C133.3%20175.0%2C134.1%20175.0%2C134.1%20200%20C134.1%20225.0%2C129.2%20225.0%2C129.2%20250%20C129.2%20275.0%2C135.4%20275.0%2C135.4%20300%20L139.6%20300%20C139.6%20275.0%2C139.5%20275.0%2C139.5%20250%20C139.5%20225.0%2C147.0%20225.0%2C147.0%20200%20C147.0%20175.0%2C144.7%20175.0%2C144.7%20150%20C144.7%20125.0%2C142.9%20125.0%2C142.9%20100%20C142.9%2075.0%2C142.5%2075.0%2C142.5%2050%20C142.5%2025.0%2C138.4%2025.0%2C138.4%200%20Z%27%2F%3E%3Cpath%20d%3D%27M160.4%200%20C160.4%2025.0%2C161.1%2025.0%2C161.1%2050%20C161.1%2075.0%2C165.4%2075.0%2C165.4%20100%20C165.4%20125.0%2C159.4%20125.0%2C159.4%20150%20C159.4%20175.0%2C157.7%20175.0%2C157.7%20200%20C157.7%20225.0%2C159.8%20225.0%2C159.8%20250%20C159.8%20275.0%2C163.5%20275.0%2C163.5%20300%20L171.8%20300%20C171.8%20275.0%2C179.2%20275.0%2C179.2%20250%20C179.2%20225.0%2C181.1%20225.0%2C181.1%20200%20C181.1%20175.0%2C179.4%20175.0%2C179.4%20150%20C179.4%20125.0%2C183.7%20125.0%2C183.7%20100%20C183.7%2075.0%2C182.5%2075.0%2C182.5%2050%20C182.5%2025.0%2C170.5%2025.0%2C170.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M211.6%200%20C211.6%2025.0%2C205.7%2025.0%2C205.7%2050%20C205.7%2075.0%2C211.3%2075.0%2C211.3%20100%20C211.3%20125.0%2C212.1%20125.0%2C212.1%20150%20C212.1%20175.0%2C210.7%20175.0%2C210.7%20200%20C210.7%20225.0%2C209.9%20225.0%2C209.9%20250%20C209.9%20275.0%2C207.0%20275.0%2C207.0%20300%20L213.5%20300%20C213.5%20275.0%2C215.2%20275.0%2C215.2%20250%20C215.2%20225.0%2C218.2%20225.0%2C218.2%20200%20C218.2%20175.0%2C220.4%20175.0%2C220.4%20150%20C220.4%20125.0%2C219.9%20125.0%2C219.9%20100%20C219.9%2075.0%2C213.7%2075.0%2C213.7%2050%20C213.7%2025.0%2C217.3%2025.0%2C217.3%200%20Z%27%2F%3E%3Cpath%20d%3D%27M236.7%200%20C236.7%2025.0%2C233.3%2025.0%2C233.3%2050%20C233.3%2075.0%2C227.7%2075.0%2C227.7%20100%20C227.7%20125.0%2C229.0%20125.0%2C229.0%20150%20C229.0%20175.0%2C234.2%20175.0%2C234.2%20200%20C234.2%20225.0%2C225.7%20225.0%2C225.7%20250%20C225.7%20275.0%2C236.0%20275.0%2C236.0%20300%20L255.1%20300%20C255.1%20275.0%2C258.1%20275.0%2C258.1%20250%20C258.1%20225.0%2C259.5%20225.0%2C259.5%20200%20C259.5%20175.0%2C253.2%20175.0%2C253.2%20150%20C253.2%20125.0%2C259.6%20125.0%2C259.6%20100%20C259.6%2075.0%2C262.4%2075.0%2C262.4%2050%20C262.4%2025.0%2C249.6%2025.0%2C249.6%200%20Z%27%2F%3E%3Cpath%20d%3D%27M284.2%200%20C284.2%2025.0%2C276.5%2025.0%2C276.5%2050%20C276.5%2075.0%2C285.6%2075.0%2C285.6%20100%20C285.6%20125.0%2C277.1%20125.0%2C277.1%20150%20C277.1%20175.0%2C282.6%20175.0%2C282.6%20200%20C282.6%20225.0%2C281.7%20225.0%2C281.7%20250%20C281.7%20275.0%2C279.7%20275.0%2C279.7%20300%20L286.9%20300%20C286.9%20275.0%2C293.5%20275.0%2C293.5%20250%20C293.5%20225.0%2C293.6%20225.0%2C293.6%20200%20C293.6%20175.0%2C285.4%20175.0%2C285.4%20150%20C285.4%20125.0%2C294.4%20125.0%2C294.4%20100%20C294.4%2075.0%2C288.0%2075.0%2C288.0%2050%20C288.0%2025.0%2C289.5%2025.0%2C289.5%200%20Z%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');background-size:300px 300px;background-repeat:repeat;pointer-events:none"></div>
+            <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#3f9b46;position:relative">Turmas</span>
+            <h1 style="font-family:'Caprasimo',system-ui;font-size:42px;line-height:.94;letter-spacing:-.025em;text-transform:uppercase;margin:10px 0 12px;position:relative">Venha jogar com a gente</h1>
+            <p style="margin:0 0 20px;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.78);position:relative">Sem experiência, sem uniforme, sem idade certa. A primeira aula é gratuita e você só precisa de roupa leve.</p>
+            <button onClick="{{ scrollExp }}" style="min-height:50px;padding:0 22px;border:0;border-radius:999px;background:#3f9b46;color:#0b0b0b;font-family:'Caprasimo',system-ui;font-size:14.5px;cursor:pointer;position:relative" style-hover="background:#34803a">Agendar aula experimental</button>
+          </div>
+
+          <div style="padding:30px 20px 32px;background:#ffffff">
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <sc-for list="{{ turmas }}" as="t" hint-placeholder-count="1">
+                <div style="padding:20px;border-radius:24px;border:1px solid rgba(11,11,11,.12)">
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px">
+                    <div style="font-family:'Caprasimo',system-ui;font-size:24px;text-transform:uppercase;letter-spacing:-.02em;line-height:1">{{ t.nome }}</div>
+                    <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,11,11,.5)">{{ t.idade }}</div>
+                  </div>
+                  <div style="font-size:13.5px;line-height:1.55;color:rgba(11,11,11,.68);margin-bottom:14px">{{ t.texto }}</div>
+                  <div style="display:flex;flex-wrap:wrap;gap:7px">
+                    <sc-for list="{{ t.dias }}" as="d" hint-placeholder-count="2">
+                      <span style="font-size:12px;font-weight:600;padding:7px 12px;border-radius:999px;background:#f4f2ee">{{ d }}</span>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <sc-if value="{{ stripes }}" hint-placeholder-val="{{ true }}">
+            <div style="height:26px;background:#ffffff;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20300%20300%27%20preserveAspectRatio%3D%27none%27%3E%3Cg%20fill%3D%27%230b0b0b%27%20fill-opacity%3D%271%27%3E%3Cpath%20d%3D%27M17.3%200%20C17.3%2025.0%2C11.2%2025.0%2C11.2%2050%20C11.2%2075.0%2C13.4%2075.0%2C13.4%20100%20C13.4%20125.0%2C8.3%20125.0%2C8.3%20150%20C8.3%20175.0%2C15.3%20175.0%2C15.3%20200%20C15.3%20225.0%2C10.7%20225.0%2C10.7%20250%20C10.7%20275.0%2C20.9%20275.0%2C20.9%20300%20L26.3%20300%20C26.3%20275.0%2C29.0%20275.0%2C29.0%20250%20C29.0%20225.0%2C30.5%20225.0%2C30.5%20200%20C30.5%20175.0%2C27.3%20175.0%2C27.3%20150%20C27.3%20125.0%2C29.5%20125.0%2C29.5%20100%20C29.5%2075.0%2C25.1%2075.0%2C25.1%2050%20C25.1%2025.0%2C26.5%2025.0%2C26.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M54.5%200%20C54.5%2025.0%2C56.4%2025.0%2C56.4%2050%20C56.4%2075.0%2C54.6%2075.0%2C54.6%20100%20C54.6%20125.0%2C51.7%20125.0%2C51.7%20150%20C51.7%20175.0%2C57.5%20175.0%2C57.5%20200%20C57.5%20225.0%2C50.3%20225.0%2C50.3%20250%20C50.3%20275.0%2C59.2%20275.0%2C59.2%20300%20L65.9%20300%20C65.9%20275.0%2C58.1%20275.0%2C58.1%20250%20C58.1%20225.0%2C67.3%20225.0%2C67.3%20200%20C67.3%20175.0%2C57.9%20175.0%2C57.9%20150%20C57.9%20125.0%2C62.6%20125.0%2C62.6%20100%20C62.6%2075.0%2C63.0%2075.0%2C63.0%2050%20C63.0%2025.0%2C61.5%2025.0%2C61.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M84.3%200%20C84.3%2025.0%2C83.0%2025.0%2C83.0%2050%20C83.0%2075.0%2C73.8%2075.0%2C73.8%20100%20C73.8%20125.0%2C81.1%20125.0%2C81.1%20150%20C81.1%20175.0%2C81.5%20175.0%2C81.5%20200%20C81.5%20225.0%2C74.9%20225.0%2C74.9%20250%20C74.9%20275.0%2C84.8%20275.0%2C84.8%20300%20L96.2%20300%20C96.2%20275.0%2C102.2%20275.0%2C102.2%20250%20C102.2%20225.0%2C103.5%20225.0%2C103.5%20200%20C103.5%20175.0%2C101.9%20175.0%2C101.9%20150%20C101.9%20125.0%2C103.6%20125.0%2C103.6%20100%20C103.6%2075.0%2C104.4%2075.0%2C104.4%2050%20C104.4%2025.0%2C98.1%2025.0%2C98.1%200%20Z%27%2F%3E%3Cpath%20d%3D%27M129.2%200%20C129.2%2025.0%2C128.2%2025.0%2C128.2%2050%20C128.2%2075.0%2C132.5%2075.0%2C132.5%20100%20C132.5%20125.0%2C133.3%20125.0%2C133.3%20150%20C133.3%20175.0%2C134.1%20175.0%2C134.1%20200%20C134.1%20225.0%2C129.2%20225.0%2C129.2%20250%20C129.2%20275.0%2C135.4%20275.0%2C135.4%20300%20L139.6%20300%20C139.6%20275.0%2C139.5%20275.0%2C139.5%20250%20C139.5%20225.0%2C147.0%20225.0%2C147.0%20200%20C147.0%20175.0%2C144.7%20175.0%2C144.7%20150%20C144.7%20125.0%2C142.9%20125.0%2C142.9%20100%20C142.9%2075.0%2C142.5%2075.0%2C142.5%2050%20C142.5%2025.0%2C138.4%2025.0%2C138.4%200%20Z%27%2F%3E%3Cpath%20d%3D%27M160.4%200%20C160.4%2025.0%2C161.1%2025.0%2C161.1%2050%20C161.1%2075.0%2C165.4%2075.0%2C165.4%20100%20C165.4%20125.0%2C159.4%20125.0%2C159.4%20150%20C159.4%20175.0%2C157.7%20175.0%2C157.7%20200%20C157.7%20225.0%2C159.8%20225.0%2C159.8%20250%20C159.8%20275.0%2C163.5%20275.0%2C163.5%20300%20L171.8%20300%20C171.8%20275.0%2C179.2%20275.0%2C179.2%20250%20C179.2%20225.0%2C181.1%20225.0%2C181.1%20200%20C181.1%20175.0%2C179.4%20175.0%2C179.4%20150%20C179.4%20125.0%2C183.7%20125.0%2C183.7%20100%20C183.7%2075.0%2C182.5%2075.0%2C182.5%2050%20C182.5%2025.0%2C170.5%2025.0%2C170.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M211.6%200%20C211.6%2025.0%2C205.7%2025.0%2C205.7%2050%20C205.7%2075.0%2C211.3%2075.0%2C211.3%20100%20C211.3%20125.0%2C212.1%20125.0%2C212.1%20150%20C212.1%20175.0%2C210.7%20175.0%2C210.7%20200%20C210.7%20225.0%2C209.9%20225.0%2C209.9%20250%20C209.9%20275.0%2C207.0%20275.0%2C207.0%20300%20L213.5%20300%20C213.5%20275.0%2C215.2%20275.0%2C215.2%20250%20C215.2%20225.0%2C218.2%20225.0%2C218.2%20200%20C218.2%20175.0%2C220.4%20175.0%2C220.4%20150%20C220.4%20125.0%2C219.9%20125.0%2C219.9%20100%20C219.9%2075.0%2C213.7%2075.0%2C213.7%2050%20C213.7%2025.0%2C217.3%2025.0%2C217.3%200%20Z%27%2F%3E%3Cpath%20d%3D%27M236.7%200%20C236.7%2025.0%2C233.3%2025.0%2C233.3%2050%20C233.3%2075.0%2C227.7%2075.0%2C227.7%20100%20C227.7%20125.0%2C229.0%20125.0%2C229.0%20150%20C229.0%20175.0%2C234.2%20175.0%2C234.2%20200%20C234.2%20225.0%2C225.7%20225.0%2C225.7%20250%20C225.7%20275.0%2C236.0%20275.0%2C236.0%20300%20L255.1%20300%20C255.1%20275.0%2C258.1%20275.0%2C258.1%20250%20C258.1%20225.0%2C259.5%20225.0%2C259.5%20200%20C259.5%20175.0%2C253.2%20175.0%2C253.2%20150%20C253.2%20125.0%2C259.6%20125.0%2C259.6%20100%20C259.6%2075.0%2C262.4%2075.0%2C262.4%2050%20C262.4%2025.0%2C249.6%2025.0%2C249.6%200%20Z%27%2F%3E%3Cpath%20d%3D%27M284.2%200%20C284.2%2025.0%2C276.5%2025.0%2C276.5%2050%20C276.5%2075.0%2C285.6%2075.0%2C285.6%20100%20C285.6%20125.0%2C277.1%20125.0%2C277.1%20150%20C277.1%20175.0%2C282.6%20175.0%2C282.6%20200%20C282.6%20225.0%2C281.7%20225.0%2C281.7%20250%20C281.7%20275.0%2C279.7%20275.0%2C279.7%20300%20L286.9%20300%20C286.9%20275.0%2C293.5%20275.0%2C293.5%20250%20C293.5%20225.0%2C293.6%20225.0%2C293.6%20200%20C293.6%20175.0%2C285.4%20175.0%2C285.4%20150%20C285.4%20125.0%2C294.4%20125.0%2C294.4%20100%20C294.4%2075.0%2C288.0%2075.0%2C288.0%2050%20C288.0%2025.0%2C289.5%2025.0%2C289.5%200%20Z%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');background-size:300px 100%;background-repeat:repeat-x"></div>
+          </sc-if>
+
+          <div style="padding:32px 20px 36px;background:#f4f2ee">
+            <h2 style="font-family:'Caprasimo',system-ui;font-size:28px;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:0 0 6px">Aula experimental</h2>
+            <p style="margin:0 0 18px;font-size:14px;line-height:1.55;color:rgba(11,11,11,.66)">Deixe seu nome e a gente te espera na próxima aula do núcleo mais perto.</p>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <input class="input" placeholder="Seu nome" style="min-height:50px;border-radius:999px;background:#ffffff;border:1px solid rgba(11,11,11,.16);padding:0 18px;font-size:14px;font-family:'Figtree',system-ui">
+              <input class="input" placeholder="WhatsApp" style="min-height:50px;border-radius:999px;background:#ffffff;border:1px solid rgba(11,11,11,.16);padding:0 18px;font-size:14px;font-family:'Figtree',system-ui">
+              <input class="input" placeholder="Núcleo de interesse" style="min-height:50px;border-radius:999px;background:#ffffff;border:1px solid rgba(11,11,11,.16);padding:0 18px;font-size:14px;font-family:'Figtree',system-ui">
+              <button style="min-height:52px;border:0;border-radius:999px;background:#0b0b0b;color:#ffffff;font-family:'Caprasimo',system-ui;font-size:15px;cursor:pointer;margin-top:4px" style-hover="background:#3a3a3a">Quero experimentar</button>
+            </div>
+          </div>
+
+          <div style="padding:32px 20px 36px;background:#ffffff">
+            <h2 style="font-family:'Caprasimo',system-ui;font-size:28px;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:0 0 18px">Perguntas frequentes</h2>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="4">
+                <div style="border-radius:20px;background:#f4f2ee;overflow:hidden">
+                  <div onClick="{{ q.toggle }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px;cursor:pointer">
+                    <span style="font-size:14.5px;font-weight:700;line-height:1.35">{{ q.p }}</span>
+                    <span style="flex:none;width:26px;height:26px;border-radius:50%;background:#0b0b0b;color:#3f9b46;display:flex;align-items:center;justify-content:center;font-size:14px">{{ q.icon }}</span>
+                  </div>
+                  <sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}">
+                    <div style="padding:0 16px 18px;font-size:13.5px;line-height:1.6;color:rgba(11,11,11,.68)">{{ q.r }}</div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- ================= EVENTOS ================= -->
+        <sc-if value="{{ isEventos }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="padding:30px 20px 22px;background:#ffffff">
+            <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,11,11,.45)">Agenda ⟨2026⟩</span>
+            <h1 style="font-family:'Caprasimo',system-ui;font-size:42px;line-height:.94;letter-spacing:-.025em;text-transform:uppercase;margin:10px 0 12px">Eventos e rodas</h1>
+            <p style="margin:0;font-size:14.5px;line-height:1.6;color:rgba(11,11,11,.7)">Batizados, rodas abertas e workshops. Roda aberta é aberta mesmo: pode chegar e assistir.</p>
+          </div>
+
+          <div style="position:relative;margin:0 0 8px;padding:26px 20px 30px;background:#0b0b0b;color:#ffffff;overflow:hidden">
+            <div style="position:absolute;top:0;left:0;width:100%;height:26px;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20300%20300%27%20preserveAspectRatio%3D%27none%27%3E%3Cg%20fill%3D%27%23ffffff%27%20fill-opacity%3D%271%27%3E%3Cpath%20d%3D%27M17.3%200%20C17.3%2025.0%2C11.2%2025.0%2C11.2%2050%20C11.2%2075.0%2C13.4%2075.0%2C13.4%20100%20C13.4%20125.0%2C8.3%20125.0%2C8.3%20150%20C8.3%20175.0%2C15.3%20175.0%2C15.3%20200%20C15.3%20225.0%2C10.7%20225.0%2C10.7%20250%20C10.7%20275.0%2C20.9%20275.0%2C20.9%20300%20L26.3%20300%20C26.3%20275.0%2C29.0%20275.0%2C29.0%20250%20C29.0%20225.0%2C30.5%20225.0%2C30.5%20200%20C30.5%20175.0%2C27.3%20175.0%2C27.3%20150%20C27.3%20125.0%2C29.5%20125.0%2C29.5%20100%20C29.5%2075.0%2C25.1%2075.0%2C25.1%2050%20C25.1%2025.0%2C26.5%2025.0%2C26.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M54.5%200%20C54.5%2025.0%2C56.4%2025.0%2C56.4%2050%20C56.4%2075.0%2C54.6%2075.0%2C54.6%20100%20C54.6%20125.0%2C51.7%20125.0%2C51.7%20150%20C51.7%20175.0%2C57.5%20175.0%2C57.5%20200%20C57.5%20225.0%2C50.3%20225.0%2C50.3%20250%20C50.3%20275.0%2C59.2%20275.0%2C59.2%20300%20L65.9%20300%20C65.9%20275.0%2C58.1%20275.0%2C58.1%20250%20C58.1%20225.0%2C67.3%20225.0%2C67.3%20200%20C67.3%20175.0%2C57.9%20175.0%2C57.9%20150%20C57.9%20125.0%2C62.6%20125.0%2C62.6%20100%20C62.6%2075.0%2C63.0%2075.0%2C63.0%2050%20C63.0%2025.0%2C61.5%2025.0%2C61.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M84.3%200%20C84.3%2025.0%2C83.0%2025.0%2C83.0%2050%20C83.0%2075.0%2C73.8%2075.0%2C73.8%20100%20C73.8%20125.0%2C81.1%20125.0%2C81.1%20150%20C81.1%20175.0%2C81.5%20175.0%2C81.5%20200%20C81.5%20225.0%2C74.9%20225.0%2C74.9%20250%20C74.9%20275.0%2C84.8%20275.0%2C84.8%20300%20L96.2%20300%20C96.2%20275.0%2C102.2%20275.0%2C102.2%20250%20C102.2%20225.0%2C103.5%20225.0%2C103.5%20200%20C103.5%20175.0%2C101.9%20175.0%2C101.9%20150%20C101.9%20125.0%2C103.6%20125.0%2C103.6%20100%20C103.6%2075.0%2C104.4%2075.0%2C104.4%2050%20C104.4%2025.0%2C98.1%2025.0%2C98.1%200%20Z%27%2F%3E%3Cpath%20d%3D%27M129.2%200%20C129.2%2025.0%2C128.2%2025.0%2C128.2%2050%20C128.2%2075.0%2C132.5%2075.0%2C132.5%20100%20C132.5%20125.0%2C133.3%20125.0%2C133.3%20150%20C133.3%20175.0%2C134.1%20175.0%2C134.1%20200%20C134.1%20225.0%2C129.2%20225.0%2C129.2%20250%20C129.2%20275.0%2C135.4%20275.0%2C135.4%20300%20L139.6%20300%20C139.6%20275.0%2C139.5%20275.0%2C139.5%20250%20C139.5%20225.0%2C147.0%20225.0%2C147.0%20200%20C147.0%20175.0%2C144.7%20175.0%2C144.7%20150%20C144.7%20125.0%2C142.9%20125.0%2C142.9%20100%20C142.9%2075.0%2C142.5%2075.0%2C142.5%2050%20C142.5%2025.0%2C138.4%2025.0%2C138.4%200%20Z%27%2F%3E%3Cpath%20d%3D%27M160.4%200%20C160.4%2025.0%2C161.1%2025.0%2C161.1%2050%20C161.1%2075.0%2C165.4%2075.0%2C165.4%20100%20C165.4%20125.0%2C159.4%20125.0%2C159.4%20150%20C159.4%20175.0%2C157.7%20175.0%2C157.7%20200%20C157.7%20225.0%2C159.8%20225.0%2C159.8%20250%20C159.8%20275.0%2C163.5%20275.0%2C163.5%20300%20L171.8%20300%20C171.8%20275.0%2C179.2%20275.0%2C179.2%20250%20C179.2%20225.0%2C181.1%20225.0%2C181.1%20200%20C181.1%20175.0%2C179.4%20175.0%2C179.4%20150%20C179.4%20125.0%2C183.7%20125.0%2C183.7%20100%20C183.7%2075.0%2C182.5%2075.0%2C182.5%2050%20C182.5%2025.0%2C170.5%2025.0%2C170.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M211.6%200%20C211.6%2025.0%2C205.7%2025.0%2C205.7%2050%20C205.7%2075.0%2C211.3%2075.0%2C211.3%20100%20C211.3%20125.0%2C212.1%20125.0%2C212.1%20150%20C212.1%20175.0%2C210.7%20175.0%2C210.7%20200%20C210.7%20225.0%2C209.9%20225.0%2C209.9%20250%20C209.9%20275.0%2C207.0%20275.0%2C207.0%20300%20L213.5%20300%20C213.5%20275.0%2C215.2%20275.0%2C215.2%20250%20C215.2%20225.0%2C218.2%20225.0%2C218.2%20200%20C218.2%20175.0%2C220.4%20175.0%2C220.4%20150%20C220.4%20125.0%2C219.9%20125.0%2C219.9%20100%20C219.9%2075.0%2C213.7%2075.0%2C213.7%2050%20C213.7%2025.0%2C217.3%2025.0%2C217.3%200%20Z%27%2F%3E%3Cpath%20d%3D%27M236.7%200%20C236.7%2025.0%2C233.3%2025.0%2C233.3%2050%20C233.3%2075.0%2C227.7%2075.0%2C227.7%20100%20C227.7%20125.0%2C229.0%20125.0%2C229.0%20150%20C229.0%20175.0%2C234.2%20175.0%2C234.2%20200%20C234.2%20225.0%2C225.7%20225.0%2C225.7%20250%20C225.7%20275.0%2C236.0%20275.0%2C236.0%20300%20L255.1%20300%20C255.1%20275.0%2C258.1%20275.0%2C258.1%20250%20C258.1%20225.0%2C259.5%20225.0%2C259.5%20200%20C259.5%20175.0%2C253.2%20175.0%2C253.2%20150%20C253.2%20125.0%2C259.6%20125.0%2C259.6%20100%20C259.6%2075.0%2C262.4%2075.0%2C262.4%2050%20C262.4%2025.0%2C249.6%2025.0%2C249.6%200%20Z%27%2F%3E%3Cpath%20d%3D%27M284.2%200%20C284.2%2025.0%2C276.5%2025.0%2C276.5%2050%20C276.5%2075.0%2C285.6%2075.0%2C285.6%20100%20C285.6%20125.0%2C277.1%20125.0%2C277.1%20150%20C277.1%20175.0%2C282.6%20175.0%2C282.6%20200%20C282.6%20225.0%2C281.7%20225.0%2C281.7%20250%20C281.7%20275.0%2C279.7%20275.0%2C279.7%20300%20L286.9%20300%20C286.9%20275.0%2C293.5%20275.0%2C293.5%20250%20C293.5%20225.0%2C293.6%20225.0%2C293.6%20200%20C293.6%20175.0%2C285.4%20175.0%2C285.4%20150%20C285.4%20125.0%2C294.4%20125.0%2C294.4%20100%20C294.4%2075.0%2C288.0%2075.0%2C288.0%2050%20C288.0%2025.0%2C289.5%2025.0%2C289.5%200%20Z%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');background-size:300px 100%;background-repeat:repeat-x"></div>
+            <div style="margin-top:14px">
+              <span style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#0b0b0b;background:#3f9b46;padding:4px 9px;border-radius:999px">Destaque do ano</span>
+              <h2 style="font-family:'Caprasimo',system-ui;font-size:31px;line-height:.98;letter-spacing:-.02em;text-transform:uppercase;margin:14px 0 8px">6º Encontro de Culturas e Tradições Meu Patuá</h2>
+              <div style="font-family:'Caprasimo',system-ui;font-size:16px;color:#3f9b46;margin-bottom:12px">“Capoeira é simples, só basta ter amor.”</div>
+              <div style="font-size:14px;color:rgba(255,255,255,.72);margin-bottom:14px">24 a 27 de setembro · Sede da ECAI, MUAFRO e Marco Zero — quatro dias de Capoeira Angola, música, dança, memória, ancestralidade, fundamento e festa.</div>
+              <div style="height:450px;border-radius:20px;overflow:hidden;margin-bottom:16px">
+                <image-slot id="cap-ev-destaque" shape="rect" fit="cover" src="evento-meu-patua.png" placeholder="Cartaz do evento"></image-slot>
+              </div>
+              <div style="font-size:14px;color:rgba(255,255,255,.72);margin-bottom:16px">Mestras, mestres, artistas, brincantes e comunidades se encontram para trocar saberes, aprender, celebrar e fortalecer caminhos.</div>
+              <div style="display:flex;gap:10px;margin-bottom:16px">
+                <div style="flex:1;padding:14px;border-radius:18px;border:1px solid rgba(255,255,255,.2)">
+                  <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:4px">Encontro completo</div>
+                  <div style="font-family:'Caprasimo',system-ui;font-size:22px">R$ 100</div>
+                </div>
+                <div style="flex:1;padding:14px;border-radius:18px;border:1px solid rgba(255,255,255,.2)">
+                  <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:4px">Por diária</div>
+                  <div style="font-family:'Caprasimo',system-ui;font-size:22px">R$ 50</div>
+                </div>
+              </div>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjzM8gW7Ict5GXIi6GXk96bwQ7CyDNJfUXFH7hKTBZ0rbsOQ/viewform" target="_blank" style="width:100%;min-height:50px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#3f9b46;color:#0b0b0b;font-family:'Caprasimo',system-ui;font-size:14.5px;text-decoration:none;box-sizing:border-box" style-hover="background:#34803a;color:#0b0b0b">Inscrições abertas · fazer inscrição</a>
+            </div>
+          </div>
+
+          <div style="padding:28px 20px 32px;background:#ffffff">
+            <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:14px">Calendário</div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <sc-for list="{{ eventos }}" as="e" hint-placeholder-count="5">
+                <div style="display:flex;gap:14px;align-items:stretch;padding:14px;border-radius:20px;border:1px solid rgba(11,11,11,.12)">
+                  <div style="flex:none;width:56px;border-radius:14px;background:#0b0b0b;color:#ffffff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 0">
+                    <span style="font-family:'Caprasimo',system-ui;font-size:20px;line-height:1">{{ e.dia }}</span>
+                    <span style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#3f9b46;margin-top:2px">{{ e.mes }}</span>
+                  </div>
+                  <div style="flex:1;min-width:0">
+                    <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:3px">{{ e.tipo }}</div>
+                    <div style="font-size:15px;font-weight:700;line-height:1.25">{{ e.titulo }}</div>
+                    <div style="font-size:12.5px;color:rgba(11,11,11,.55);margin-top:3px">{{ e.local }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="padding:0 20px 40px;background:#ffffff">
+            <h2 style="font-family:'Caprasimo',system-ui;font-size:26px;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:0 0 14px">Edições anteriores</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div style="height:150px;border-radius:18px;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-ev-a1" src="fotos/ecai_09.jpg" shape="rect" fit="cover" placeholder="⟨2025⟩"></image-slot>
+              </div>
+              <div style="height:150px;border-radius:18px;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-ev-a2" src="fotos/ecai_010.jpg" shape="rect" fit="cover" placeholder="⟨2024⟩"></image-slot>
+              </div>
+              <div style="grid-column:span 2;height:170px;border-radius:18px;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-ev-a3" src="fotos/ecai_2.jpg" shape="rect" fit="cover" placeholder="⟨2023⟩ · roda de rua"></image-slot>
+              </div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- ================= GALERIA / MÍDIA ================= -->
+        <sc-if value="{{ isGaleria }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="padding:30px 20px 22px;background:#ffffff">
+            <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,11,11,.45)">Acervo</span>
+            <h1 style="font-family:'Caprasimo',system-ui;font-size:42px;line-height:.94;letter-spacing:-.025em;text-transform:uppercase;margin:10px 0 12px">Galeria</h1>
+            <p style="margin:0 0 18px;font-size:14.5px;line-height:1.6;color:rgba(11,11,11,.7)">Fotos das rodas, das aulas e dos nossos encontros.</p>
+          </div>
+
+          <div style="padding:8px 20px 34px;background:#ffffff">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div style="grid-column:span 2;height:230px;border-radius:20px;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-gal-1" src="fotos/ecai11.jpg" shape="rect" fit="cover" placeholder="Roda na sede"></image-slot>
+              </div>
+              <div style="height:150px;border-radius:18px;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-gal-2" src="fotos/ecai_06.jpg" shape="rect" fit="cover" placeholder="Berimbaus"></image-slot>
+              </div>
+              <div style="height:150px;border-radius:18px;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-gal-3" src="fotos/ecai_07.jpg" shape="rect" fit="cover" placeholder="Aula"></image-slot>
+              </div>
+              <div style="height:150px;border-radius:18px;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-gal-4" src="fotos/ecai_03.jpg" shape="rect" fit="cover" placeholder="Roda de rua"></image-slot>
+              </div>
+              <div style="height:150px;border-radius:18px;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-gal-5" src="fotos/ecai_04.jpg" shape="rect" fit="cover" placeholder="Crianças"></image-slot>
+              </div>
+              <div style="grid-column:span 2;height:200px;border-radius:20px;overflow:hidden;filter:grayscale(1) contrast(1.1)">
+                <image-slot id="cap-gal-6" src="fotos/ecai_1.jpg" shape="rect" fit="cover" placeholder="Encontro Meu Patuá"></image-slot>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        </sc-if>
+
+        <!-- ================= FOOTER ================= -->
+        <div style="padding:30px 20px 34px;background:#0b0b0b;color:rgba(255,255,255,.7)">
+          <div style="height:14px;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20300%20300%27%20preserveAspectRatio%3D%27none%27%3E%3Cg%20fill%3D%27%233f9b46%27%20fill-opacity%3D%271%27%3E%3Cpath%20d%3D%27M17.3%200%20C17.3%2025.0%2C11.2%2025.0%2C11.2%2050%20C11.2%2075.0%2C13.4%2075.0%2C13.4%20100%20C13.4%20125.0%2C8.3%20125.0%2C8.3%20150%20C8.3%20175.0%2C15.3%20175.0%2C15.3%20200%20C15.3%20225.0%2C10.7%20225.0%2C10.7%20250%20C10.7%20275.0%2C20.9%20275.0%2C20.9%20300%20L26.3%20300%20C26.3%20275.0%2C29.0%20275.0%2C29.0%20250%20C29.0%20225.0%2C30.5%20225.0%2C30.5%20200%20C30.5%20175.0%2C27.3%20175.0%2C27.3%20150%20C27.3%20125.0%2C29.5%20125.0%2C29.5%20100%20C29.5%2075.0%2C25.1%2075.0%2C25.1%2050%20C25.1%2025.0%2C26.5%2025.0%2C26.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M54.5%200%20C54.5%2025.0%2C56.4%2025.0%2C56.4%2050%20C56.4%2075.0%2C54.6%2075.0%2C54.6%20100%20C54.6%20125.0%2C51.7%20125.0%2C51.7%20150%20C51.7%20175.0%2C57.5%20175.0%2C57.5%20200%20C57.5%20225.0%2C50.3%20225.0%2C50.3%20250%20C50.3%20275.0%2C59.2%20275.0%2C59.2%20300%20L65.9%20300%20C65.9%20275.0%2C58.1%20275.0%2C58.1%20250%20C58.1%20225.0%2C67.3%20225.0%2C67.3%20200%20C67.3%20175.0%2C57.9%20175.0%2C57.9%20150%20C57.9%20125.0%2C62.6%20125.0%2C62.6%20100%20C62.6%2075.0%2C63.0%2075.0%2C63.0%2050%20C63.0%2025.0%2C61.5%2025.0%2C61.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M84.3%200%20C84.3%2025.0%2C83.0%2025.0%2C83.0%2050%20C83.0%2075.0%2C73.8%2075.0%2C73.8%20100%20C73.8%20125.0%2C81.1%20125.0%2C81.1%20150%20C81.1%20175.0%2C81.5%20175.0%2C81.5%20200%20C81.5%20225.0%2C74.9%20225.0%2C74.9%20250%20C74.9%20275.0%2C84.8%20275.0%2C84.8%20300%20L96.2%20300%20C96.2%20275.0%2C102.2%20275.0%2C102.2%20250%20C102.2%20225.0%2C103.5%20225.0%2C103.5%20200%20C103.5%20175.0%2C101.9%20175.0%2C101.9%20150%20C101.9%20125.0%2C103.6%20125.0%2C103.6%20100%20C103.6%2075.0%2C104.4%2075.0%2C104.4%2050%20C104.4%2025.0%2C98.1%2025.0%2C98.1%200%20Z%27%2F%3E%3Cpath%20d%3D%27M129.2%200%20C129.2%2025.0%2C128.2%2025.0%2C128.2%2050%20C128.2%2075.0%2C132.5%2075.0%2C132.5%20100%20C132.5%20125.0%2C133.3%20125.0%2C133.3%20150%20C133.3%20175.0%2C134.1%20175.0%2C134.1%20200%20C134.1%20225.0%2C129.2%20225.0%2C129.2%20250%20C129.2%20275.0%2C135.4%20275.0%2C135.4%20300%20L139.6%20300%20C139.6%20275.0%2C139.5%20275.0%2C139.5%20250%20C139.5%20225.0%2C147.0%20225.0%2C147.0%20200%20C147.0%20175.0%2C144.7%20175.0%2C144.7%20150%20C144.7%20125.0%2C142.9%20125.0%2C142.9%20100%20C142.9%2075.0%2C142.5%2075.0%2C142.5%2050%20C142.5%2025.0%2C138.4%2025.0%2C138.4%200%20Z%27%2F%3E%3Cpath%20d%3D%27M160.4%200%20C160.4%2025.0%2C161.1%2025.0%2C161.1%2050%20C161.1%2075.0%2C165.4%2075.0%2C165.4%20100%20C165.4%20125.0%2C159.4%20125.0%2C159.4%20150%20C159.4%20175.0%2C157.7%20175.0%2C157.7%20200%20C157.7%20225.0%2C159.8%20225.0%2C159.8%20250%20C159.8%20275.0%2C163.5%20275.0%2C163.5%20300%20L171.8%20300%20C171.8%20275.0%2C179.2%20275.0%2C179.2%20250%20C179.2%20225.0%2C181.1%20225.0%2C181.1%20200%20C181.1%20175.0%2C179.4%20175.0%2C179.4%20150%20C179.4%20125.0%2C183.7%20125.0%2C183.7%20100%20C183.7%2075.0%2C182.5%2075.0%2C182.5%2050%20C182.5%2025.0%2C170.5%2025.0%2C170.5%200%20Z%27%2F%3E%3Cpath%20d%3D%27M211.6%200%20C211.6%2025.0%2C205.7%2025.0%2C205.7%2050%20C205.7%2075.0%2C211.3%2075.0%2C211.3%20100%20C211.3%20125.0%2C212.1%20125.0%2C212.1%20150%20C212.1%20175.0%2C210.7%20175.0%2C210.7%20200%20C210.7%20225.0%2C209.9%20225.0%2C209.9%20250%20C209.9%20275.0%2C207.0%20275.0%2C207.0%20300%20L213.5%20300%20C213.5%20275.0%2C215.2%20275.0%2C215.2%20250%20C215.2%20225.0%2C218.2%20225.0%2C218.2%20200%20C218.2%20175.0%2C220.4%20175.0%2C220.4%20150%20C220.4%20125.0%2C219.9%20125.0%2C219.9%20100%20C219.9%2075.0%2C213.7%2075.0%2C213.7%2050%20C213.7%2025.0%2C217.3%2025.0%2C217.3%200%20Z%27%2F%3E%3Cpath%20d%3D%27M236.7%200%20C236.7%2025.0%2C233.3%2025.0%2C233.3%2050%20C233.3%2075.0%2C227.7%2075.0%2C227.7%20100%20C227.7%20125.0%2C229.0%20125.0%2C229.0%20150%20C229.0%20175.0%2C234.2%20175.0%2C234.2%20200%20C234.2%20225.0%2C225.7%20225.0%2C225.7%20250%20C225.7%20275.0%2C236.0%20275.0%2C236.0%20300%20L255.1%20300%20C255.1%20275.0%2C258.1%20275.0%2C258.1%20250%20C258.1%20225.0%2C259.5%20225.0%2C259.5%20200%20C259.5%20175.0%2C253.2%20175.0%2C253.2%20150%20C253.2%20125.0%2C259.6%20125.0%2C259.6%20100%20C259.6%2075.0%2C262.4%2075.0%2C262.4%2050%20C262.4%2025.0%2C249.6%2025.0%2C249.6%200%20Z%27%2F%3E%3Cpath%20d%3D%27M284.2%200%20C284.2%2025.0%2C276.5%2025.0%2C276.5%2050%20C276.5%2075.0%2C285.6%2075.0%2C285.6%20100%20C285.6%20125.0%2C277.1%20125.0%2C277.1%20150%20C277.1%20175.0%2C282.6%20175.0%2C282.6%20200%20C282.6%20225.0%2C281.7%20225.0%2C281.7%20250%20C281.7%20275.0%2C279.7%20275.0%2C279.7%20300%20L286.9%20300%20C286.9%20275.0%2C293.5%20275.0%2C293.5%20250%20C293.5%20225.0%2C293.6%20225.0%2C293.6%20200%20C293.6%20175.0%2C285.4%20175.0%2C285.4%20150%20C285.4%20125.0%2C294.4%20125.0%2C294.4%20100%20C294.4%2075.0%2C288.0%2075.0%2C288.0%2050%20C288.0%2025.0%2C289.5%2025.0%2C289.5%200%20Z%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');background-size:300px 100%;background-repeat:repeat-x;margin-bottom:22px"></div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <img src="logo-ife.jpg" alt="" style="width:52px;height:52px;border-radius:50%;object-fit:cover;background:#ffffff">
+            <div style="font-family:'Caprasimo',system-ui;font-size:19px;color:#ffffff;text-transform:uppercase;letter-spacing:-.01em;line-height:1.05">Escola de Capoeira<br>Angola IFÉ</div>
+          </div>
+          <div style="font-size:13px;line-height:1.6;margin-bottom:16px">Sede: Rua da União, 287 — Recife/PE</div>
+          <div style="display:flex;gap:8px">
+            <a href="https://instagram.com/ecai.pe" style="display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.24);color:#ffffff;text-decoration:none" style-hover="background:rgba(255,255,255,.12);color:#3f9b46">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg>
+              @ecai.pe
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= MENU ================= -->
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;inset:0;z-index:40;background:#0b0b0b;color:#ffffff;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;justify-content:space-between;height:62px;padding:0 16px;border-bottom:1px solid rgba(255,255,255,.14)">
+            <span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5)">Navegação</span>
+            <button onClick="{{ toggleMenu }}" aria-label="Fechar" style="width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:transparent;color:#ffffff;font-size:16px;cursor:pointer" style-hover="background:rgba(255,255,255,.12)">✕</button>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:14px 20px 20px">
+            <sc-for list="{{ menu }}" as="m" hint-placeholder-count="6">
+              <div onClick="{{ m.go }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.1);cursor:pointer">
+                <span style="font-family:'Caprasimo',system-ui;font-size:26px;text-transform:uppercase;letter-spacing:-.02em;color:{{ m.color }}">{{ m.label }}</span>
+                <span style="font-size:14px;color:rgba(255,255,255,.35)">{{ m.mark }}</span>
+              </div>
+            </sc-for>
+            <div style="margin-top:22px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4)">Em breve</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+              <span style="font-size:12px;padding:8px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.55)">O Grupo</span>
+              <span style="font-size:12px;padding:8px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.55)">Loja</span>
+              <span style="font-size:12px;padding:8px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.55)">Contato</span>
+            </div>
+            <button onClick="{{ goAulas }}" style="width:100%;min-height:52px;margin-top:26px;border:0;border-radius:999px;background:#3f9b46;color:#0b0b0b;font-family:'Caprasimo',system-ui;font-size:15px;cursor:pointer" style-hover="background:#34803a">Aula experimental grátis</button>
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </div>
+
+  <div style="max-width:392px;font-size:11.5px;line-height:1.6;color:rgba(11,11,11,.5);text-align:center">
+    Telas: Início · Mestre e Fundadores · Núcleos · Núcleo (detalhe) · Aulas · Eventos · Galeria e Mídia. Menu e listas navegam de verdade; arraste fotos suas sobre os espaços cinza.
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:460,&quot;height&quot;:940},&quot;initialScreen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;mestre&quot;,&quot;nucleos&quot;,&quot;nucleo&quot;,&quot;aulas&quot;,&quot;eventos&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Protótipo&quot;},&quot;showNextEvent&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Início&quot;},&quot;stripeTexture&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Identidade&quot;}}">
+class Component extends DCLogic {
+  state = { screen: this.props.initialScreen || "home", menuOpen: false, nucleo: 0, faq: 0, gtab: "fotos" };
+
+  go(screen) { this.setState({ screen, menuOpen: false, faq: 0 }); this.scrollTop(); }
+  scrollTop() {
+    requestAnimationFrame(() => {
+      const el = this.rootEl && this.rootEl.querySelector ? this.rootEl.querySelector(".zs") : null;
+      const nodes = document.querySelectorAll(".zs");
+      nodes.forEach(n => { if (n.scrollTop) n.scrollTop = 0; });
+      if (el) el.scrollTop = 0;
+    });
+  }
+
+  nucleoList() {
+    return [
+      { sigla: "RE", nome: "Recife · ⟨Bairro⟩", resumo: "Ter e qui · Mestre Baygon", tag: "Sede principal", prof: "Mestre Baygon", end: "Rua da União, 287 — Recife/PE" },
+      { sigla: "OL", nome: "Olinda · ⟨Bairro⟩", resumo: "Prof. ⟨Apelido⟩", tag: "Núcleo", prof: "Prof. ⟨Apelido⟩", end: "Rua ⟨Endereço⟩, ⟨000⟩ — Olinda/PE" },
+      { sigla: "CE", nome: "Cariri · ⟨Cidade⟩/CE", resumo: "Prof. ⟨Apelido⟩", tag: "Núcleo", prof: "Prof. ⟨Apelido⟩", end: "Rua ⟨Endereço⟩, ⟨000⟩ — ⟨Cidade⟩/CE" },
+      { sigla: "OP", nome: "Ouro Preto · ⟨Bairro⟩", resumo: "Prof. ⟨Apelido⟩", tag: "Núcleo", prof: "Prof. ⟨Apelido⟩", end: "Rua ⟨Endereço⟩, ⟨000⟩ — Ouro Preto/MG" },
+      { sigla: "MX", nome: "México · ⟨Cidade⟩", resumo: "Prof. ⟨Apelido⟩", tag: "Núcleo internacional", prof: "Prof. ⟨Apelido⟩", end: "⟨Endereço⟩ — ⟨Cidade⟩, México" }
+    ];
+  }
+
+  renderVals() {
+    const s = this.state.screen;
+    const list = this.nucleoList();
+    const n = list[this.state.nucleo] || list[0];
+    const openN = i => () => { this.setState({ nucleo: i, screen: "nucleo", menuOpen: false }); this.scrollTop(); };
+
+    const menuDef = [
+      ["Início", "home"], ["Mestre e Fundadores", "mestre"], ["Núcleos", "nucleos"], ["Aulas", "aulas"], ["Eventos e Agenda", "eventos"], ["Galeria", "galeria"]
+    ];
+
+    const faqDef = [
+      ["Preciso ter experiência?", "Nenhuma. Metade da turma de iniciantes chega sem nunca ter feito capoeira — e ninguém entra na roda sem estar pronto."],
+      ["Que roupa devo levar?", "Calça ou legging confortável, camiseta e pé no chão. O uniforme (abadá) só depois que você decidir ficar."],
+      ["Tem idade mínima ou máxima?", "A turma infantil começa aos ⟨5⟩ anos e a adulta não tem teto: temos alunos de ⟨60+⟩ treinando toda semana."],
+      ["Como funcionam as cordas?", "A graduação segue ⟨X⟩ cordas, entregues no batizado anual. Cada troca é um compromisso novo com o grupo, não um prêmio."]
+    ];
+
+    return {
+      isHome: s === "home", isMestre: s === "mestre", isNucleos: s === "nucleos",
+      isNucleo: s === "nucleo", isAulas: s === "aulas", isEventos: s === "eventos",
+      isGaleria: s === "galeria",
+      menuOpen: this.state.menuOpen,
+      stripes: this.props.stripeTexture !== false,
+      showNextEvent: this.props.showNextEvent !== false,
+
+      toggleMenu: () => this.setState(st => ({ menuOpen: !st.menuOpen })),
+      goHome: () => this.go("home"), goMestre: () => this.go("mestre"),
+      goNucleos: () => this.go("nucleos"), goAulas: () => this.go("aulas"),
+      goEventos: () => this.go("eventos"), goGaleria: () => this.go("galeria"),
+      openSede: openN(0),
+      scrollExp: () => {},
+
+      menu: menuDef.map(([label, key]) => ({
+        label, go: () => this.go(key),
+        color: s === key ? "#3f9b46" : "#ffffff",
+        mark: s === key ? "●" : "→"
+      })),
+
+      chips: list.slice(1, 5).map((x, i) => ({ nome: x.nome.split(" · ")[0], open: openN(i) })),
+      nucleos: list.map((x, i) => ({ ...x, open: openN(i) })),
+      pins: [
+        { nome: "Recife", x: "72%", y: "44%", open: openN(0) },
+        { nome: "Olinda", x: "80%", y: "26%", open: openN(1) },
+        { nome: "Cariri/CE", x: "50%", y: "34%", open: openN(2) },
+        { nome: "Ouro Preto", x: "56%", y: "76%", open: openN(3) },
+        { nome: "México", x: "16%", y: "58%", open: openN(4) }
+      ],
+
+      nucleoNome: n.nome, nucleoTag: n.tag, nucleoProf: n.prof, nucleoEndereco: n.end,
+      horarios: [
+        { dia: "Terça e quinta", turma: "Turma mista", hora: "18h30–19h30", bg: "#ffffff" },
+        { dia: "Terça e quinta", turma: "Turma mista", hora: "19h30–21h", bg: "#f4f2ee" }
+      ],
+
+      pilares: [
+        { n: "01", titulo: "Tradição viva", texto: "Cantamos em português, tocamos ao vivo e chamamos os mais velhos pelo nome que a roda deu." },
+        { n: "02", titulo: "Comunidade", texto: "Família treina junto: pais, filhos e vizinhos na mesma roda, aos sábados." },
+        { n: "03", titulo: "Disciplina gentil", texto: "Cobramos presença e respeito — o resto o corpo aprende no tempo dele." }
+      ],
+
+      linhagem: [
+        { nome: "Mestre ⟨Nome⟩", nota: "⟨18XX–19XX⟩" },
+        { nome: "Mestre ⟨Nome⟩", nota: "formou em ⟨19XX⟩" },
+        { nome: "Mestre Baygon", nota: "nosso mestre" },
+        { nome: "⟨6⟩ professores formados", nota: "hoje" }
+      ],
+
+      fundadores: [
+        { slot: "cap-fund-1", foto: "fotos/ecai_04.jpg", papel: "Cofundador", apelido: "⟨Apelido⟩", nome: "⟨Nome completo⟩", trajetoria: "Cedeu o quintal onde foi a primeira aula. Hoje responde pelo núcleo de ⟨Cidade⟩ e afina todos os berimbaus do grupo." },
+        { slot: "cap-fund-2", foto: "fotos/ecai_03.jpg", papel: "Cofundadora", apelido: "⟨Apelido⟩", nome: "⟨Nome completo⟩", trajetoria: "Primeira mulher graduada do grupo. Criou a turma infantil em ⟨19XX⟩, que segue sendo a maior." },
+        { slot: "cap-fund-3", foto: "fotos/ecai_010.jpg", papel: "Cofundador", apelido: "⟨Apelido⟩", nome: "⟨Nome completo⟩", trajetoria: "Levou o grupo para fora do estado e organiza o batizado desde a primeira edição." }
+      ],
+
+      marcos: [
+        { ano: "⟨19XX⟩", titulo: "Fundação", texto: "Primeira aula no quintal de ⟨Bairro⟩, com ⟨11⟩ alunos e um berimbau emprestado." },
+        { ano: "⟨19XX⟩", titulo: "Primeiros núcleos", texto: "Olinda e Cariri abrem no mesmo ano, com alunos da primeira turma dando aula." },
+        { ano: "⟨19XX⟩", titulo: "Primeiro batizado", texto: "⟨40⟩ batizados e a criação do sistema de cordas do grupo." },
+        { ano: "⟨20XX⟩", titulo: "Sede própria", texto: "A sede de Recife é inaugurada — chão de madeira e parede pintada pelos alunos." },
+        { ano: "⟨20XX⟩", titulo: "Travessia", texto: "Primeiro núcleo fora do Brasil, no México." }
+      ],
+
+      turmas: [
+        { nome: "Turma mista", idade: "Todas as idades", texto: "Uma turma só, para iniciantes e veteranos, crianças e adultos: ginga, esquiva, instrumentos e canto — cada um no seu tempo, na mesma roda. Escolha o horário que couber na sua semana.", dias: ["Ter e qui · 18h30–19h30", "Ter e qui · 19h30–21h"] }
+      ],
+
+      faqs: faqDef.map(([p, r], i) => ({
+        p, r, open: this.state.faq === i,
+        icon: this.state.faq === i ? "–" : "+",
+        toggle: () => this.setState(st => ({ faq: st.faq === i ? -1 : i }))
+      })),
+
+      eventos: [
+        { dia: "24", mes: "set", tipo: "Abertura", titulo: "Meu Patuá · abertura", local: "Sede da ECAI · Rua da União, 287" },
+        { dia: "25", mes: "set", tipo: "Encontro", titulo: "Meu Patuá · oficinas e rodas", local: "MUAFRO" },
+        { dia: "26", mes: "set", tipo: "Encontro", titulo: "Meu Patuá · culturas tradicionais", local: "MUAFRO · Sede da ECAI" },
+        { dia: "27", mes: "set", tipo: "Encerramento", titulo: "Meu Patuá · roda no Marco Zero", local: "Marco Zero · Recife Antigo" },
+        { dia: "⟨00⟩", mes: "⟨mês⟩", tipo: "Roda aberta", titulo: "⟨Próxima roda aberta⟩", local: "⟨Local e horário⟩" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

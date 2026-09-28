@@ -1,0 +1,8 @@
+{
+  "projects": { "default": "proza-1404" },
+  "targets": {
+    "proza-1404": {
+      "hosting": { "capoeira": ["capoeira-ife"] }
+    }
+  }
+}

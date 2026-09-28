@@ -1,0 +1,18 @@
+# saida gerada — sempre reconstruivel com o build
+dist/
+
+# cache de deploy do Firebase
+.firebase/
+
+# dependencias
+node_modules/
+
+# IDE e sistema
+.idea/
+.DS_Store
+.vscode/
+
+# intermediario do cartaz: 2,1 MB regeraveis por cartaz.py a partir do .original.png.
+# O .jpg fica versionado de proposito — e o arquivo que o site publica, e assim o
+# build nao passa a depender do Pillow estar instalado.
+evento-meu-patua.png
