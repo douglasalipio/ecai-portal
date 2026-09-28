@@ -1,0 +1,89 @@
+
+*{-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#dcd9d3;font-family:"Figtree",system-ui,-apple-system,sans-serif;
+     --color-bg:#ffffff;--color-surface:#f4f2ee;--color-text:#0b0b0b;--color-accent:#3f9b46;
+     --color-accent-600:#34803a;--color-accent-700:#24632a;--color-divider:rgba(11,11,11,.14)}
+a{color:#24632a;text-underline-offset:3px}
+img{max-width:100%}
+.site{max-width:480px;margin:0 auto;background:#ffffff;color:#0b0b0b;min-height:100vh;
+      position:relative;isolation:isolate}
+@media (min-width:520px){.site{box-shadow:0 0 80px rgba(11,11,11,.22)}}
+
+/* menu: overlay real, sem depender de runtime */
+.menu{position:fixed;inset:0;z-index:60;display:none;background:rgba(11,11,11,.55)}
+.menu.aberto{display:block}
+/* o painel do menu traz inset:0 inline (heranca do prototipo): precisa de
+   !important para virar coluna centrada em vez de colar na borda esquerda */
+.menu > div{position:fixed!important;inset:0 auto 0 50%!important;
+            width:100%!important;max-width:480px!important;
+            transform:translateX(-50%)!important}
+body.travado{overflow:hidden}
+
+/* acordeao do FAQ, antes controlado por estado do prototipo */
+.faq-r{display:none}
+.faq.aberto .faq-r{display:block}
+
+/* rolagem horizontal das galerias sem barra visivel */
+.zs{scrollbar-width:none}
+.zs::-webkit-scrollbar{width:0;height:0}
+
+:focus-visible{outline:2px solid #3f9b46;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* ---------- telas maiores ----------
+   O arquivo de design so previa celular e tudo usa estilo inline, que vence
+   folha de estilo. Por isso os ajustes abaixo usam !important: e a unica
+   forma de sobrepor os valores embutidos em cada elemento. */
+.nav-desk{display:none}
+
+@media (min-width:820px){
+  .site{max-width:720px}
+  .sec:not(.bleed){padding-left:44px!important;padding-right:44px!important}
+}
+
+@media (min-width:1120px){
+  .site{max-width:1180px}
+  /* respiro lateral: o conteudo fica em ~840px, o fundo ocupa a largura toda.
+     As secoes .bleed ficam de fora porque posicionam filhos em absoluto. */
+  .sec:not(.bleed){padding-left:170px!important;padding-right:170px!important}
+  /* so a capa cresce; as tarjas de zebra mantem a altura original */
+  .sec.hero{height:520px!important}
+  /* o texto e os botoes da capa acompanham o mesmo respiro das secoes */
+  .sec.hero > div[style*="bottom:0"]{padding-left:170px!important;
+    padding-right:170px!important;padding-bottom:40px!important}
+  .sec.hero > div[style*="bottom:0"] > div[style*="display:flex"]{max-width:440px}
+
+  /* barra de navegacao no lugar do menu sanduiche */
+  .nav-desk{display:flex;gap:24px;align-items:center}
+  .nav-desk a{color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;
+              letter-spacing:.02em;white-space:nowrap}
+  .nav-desk a:hover{color:#ffffff}
+  .nav-desk a[aria-current="page"]{color:#3f9b46}
+  .menu-btn{display:none!important}
+
+  /* a linha de texto nao deve atravessar a tela inteira */
+  .sec p, .sec > div > p{max-width:66ch}
+
+  /* galeria em tres colunas */
+  .grade-galeria{grid-template-columns:1fr 1fr 1fr!important}
+  .grade-galeria > div{height:240px!important}
+  .grade-galeria > div[style*="span 2"]{grid-column:span 3!important;height:420px!important}
+
+  /* o cartaz e retrato: limitar a largura evita corte agressivo */
+  .cartaz{max-width:460px;height:600px!important}
+
+  /* rodape em quatro colunas */
+  .rodape-cols{grid-template-columns:1.2fr 1fr 1fr!important;gap:32px!important}
+}
+
+@media (min-width:1400px){
+  .site{max-width:1320px}
+  .sec:not(.bleed){padding-left:240px!important;padding-right:240px!important}
+}
+
+.hv1:hover{background:rgba(255,255,255,.12)}
+.hv2:hover{background:rgba(11,11,11,.75)}
+.hv1:hover{background:rgba(255,255,255,.12)}
+.hv2:hover{background:#34803a}
